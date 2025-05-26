@@ -59,6 +59,8 @@ const PaperSubmission = () => {
         >
           Submit Your Paper
         </a>
+        <br /><br />
+        The Microsoft CMT service was used for managing the peer-reviewing process for this conference. <br />This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support
       </div>
     </div>
   );
@@ -92,7 +94,7 @@ const ImpDates = () => {
       }}>
         <tbody>
           {[
-            ['Opening Date for Paper Submission', '05.05.2025'],
+            ['Opening Date for Paper Submission', '06.05.2025'],
             ['Last Date for Full Paper Submission', '01.08.2025'],
             ['Notification of Acceptance', '15.10.2025'],
             ['Camera-Ready Paper Submission', '01.11.2025'],
