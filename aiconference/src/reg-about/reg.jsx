@@ -35,7 +35,7 @@ const PaperSubmission = () => {
           Submitted research work must be original in content amd free from plagiarism. Authors are requested to submit a plagiarism report using <br />iThenticate / Turnitin. Plagiarism should be less than 20% to qualify for the paper to be reviewed.
         </li>
         <li style={{ textAlign: 'left', marginBottom: '10px', borderColor: 'white' }}>
-          Submit the manuscripts through the below link.
+          The Microsoft CMT link will be provided shortly.
         </li>
       </ul>
 
