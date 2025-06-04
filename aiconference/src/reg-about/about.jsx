@@ -3,6 +3,7 @@ import psgImage from '../assets/PSGTECH.jpeg';
 import psgAiImage from '../assets/AICons_logo.jpg';
 import psgCareImage from '../assets/PSGCARE.jpg';
 
+
 const SeeMore = ({ children }) => {
   const [showMore, setShowMore] = useState(false);
 
