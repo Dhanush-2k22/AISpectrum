@@ -12,9 +12,19 @@ const ThemeSection = () => {
           color: '#0d58a9',
 
           
-      }}>THEME</h2><section style={{
+      }}>THEME</h2>
+         <div
+            style={{
+              width: '100px',
+              height: '4px',
+              background: '#ffdd00',
+              margin: '0 auto',
+              borderRadius: '2px',
+            }}
+          />
+      <section style={{
         marginBottom: '80px', 
-        background: '#0d58a9',
+        background: 'rgb(255, 255, 255)',
         borderRadius: '20px',
         padding: '30px',
         boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
@@ -40,7 +50,8 @@ const ThemeSection = () => {
                   maxWidth: '900px',
                   margin: '0 auto',
                   textAlign: 'justify-center',
-                  textJustify: 'inter-word'
+                  textJustify: 'inter-word',
+                  color:'#475569',
               }}>
                   AI is revolutionizing industries, research, and society, but it must be ethical, progressive, innovative, and of high quality to maximize its potential responsibly. EPIQ AI 2025 brings together researchers, industry experts, policymakers, and innovators to shape a future where AI is trustworthy, impactful, and sustainable.
               </p>

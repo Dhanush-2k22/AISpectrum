@@ -5,15 +5,25 @@ const PaperSubmission = () => {
   return (
     <div style={{ 
       marginBottom: '80px', 
-      background: '#0d58a9',
+      background: 'rgb(255, 255, 255)',
       borderRadius: '20px',
       padding: '30px',
       boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
       maxWidth: '90%',
       margin: '0 auto 60px',
-      color: 'white'
+      color: '#475569'
     }}>
-      <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', fontFamily: 'Georgia, serif',color:'#ffdd00' }}>PAPER SUBMISSION</h2>
+      <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', fontFamily: 'Georgia, serif',color:'#0d58a9' }}>PAPER SUBMISSION</h2>
+             <div
+            style={{
+              width: '100px',
+              height: '4px',
+              background: '#ffdd00',
+              margin: '0 auto',
+              borderRadius: '2px',
+            }}
+          />
+
       
       <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem', listStyleType: 'disc', borderColor: 'white' }}>
         <li style={{ textAlign: 'left', marginBottom: '10px', borderColor: 'white' }}>
@@ -80,6 +90,15 @@ const ImpDates = () => {
       color: 'white'
     }}>
       <h2 style={{ fontSize: '2rem', fontWeight: 'bold', textAlign: 'center', margin: '30px 0', fontFamily: 'Georgia, serif' }}>IMPORTANT DATES</h2>
+             <div
+            style={{
+              width: '100px',
+              height: '4px',
+              background: '#ffdd00',
+              margin: '0 auto',
+              borderRadius: '2px',
+            }}
+          />
 
       <table style={{
         width: '80%',
@@ -116,15 +135,24 @@ const RegDetails = () => {
   return (
     <div id="registration" style={{ 
       marginBottom: '80px', 
-      background: '#0d58a9',
+      background: 'rgb(255, 255, 255)',
       borderRadius: '20px',
       padding: '30px',
       boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
       maxWidth: '90%',
       margin: '60px auto',
-      color: 'white'
+      color: '#475569'
     }}>
-      <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', fontFamily: 'Georgia, serif',color:'#ffdd00' }}>REGISTRATION DETAILS</h2>
+      <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', fontFamily: 'Georgia, serif',color:'#0d58a9' }}>REGISTRATION DETAILS</h2>
+             <div
+            style={{
+              width: '100px',
+              height: '4px',
+              background: '#ffdd00',
+              margin: '0 auto',
+              borderRadius: '2px',
+            }}
+          />
       
       <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem', listStyleType: 'disc' }}>
         <li style={{ textAlign: 'left', marginBottom: '8px' }}>All accepted papers must be registered</li>
@@ -177,7 +205,7 @@ const RegDetails = () => {
         <strong>Note:</strong> Registration fee inclusive of 18% GST.
       </p>
 
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', fontFamily: 'Georgia, serif',color:'#ffdd00' }}>Payment Type: Internet Banking</h2>
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', fontFamily: 'Georgia, serif',color:'#0d58a9' }}>Payment Type: Internet Banking</h2>
       
       <div style={{ overflowX: 'auto', marginBottom: '2rem' }}>
         <table style={{

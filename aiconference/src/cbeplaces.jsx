@@ -67,8 +67,8 @@ const WelcomeCardSection = () => {
       style={{
         width: "100%",
         padding: "40px 0",
-        background: '#0d58a9',
-        color: "#fff",
+        background: 'rgb(255, 255, 255)',
+        color: '#475569',
         textAlign: "center",
         borderRadius: "30px",
         overflow: "hidden",
@@ -76,9 +76,19 @@ const WelcomeCardSection = () => {
       }}
     >
       <div style={{ width: "90%", margin: "0 auto" }}>
-        <h2 style={{ fontSize: "2rem", marginBottom: "20px", fontWeight: "bold",color:"#ffdd00" }}>
+        <h2 style={{ fontSize: "2rem", marginBottom: "20px", fontWeight: "bold",color:"#0d58a9" }}>
           Welcome to Coimbatore
         </h2>
+        <div
+            style={{
+              width: '100px',
+              height: '4px',
+              background: '#ffdd00',
+              margin: '0 auto',
+              borderRadius: '2px',
+              
+            }}
+          />
 
         <div
           ref={scrollRef}

@@ -201,7 +201,7 @@ const TopicsSection = () => {
 
   return (
     <div style={{
-      background: '#0d58a9',
+      background: 'rgb(255, 255, 255)',
       borderRadius: '20px',
       padding: '40px 30px',
       boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)',
@@ -214,20 +214,30 @@ const TopicsSection = () => {
         fontWeight: 'bold',
         textAlign: 'center',
         marginBottom: '15px',
-        color: '#ffdd00',
+        color: '#0d58a9',
       }}>
         CONFERENCE TRACKS & TOPICS
       </h2>
+               <div
+            style={{
+              width: '100px',
+              height: '4px',
+              background: '#ffdd00',
+              margin: '0 auto',
+              borderRadius: '2px',
+            }}
+          />
 
       <p style={{
         fontSize: '1.1em',
         marginBottom: '30px',
+        marginTop:'15px',
         lineHeight: '1.6',
         maxWidth: '900px',
         marginLeft: 'auto',
         marginRight: 'auto',
         textAlign: 'justify',
-        color: '#FFFFFF',
+        color: '#475569',
       }}>
         We invite researchers, academicians, industry professionals, and practitioners to submit original papers on the foundations, applications, and future directions of Artificial Intelligence. The conference welcomes research articles, reviews, and technical contributions across various fields. Submissions spanning the full spectrum of AI, particularly those that bridge disciplines or explore emerging areas, are especially encouraged.
       </p>

@@ -29,7 +29,7 @@ const VenueContactSection = () => {
           width: "100%",
           margin: 0,
           padding: 0,
-          background: '#0d58a9',
+          background: 'rgb(255,255,255)',
           borderRadius: "20px", // 👈 Added curved edges
         }}
       >
@@ -47,7 +47,7 @@ const VenueContactSection = () => {
           <div
             className="hover-card"
             style={{
-              background: "0d58a9",
+              background: "#0d58a9",
               borderRadius: "15px",
               padding: "15px",
               color: "#fff",

@@ -26,7 +26,7 @@ const Sponsor = () => {
       <div
         style={{
           width: "100%",
-          background: '#0d58a9',
+          background: 'rgb(255,255,255)',
           padding: "50px 20px",
           textAlign: "center",
           boxSizing: "border-box",
@@ -39,13 +39,23 @@ const Sponsor = () => {
         {/* Section Title */}
         <h2
           style={{
-            color: "#fff",
+            color: "#0d58a9",
             fontSize: "2rem",
             marginBottom: "40px",
           }}
         >
           Sponsors
         </h2>
+        <div
+            style={{
+              width: '100px',
+              height: '4px',
+              background: '#ffdd00',
+              margin: '0 auto',
+              borderRadius: '2px',
+              
+            }}
+          />
 
         {/* Sponsor Cards Grid */}
         <div
@@ -77,7 +87,7 @@ const Sponsor = () => {
         >
           <h2
             style={{
-              color: "#fff",
+              color: "#0d58a9",
               fontSize: "1.6rem",
               margin: 0,
             }}
