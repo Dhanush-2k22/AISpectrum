@@ -1,13 +1,83 @@
 import React, { useEffect } from 'react';
 import ProfileCard from './profilecard'; 
 import NormalCardGrid from './normalcard';
-import Dr_GRK from './assets/Dr_GRK.jpg';
+import { colors } from './styles/commonStyles';
+
+// Import images from committee file
+import TrusteeImage from './assets/trustee.jpg';
+import PrakasanImage from './assets/Prakasan.png';
+import GRKImage from './assets/GRK.jpg';
 import VinothImage from './assets/Vinoth Kumar.png';
+import IndhumathiImage from './assets/Indumathi.png';
+import RekhaImage from './assets/Rekha.png';
+import SathiyapriyaImage from './assets/Sathiyapriya.png';
+import SenthilPrabhaImage from './assets/Senthilprabha.png';
+import VijayanImage from './assets/vijayan K.jpg';
+import FerranteImage from './assets/ferrante.jpg';
+import BhamaImage from './assets/Bhama.png';
+import PabloImage from './assets/pablo.jpg';
+import GopikaRaniImage from './assets/Gopikarani.png';
+import ThirumahalImage from './assets/Thirumahal.png';
+import ShanmugamImage from './assets/Shanmugam.png';
+import SivaranjiniImage from './assets/Sivaranjani.png';
+import MuruganImage from './assets/Murugan.png';
+import NirmalaImage from './assets/Nirmala.png';
+import ACRImage from './assets/ACR.jpg';
+import SangeethaImage from './assets/Sangeetha.png';
+import PrakashImage from './assets/Prakash.jpg';
+import MPrakashImage from './assets/M.Prakash.png';
+import SureshImage from './assets/Suresh.png';
+import VijayalakshmiImage from './assets/Vijiyalakashmi.png';
+import SivarajImage from './assets/Sivaraj.png';
+import MaruthamaniImage from './assets/Maruthamani.png';
+import ArulJothiImage from './assets/Aruljothi.png';
+import NatarajanImage from './assets/Natarajan.png';
+import JayaprasathImage from './assets/Jayaprasanth.png';
+import PrabhavathiImage from './assets/Prabavathi.png';
+import SureshkumarImage from './assets/Sureshkumar.png';
+import BrindhaImage from './assets/Brindha.png';
+import KarthikVijaykumarImage from './assets/KarthikVijayakumar.png';
+import DharaniImage from './assets/Dharani-DNVAoUd9.jpg';
+import saisundara from './assets/SaiSundar.png';
+import praveeen from './assets/Praveen.png';
+import dhanalakshmi from './assets/Dhanalakshmi.png';
+import surjith from './assets/Surjit.png';
+import abirami from './assets/Abirami.png';
+import kanchana from './assets/kanchana.jpg';
+import sridevi from './assets/Sridevi.png';
+import kalpana from './assets/Kalpana.png';
+import niresh from './assets/NIresh.png';
+import veerakumar from './assets/Veerakumar.jpg';
+import thillairajan from './assets/Thillairajan.png';
+import rajesh from './assets/Rajesh.png';
+import kathirvel from './assets/Kathirvel.png';
+import anisha from './assets/ANisha.png';
+import barath from './assets/Barath.jpg';
+import murugappan from './assets/Murugappan.jpg';
+import sugunathan from './assets/sugananthan.jpg';
+import pablo from './assets/pablo.jpg';
+import shelly from './assets/shelly.png';
+import sonali from './assets/sonali.jpg';
+import badri from './assets/badri.jpg';
+import vijaykumar from './assets/vijayakumar.jpg';
+import thiyagarajan from './assets/thiyagarajan.jpg';
+import siddarth from './assets/siddarth.jpg';
+import jorg from './assets/jorg.png';
+import amar from './assets/amar.jpg';
+import srinivas from './assets/srinivas.png';
+import Dr_GRK from './assets/Dr_GRK.jpg';
+import arun from './assets/arun.jpg';
+import mukundh from './assets/mukund.jpg';
+import srikanth from './assets/srikanth.jpg';
+import sudha_R from './assets/sudha_R.png';
+import Dr_Rekha from './assets/Dr_Rekha.jpg';
+import millie from './assets/mille.jpg';
+import defaultImage from './assets/5856.jpg';
 
 const TempComponent = () => {
   // Set background color when component mounts
   useEffect(() => {
-    document.body.style.backgroundColor = '#1E3A8A';
+    document.body.style.backgroundColor = '#FFFFFF';
     document.body.style.margin = '0';
     
     // Cleanup function to reset styles when component unmounts
@@ -18,347 +88,361 @@ const TempComponent = () => {
   
   return (
     <div style={{
-      padding: '70px 20px 40px 20px', // Reduced side padding for mobile
-      color: 'white',
-      fontFamily: 'Georgia, serif',
+      padding: '70px 20px 40px 20px',
+      color: '#000000',
+      fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif',
       maxWidth: '1280px',
       margin: '0 auto',
-      overflowX: 'hidden', // Prevent horizontal scrolling on mobile
+      overflowX: 'hidden',
       width: '100%',
       boxSizing: 'border-box'
     }}>
       <h1 style={{ 
         textAlign: 'center', 
         marginBottom: '40px',
-        fontSize: 'calc(1.5rem + 1vw)' // Responsive font size
+        fontSize: 'calc(1.5rem + 1vw)',
+        color: colors.blue,
+        fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif',
+        fontWeight: '600'
       }}>ORGANIZING COMMITTEE</h1>
 
       <h2 style={{ 
         textAlign: 'center', 
         marginBottom: '25px',
-        fontSize: 'calc(1.2rem + 0.5vw)' // Responsive font size
+        fontSize: 'calc(1.2rem + 0.5vw)',
+        color: colors.blue
       }}>PATRON</h2>
       <div style={{ 
         marginBottom: '40px', 
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
-        borderRadius: '20px',
-        padding: '20px 15px', // Reduced padding for mobile
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         gap: '30px'
       }}>
-        <div>
-          <h2 style={{ 
-            textAlign: 'center', 
-            marginBottom: '10px', 
-            fontWeight: '800' 
-          }}>Shri L Gopalakrishnan</h2>
-          <h4 style={{ 
-            textAlign: 'center', 
-            marginBottom: '10px',
-            fontWeight: '400',  
-            fontSize: '1.2em'
-          }}>Managing Trustee<br />PSG & Sons' Charities</h4>
-        </div>
+        <ProfileCard
+          name="Shri L Gopalakrishnan"
+          designation="Managing Trustee"
+          organization="PSG & Sons' Charities"
+          photoUrl={TrusteeImage}
+        />
       </div>
       
       <h2 style={{ 
         textAlign: 'center', 
         marginBottom: '25px',
-        fontSize: 'calc(1.2rem + 0.5vw)' // Responsive font size
+        fontSize: 'calc(1.2rem + 0.5vw)',
+        color: colors.blue
       }}>CO - PATRON</h2>
       <div style={{ 
         marginBottom: '40px', 
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
-        borderRadius: '20px',
-        padding: '20px 15px', // Reduced padding for mobile
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         gap: '30px'
       }}>
-        <div>
-          <h2 style={{ 
-            textAlign: 'center', 
-            marginBottom: '10px', 
-            fontWeight: '800' 
-          }}>Dr K Prakasan</h2>
-          <h4 style={{ 
-            textAlign: 'center', 
-            marginBottom: '10px',
-            fontWeight: '400',  
-            fontSize: '1.2em'
-          }}>Principal <br />PSG College of Technology</h4>
-        </div>
+        <ProfileCard
+          name="Dr K Prakasan"
+          designation="Principal"
+          organization="PSG College of Technology"
+          photoUrl={PrakasanImage}
+        />
       </div>
       
       <h2 style={{ 
         textAlign: 'center', 
         marginBottom: '25px',
-        fontSize: 'calc(1.2rem + 0.5vw)' // Responsive font size
+        fontSize: 'calc(1.2rem + 0.5vw)',
+        color: colors.blue
       }}>GENERAL CHAIRS</h2>
       <div style={{ 
-        marginBottom: '40px', 
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
-        borderRadius: '20px',
-        padding: '20px 15px', // Reduced padding for mobile
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '30px'
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, minmax(250px, 1fr))',
+        gap: '30px',
+        maxWidth: '1400px',
+        margin: '0 auto 40px',
+        padding: '0 20px',
+        width: '100%',
+        boxSizing: 'border-box',
+        justifyContent: 'center'
       }}>
-        <div>
-          <h2 style={{ 
-            textAlign: 'center', 
-            marginBottom: '10px',
-            fontWeight: '800'  // Increased boldness for name
-          }}>Dr G R Karpagam</h2>
-          <h4 style={{ 
-            textAlign: 'center', 
-            marginBottom: '2px',  // Reduced from 5px to 2px
-            fontWeight: '400',  // Reduced boldness for designation
-            fontSize: '1.2em'
-          }}>Professor <br />Department of Computer Science and Engineering<br />Director, PSG - AI Consortium<br />PSG College of Technology</h4>
+        <div style={{ 
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          minWidth: '0',
+          gridColumn: '2 / span 1'
+        }}>
+          <ProfileCard
+            name="Dr G R Karpagam"
+            designation={
+              <>
+                Professor<br />Department of Computer Science and Engineering<br />Director, PSG - AI Consortium
+              </>
+            }
+            organization="PSG College of Technology"
+            photoUrl={Dr_GRK}
+          />
         </div>
         
-        <div>
-          <h2 style={{ 
-            textAlign: 'center', 
-            marginBottom: '10px',
-            fontWeight: '800'  // Increased boldness for name
-          }}>Dr B Vinoth Kumar</h2>
-          <h4 style={{ 
-            textAlign: 'center', 
-            marginBottom: '1px',  // Reduced from 5px to 2px
-            fontWeight: '400',  // Reduced boldness for designation
-            fontSize: '1.2em'
-          }}>Professor <br />Department of Information Technology<br />IT Infrastructure and Networking -Technical Lead, PSG - AI Consortium<br />PSG College of Technology</h4>
+        <div style={{ 
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          minWidth: '0',
+          gridColumn: '3 / span 1'
+        }}>
+          <ProfileCard
+            name="Dr B Vinoth Kumar"
+            designation={
+              <>
+                Professor<br />Department of Information Technology<br />IT Infrastructure and Networking -Technical Lead, PSG - AI Consortium
+              </>
+            }
+            organization="PSG College of Technology"
+            photoUrl={VinothImage}
+          />
         </div>
       </div>
       
       <h2 style={{ 
         textAlign: 'center', 
         marginBottom: '25px',
-        fontSize: 'calc(1.2rem + 0.5vw)' // Responsive font size
+        fontSize: 'calc(1.2rem + 0.5vw)',
+        color: colors.blue
       }}>ORGANIZING CHAIRS</h2>
       <div style={{ 
-        marginBottom: '40px', 
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
-        borderRadius: '20px',
-        padding: '20px 15px', // Reduced padding for mobile
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '30px'
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, minmax(250px, 1fr))',
+        gap: '30px',
+        maxWidth: '1400px',
+        margin: '0 auto 40px',
+        padding: '0 20px',
+        width: '100%',
+        boxSizing: 'border-box'
       }}>
-        <div>
-          <h2 style={{ 
-            textAlign: 'center', 
-            marginBottom: '10px',
-            fontWeight: '800'  // Increased boldness for name
-          }}>Dr D Indumathi</h2>
-          <h4 style={{ 
-            textAlign: 'center', 
-            marginBottom: '2px',  // Reduced from 5px to 2px
-            fontWeight: '400',  // Reduced boldness for designation
-            fontSize: '1.2em'
-          }}>Associate Professor <br />Department of Computer Science and Engineering<br />PSG College of Technology</h4>
+        <div style={{ 
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          minWidth: '0'
+        }}>
+          <ProfileCard
+            name="Dr D Indumathi"
+            designation="Associate Professor"
+            organization="Department of Computer Science and Engineering, PSG College of Technology"
+            photoUrl={IndhumathiImage}
+          />
         </div>
         
-        <div>
-          <h2 style={{ 
-            textAlign: 'center', 
-            marginBottom: '10px',
-            fontWeight: '800'  // Increased boldness for name
-          }}>Dr R Rekha</h2>
-          <h4 style={{ 
-            textAlign: 'center', 
-            marginBottom: '1px',  // Reduced from 5px to 2px
-            fontWeight: '400',  // Reduced boldness for designation
-            fontSize: '1.2em'
-          }}>Associate Professor <br /> Department of Information Technology<br />PSG College of Technology</h4>
-        </div>
-        <div>
-          <h2 style={{ 
-            textAlign: 'center', 
-            marginBottom: '10px',
-            fontWeight: '800'  // Increased boldness for name
-          }}>Dr K Sathiyapriya</h2>
-          <h4 style={{ 
-            textAlign: 'center', 
-            marginBottom: '2px',  // Reduced from 5px to 2px
-            fontWeight: '400',  // Reduced boldness for designation
-            fontSize: '1.2em'
-          }}>Associate Professor <br />Department of Computer Science and Engineering<br />PSG College of Technology</h4>
+        <div style={{ 
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          minWidth: '0'
+        }}>
+          <ProfileCard
+            name="Dr R Rekha"
+            designation="Associate Professor"
+            organization="Department of Information Technology, PSG College of Technology"
+            photoUrl={Dr_Rekha}
+          />
         </div>
         
-        <div>
-          <h2 style={{ 
-            textAlign: 'center', 
-            marginBottom: '10px',
-            fontWeight: '800'  // Increased boldness for name
-          }}>Dr R Senthil Prabha</h2>
-          <h4 style={{ 
-            textAlign: 'center', 
-            marginBottom: '1px',  // Reduced from 5px to 2px
-            fontWeight: '400',  // Reduced boldness for designation
-            fontSize: '1.2em'
-          }}>Associate Professor <br />Department of Information Technology<br />PSG College of Technology</h4>
+        <div style={{ 
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          minWidth: '0'
+        }}>
+          <ProfileCard
+            name="Dr K Sathiyapriya"
+            designation="Associate Professor"
+            organization="Department of Computer Science and Engineering, PSG College of Technology"
+            photoUrl={SathiyapriyaImage}
+          />
+        </div>
+        
+        <div style={{ 
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          minWidth: '0'
+        }}>
+          <ProfileCard
+            name="Dr R Senthil Prabha"
+            designation="Associate Professor"
+            organization="Department of Information Technology, PSG College of Technology"
+            photoUrl={SenthilPrabhaImage}
+          />
         </div>
       </div>
       
       <h2 style={{ 
         textAlign: 'center', 
         marginBottom: '25px',
-        fontSize: 'calc(1.2rem + 0.5vw)' // Responsive font size
+        fontSize: 'calc(1.2rem + 0.5vw)',
+        color: colors.blue
       }}>ORGANIZING CO - CHAIR</h2>
       <div style={{ 
         marginBottom: '40px', 
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
-        borderRadius: '20px',
-        padding: '20px 15px', // Reduced padding for mobile
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         gap: '30px'
       }}>
-        <div>
-          <h2 style={{ 
-            textAlign: 'center', 
-            marginBottom: '10px',
-            fontWeight: '800'  // Increased boldness for name
-          }}>Dr Ferrante Neri</h2>
-          <h4 style={{ 
-            textAlign: 'center', 
-            marginBottom: '2px',  // Reduced from 5px to 2px
-            fontWeight: '400',  // Reduced boldness for designation
-            fontSize: '1.2em'
-          }}>Professor of Machine Learning and Artificial Intelligence<br />University of Surrey , United Kingdom</h4>
-        </div>
+        <ProfileCard
+          name="Dr Ferrante Neri"
+          designation="Professor of Machine Learning and Artificial Intelligence"
+          organization="University of Surrey, United Kingdom"
+          photoUrl={FerranteImage}
+        />
       </div>
       
       <h2 style={{ 
         textAlign: 'center', 
         marginBottom: '25px',
-        fontSize: 'calc(1.2rem + 0.5vw)' // Responsive font size
+        fontSize: 'calc(1.2rem + 0.5vw)',
+        color: colors.blue
       }}>SCIENTIFIC COMMITTEE CHAIRS</h2>
       <div style={{ 
-        marginBottom: '40px', 
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
-        borderRadius: '20px',
-        padding: '20px 15px', // Reduced padding for mobile
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '30px'
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, minmax(250px, 1fr))',
+        gap: '30px',
+        maxWidth: '1400px',
+        margin: '0 auto 40px',
+        padding: '0 20px',
+        width: '100%',
+        boxSizing: 'border-box'
       }}>
-        <div>
-          <h2 style={{ 
-            textAlign: 'center', 
-            marginBottom: '10px',
-            fontWeight: '800'  // Increased boldness for name
-          }}>Dr Pablo Moscato </h2>
-          <h4 style={{ 
-            textAlign: 'center', 
-            marginBottom: '2px',  // Reduced from 5px to 2px
-            fontWeight: '400',  // Reduced boldness for designation
-            fontSize: '1.2em'
-          }}>Professor of Data Science<br />
-          University of Newcastle, Australia</h4>
+        <div style={{ 
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          minWidth: '0'
+        }}>
+          <ProfileCard
+            name="Dr Pablo Moscato"
+            designation="Professor of Data Science"
+            organization="University of Newcastle, Australia"
+            photoUrl={PabloImage}
+          />
         </div>
-        <div>
-          <h2 style={{ 
-            textAlign: 'center', 
-            marginBottom: '10px',
-            fontWeight: '800'  // Increased boldness for name
-          }}>Dr Sudha Ramalingam </h2>
-          <h4 style={{ 
-            textAlign: 'center', 
-            marginBottom: '2px',  // Reduced from 5px to 2px
-            fontWeight: '400',  // Reduced boldness for designation
-            fontSize: '1.2em'
-          }}>Professor & Head , Community Medicine<br />
-          Director - Research and Innovation<br />
-          PSG Institute of Medical Science and Research , India</h4>
+        
+        <div style={{ 
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          minWidth: '0'
+        }}>
+          <ProfileCard
+            name="Dr Sudha Ramalingam"
+            designation={
+              <>
+                Professor & Head, Community Medicine<br />
+                Director - Research and Innovation
+              </>
+            }
+            organization="PSG Institute of Medical Science and Research, India"
+            photoUrl={sudha_R}
+          />
         </div>
-        <div>
-          <h2 style={{ 
-            textAlign: 'center', 
-            marginBottom: '10px',
-            fontWeight: '800'  // Increased boldness for name
-          }}>Dr Millie Pant </h2>
-          <h4 style={{ 
-            textAlign: 'center', 
-            marginBottom: '2px',  // Reduced from 5px to 2px
-            fontWeight: '400',  // Reduced boldness for designation
-            fontSize: '1.2em'
-          }}>Professor & Head <br />
-          Department of Applied Mathematics and Scientific Computing<br />
-          Indian Institute of Technology Roorke , India</h4>
+        
+        <div style={{ 
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          minWidth: '0'
+        }}>
+          <ProfileCard
+            name="Dr Millie Pant"
+            designation="Professor & Head"
+            organization="Department of Applied Mathematics and Scientific Computing, Indian Institute of Technology Roorke, India"
+            photoUrl={millie}
+          />
         </div>
-        <div>
-          <h2 style={{ 
-            textAlign: 'center', 
-            marginBottom: '10px',
-            fontWeight: '800'  // Increased boldness for name
-          }}>Dr B Malar</h2>
-          <h4 style={{ 
-            textAlign: 'center', 
-            marginBottom: '2px',  // Reduced from 5px to 2px
-            fontWeight: '400',  // Reduced boldness for designation
-            fontSize: '1.2em'
-          }}>Professor <br />
-          Department of Applied Mathematics and Computational Sciences<br />
-          PSG College of Technology , India</h4>
+        
+        <div style={{ 
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          minWidth: '0'
+        }}>
+          <ProfileCard
+            name="Dr B Malar"
+            designation="Professor"
+            organization="Department of Applied Mathematics and Computational Sciences, PSG College of Technology, India"
+            photoUrl={defaultImage}
+          />
         </div>
-        <div>
-          <h2 style={{ 
-            textAlign: 'center', 
-            marginBottom: '10px',
-            fontWeight: '800'  // Increased boldness for name
-          }}>Dr Arun Rajkumar</h2>
-          <h4 style={{ 
-            textAlign: 'center', 
-            marginBottom: '2px',  // Reduced from 5px to 2px
-            fontWeight: '400',  // Reduced boldness for designation
-            fontSize: '1.2em'
-          }}>Assistant Professor <br />
-          Department of Computer Science and Engineering<br />
-          Indian Institute of Technology Madras , India</h4>
+      </div>
+
+      <div style={{ 
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, minmax(250px, 1fr))',
+        gap: '30px',
+        maxWidth: '1400px',
+        margin: '0 auto 40px',
+        padding: '0 20px',
+        width: '100%',
+        boxSizing: 'border-box',
+        justifyContent: 'center'
+      }}>
+        <div style={{ 
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          minWidth: '0',
+          gridColumn: '2 / span 1'
+        }}>
+          <ProfileCard
+            name="Dr Arun Rajkumar"
+            designation="Assistant Professor"
+            organization="Department of Computer Science and Engineering, Indian Institute of Technology Madras, India"
+            photoUrl={arun}
+          />
         </div>
-        <div>
-          <h2 style={{ 
-            textAlign: 'center', 
-            marginBottom: '10px',
-            fontWeight: '800'  // Increased boldness for name
-          }}>Dr B Sangeetha</h2>
-          <h4 style={{ 
-            textAlign: 'center', 
-            marginBottom: '1px',  // Reduced from 5px to 2px
-            fontWeight: '400',  // Reduced boldness for designation
-            fontSize: '1.2em'
-          }}>Assistant Professor(Sl.Gr) <br />Department of Information Technology<br />
-          PSG College of Technology</h4>
+        
+        <div style={{ 
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          minWidth: '0',
+          gridColumn: '3 / span 1'
+        }}>
+          <ProfileCard
+            name="Dr B Sangeetha"
+            designation="Assistant Professor(Sl.Gr)"
+            organization="Department of Information Technology, PSG College of Technology"
+            photoUrl={SangeethaImage}
+          />
         </div>
       </div>
       
-      <h2 style={{ 
+      <h1 style={{ 
         textAlign: 'center', 
-        marginBottom: '25px',
-        fontSize: 'calc(1.2rem + 0.5vw)' // Responsive font size
-      }}>ADVISORY COMMITTEE</h2>
+        marginBottom: '40px',
+        fontSize: 'calc(1.5rem + 1vw)',
+        color: colors.blue,
+        fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif',
+        fontWeight: '600'
+      }}>ADVISORY COMMITTEE</h1>
       <div style={{ 
         marginBottom: '40px', 
         background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
         borderRadius: '20px',
-        padding: '20px 15px', // Reduced padding for mobile
+        padding: '20px 15px',
         boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
         display: 'flex',
         flexDirection: 'column',
@@ -368,7 +452,8 @@ const TempComponent = () => {
         <h2 style={{ 
           textAlign: 'center', 
           marginBottom: '25px',
-          fontSize: 'calc(1.2rem + 0.5vw)' // Responsive font size
+          fontSize: 'calc(1.2rem + 0.5vw)',
+          color: colors.blue
         }}>NATIONAL ADVISORY COMMITTEE</h2>
         
         <div style={{
@@ -377,12 +462,12 @@ const TempComponent = () => {
           margin: '0 auto',
           border: '2px solid rgba(255, 255, 255, 0.3)',
           borderRadius: '10px',
-          overflow: 'auto', // Enable horizontal scrolling for tables on mobile
+          overflow: 'auto',
           backgroundColor: 'rgba(0, 0, 0, 0.2)'
         }}>
           <table style={{
             width: '100%',
-            minWidth: '600px', // Ensure table content doesn't get too squished
+            minWidth: '600px',
             borderCollapse: 'collapse',
             color: 'white',
             textAlign: 'left'
@@ -554,8 +639,9 @@ const TempComponent = () => {
         
         <h2 style={{ 
           textAlign: 'center', 
-          margin: '40px 0 25px',
-          fontSize: 'calc(1.2rem + 0.5vw)' // Responsive font size
+          marginBottom: '25px',
+          fontSize: 'calc(1.2rem + 0.5vw)',
+          color: colors.blue
         }}>INTERNATIONAL ADVISORY COMMITTEE</h2>
         
         <div style={{
@@ -564,12 +650,12 @@ const TempComponent = () => {
           margin: '0 auto',
           border: '2px solid rgba(255, 255, 255, 0.3)',
           borderRadius: '10px',
-          overflow: 'auto', // Enable horizontal scrolling for tables on mobile
+          overflow: 'auto',
           backgroundColor: 'rgba(0, 0, 0, 0.2)'
         }}>
           <table style={{
             width: '100%',
-            minWidth: '600px', // Ensure table content doesn't get too squished
+            minWidth: '600px',
             borderCollapse: 'collapse',
             color: 'white',
             textAlign: 'left'
@@ -703,12 +789,6 @@ const TempComponent = () => {
           h4 {
             font-size: 1rem !important;
           }
-          table {
-            font-size: 0.9rem;
-          }
-          td {
-            padding: 10px 12px !important;
-          }
         }
         
         @media screen and (max-width: 480px) {
@@ -721,11 +801,21 @@ const TempComponent = () => {
           h4 {
             font-size: 0.9rem !important;
           }
-          table {
-            font-size: 0.8rem;
+        }
+        
+        @media screen and (max-width: 1200px) {
+          div[style*="gridTemplateColumns"] {
+            grid-template-columns: repeat(3, 1fr);
           }
-          td {
-            padding: 8px 10px !important;
+        }
+        @media screen and (max-width: 900px) {
+          div[style*="gridTemplateColumns"] {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media screen and (max-width: 600px) {
+          div[style*="gridTemplateColumns"] {
+            grid-template-columns: 1fr;
           }
         }
       `}</style>

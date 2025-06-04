@@ -662,15 +662,26 @@ const panelist = [
  
 
   return (
-    <div className="committee-container" style={{ padding: '40px', fontFamily: 'Georgia, serif', color: '#FFFFFF', position: 'relative', width: '100vw', marginLeft: 'calc(-50vw + 50%)', boxSizing: 'border-box' }}>
+    <div className="committee-container" style={{ 
+      padding: '40px', 
+      fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif', 
+      color: '#000000', 
+      position: 'relative', 
+      width: '100vw', 
+      marginLeft: 'calc(-50vw + 50%)', 
+      boxSizing: 'border-box',
+      backgroundColor: '#FFFFFF'
+    }}>
       <div className="committee-background"></div>
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
       <h2 style={{
         textAlign: 'center',
         fontSize: '2.5em',
         marginBottom: '40px',
-        color: '#FFFFFF',
+        color: colors.blue,
         position: 'relative',
+        fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif',
+        fontWeight: '600'
       }}>ORGANIZING COMMITTEE</h2>
 
       {/* Chief Patron and Patron */}
@@ -941,14 +952,14 @@ const panelist = [
             padding: '10px 20px',
             border: 'none',
             borderRadius: '10px',
-            backgroundColor: activeSection === 'Finance' ? '#00B4D8' : '#004AAD',
-            color: '#FFFFFF',
+            backgroundColor: activeSection === 'Finance' ? colors.blue : '#F0F0F0',
+            color: activeSection === 'Finance' ? '#FFFFFF' : '#000000',
             cursor: 'pointer',
             fontSize: '1em',
-            fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
+            fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif',
             fontWeight: '500',
             letterSpacing: '0.5px',
-            transition: 'background-color 0.3s',
+            transition: 'all 0.3s ease',
             flex: '1 1 calc(20% - 20px)', 
             maxWidth: 'calc(20% - 20px)',
           }}
