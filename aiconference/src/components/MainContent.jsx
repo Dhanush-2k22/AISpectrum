@@ -11,7 +11,7 @@ import {
 import { colors } from '../styles/commonStyles';
 
 import PSGLogo from '../assets/PSG_College_of_Technology_logo.png';
-import AIConsLogo from '../assets/AI_Cons_logo.png';
+import AIConsLogo from '../assets/AICons_logo.jpg';
 
 const MainContent = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -54,7 +54,7 @@ const MainContent = () => {
         <img
           src={PSGLogo}
           alt="PSGCT Logo"
-          style={{ height: '100px', width: 'auto', marginRight: '1.8rem', filter: 'brightness(0.9)' }}
+          style={{ height: '105px', width: 'auto', marginRight: '2rem', filter: 'brightness(0.9)', objectFit: 'contain' }}
         />
 
         <div style={{ textAlign: 'center', minWidth: '300px', margin: '0 1rem' }}>
@@ -66,7 +66,7 @@ const MainContent = () => {
         <img
           src={AIConsLogo}
           alt="AI Consortium Logo"
-          style={{ height: '120px', width: 'auto', marginLeft: '1rem' }}
+          style={{ height: '140px', width: 'auto', marginLeft: '1rem',marginBottom:'1.8rem',objectFit: 'contain' }}
         />
       </InfoSection>
 

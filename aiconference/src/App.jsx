@@ -208,10 +208,9 @@ function App() {
 
           {/* Section Content */}
           <div style={{ color: colors.white, position: 'relative', zIndex: 1 }}>
-            <div id="about"><About /></div>
-            <br />
-            <div id="committee"><SpeakerSection/></div>
-            <div id="theme"><ThemeSection /></div><br />
+            <div id="about" style={{ marginTop: '-50px' }}><About /></div>
+            <div id="committee" style={{ marginTop: '-60px' }}><SpeakerSection/></div>
+            <div id="theme" style={{ marginTop: '-30px' }}><ThemeSection /></div><br />
             <div id="topics"><TopicsSection /></div>
             <div id="Publication"><PublicationSection /></div>
             <div id="Dates"><Dates /></div>

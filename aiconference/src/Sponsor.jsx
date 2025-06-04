@@ -8,7 +8,7 @@ const Sponsor = () => {
         .sponsor-card {
           background:#ffffff;
           color: white;
-          padding: 20px;
+          padding: 10px;
           border-radius: 12px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
           transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -27,12 +27,12 @@ const Sponsor = () => {
         style={{
           width: "100%",
           background: 'rgb(255,255,255)',
-          padding: "50px 20px",
+          padding: "20px 20px",
           textAlign: "center",
           boxSizing: "border-box",
           margin: 0,
-          marginTop: "60px",
-          marginBottom: "60px",
+          marginTop: "40px",
+          marginBottom: "20px",
           borderRadius: "20px", // 👈 Curved edges here
         }}
       >
