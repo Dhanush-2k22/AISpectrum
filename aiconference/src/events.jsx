@@ -17,13 +17,13 @@ const EventsSection = () => {
     <div style={{ 
       margin: '40px auto', 
       padding: '30px', 
-      background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))', 
+      background: '#0d58a9', 
       borderRadius: '20px', 
       maxWidth: '1200px', 
       boxShadow: '0 4px 12px rgba(0,0,0,0.3)' 
     }}>
       <h2 style={{ 
-        color: 'white', 
+        color: '#ffdd00', 
         textAlign: 'center', 
         marginBottom: '30px', 
         fontSize: '32px', 

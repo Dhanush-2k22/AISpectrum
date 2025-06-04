@@ -1,19 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactCardFlip from 'react-card-flip';
-import { 
-  FaAtom, FaIndustry, FaRocket, FaChevronDown, FaBolt
-} from 'react-icons/fa';
+import { FaAtom, FaIndustry, FaRocket, FaChevronDown, FaBolt } from 'react-icons/fa';
 
 const cardStyle = {
-  width: '450px', // Increased width for better readability when 2 per line
+  width: '450px',
   height: '320px',
   margin: '15px',
   cursor: 'pointer',
 };
 
 const frontBackSharedStyle = {
-  background: 'linear-gradient(135deg, #004AAD, #00B4D8)',
-  color: '#fff',
+  background: '#0d58a9',
+  color: '#ffdd00',
   padding: '30px',
   borderRadius: '20px',
   border: '4.5px solid #BCC6CC',
@@ -40,7 +38,6 @@ const TopicCard = ({ title, description, topics, icon }) => {
     setScrollPosition(e.target.scrollTop);
   };
 
-  // Use useEffect to calculate dimensions when component mounts or flips
   useEffect(() => {
     if (isFlipped && contentRef.current) {
       setContentHeight(contentRef.current.scrollHeight);
@@ -48,24 +45,23 @@ const TopicCard = ({ title, description, topics, icon }) => {
     }
   }, [isFlipped]);
 
-  // Determine if there's more content to scroll down to
   const hasMoreContent = contentHeight > containerHeight && scrollPosition < contentHeight - containerHeight;
 
   return (
     <div style={cardStyle}>
-      <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" containerStyle={{height: '100%'}}>
+      <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" containerStyle={{ height: '100%' }}>
         {/* Front */}
-        <div key="front" style={{ 
-          ...frontBackSharedStyle, 
-          display: 'flex', 
-          flexDirection: 'column', 
-          justifyContent: 'center', 
-          alignItems: 'center' 
+        <div key="front" style={{
+          ...frontBackSharedStyle,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center'
         }} onClick={handleClick}>
           {icon && <div style={{ fontSize: '2.5em', marginBottom: '15px' }}>{icon}</div>}
-          <h3 style={{ 
-            fontFamily: 'Libre Baskerville, Georgia, serif', 
-            fontSize: '1.5em', 
+          <h3 style={{
+            fontFamily: 'Libre Baskerville, Georgia, serif',
+            fontSize: '1.5em',
             fontWeight: 'bold',
             margin: '0 0 10px 0'
           }}>{title}</h3>
@@ -73,26 +69,26 @@ const TopicCard = ({ title, description, topics, icon }) => {
         </div>
 
         {/* Back */}
-        <div key="back" style={{ 
-          ...frontBackSharedStyle, 
-          padding: '20px', 
+        <div key="back" style={{
+          ...frontBackSharedStyle,
+          padding: '20px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-start',
           overflowY: 'hidden',
           position: 'relative'
         }} onClick={handleClick}>
-          <h4 style={{ 
-            fontFamily: 'Libre Baskerville, Georgia, serif', 
-            fontSize: '1.2em', 
-            fontWeight: 'bold', 
+          <h4 style={{
+            fontFamily: 'Libre Baskerville, Georgia, serif',
+            fontSize: '1.2em',
+            fontWeight: 'bold',
             marginTop: '0',
             marginBottom: '8px'
           }}>{description}</h4>
-          <div 
+          <div
             ref={contentRef}
-            style={{ 
-              overflowY: 'auto', 
+            style={{
+              overflowY: 'auto',
               flex: 1,
               paddingRight: '10px',
               msOverflowStyle: 'none',
@@ -100,20 +96,19 @@ const TopicCard = ({ title, description, topics, icon }) => {
             }}
             onScroll={handleScroll}
           >
-            <ul style={{ 
-              listStyleType: 'disc', 
-              paddingLeft: '20px', 
-              fontSize: '0.9em', 
-              textAlign: 'left', 
-              margin: 0 
+            <ul style={{
+              listStyleType: 'disc',
+              paddingLeft: '20px',
+              fontSize: '0.9em',
+              textAlign: 'left',
+              margin: 0
             }}>
               {topics.map((topic, index) => (
                 <li key={index} style={{ marginBottom: '4px' }}>{topic}</li>
               ))}
             </ul>
           </div>
-          
-          {/* Show down arrow when content exceeds container height */}
+
           {(contentHeight > containerHeight) && (
             <div style={{
               position: 'absolute',
@@ -130,7 +125,6 @@ const TopicCard = ({ title, description, topics, icon }) => {
             </div>
           )}
 
-          {/* Add CSS for scrollbar hiding and arrow animation */}
           <style>{`
             div::-webkit-scrollbar {
               display: none;
@@ -207,55 +201,70 @@ const TopicsSection = () => {
 
   return (
     <div style={{
-      background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
+      background: '#0d58a9',
       borderRadius: '20px',
       padding: '40px 30px',
       boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)',
       maxWidth: '1200px',
       margin: '40px auto',
     }}>
-      <h2 style={{ 
+      <h2 style={{
         fontFamily: 'Libre Baskerville, Georgia, serif',
-        fontSize: '2em', 
+        fontSize: '2em',
         fontWeight: 'bold',
         textAlign: 'center',
+        marginBottom: '15px',
+        color: '#ffdd00',
+      }}>
+        CONFERENCE TRACKS & TOPICS
+      </h2>
+
+      <p style={{
+        fontSize: '1.1em',
         marginBottom: '30px',
-        color: 'white',
-      }}>CONFERENCE TRACKS & TOPICS</h2>
-      
+        lineHeight: '1.6',
+        maxWidth: '900px',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        textAlign: 'justify',
+        color: '#FFFFFF',
+      }}>
+        We invite researchers, academicians, industry professionals, and practitioners to submit original papers on the foundations, applications, and future directions of Artificial Intelligence. The conference welcomes research articles, reviews, and technical contributions across various fields. Submissions spanning the full spectrum of AI, particularly those that bridge disciplines or explore emerging areas, are especially encouraged.
+      </p>
+
       {/* First row: Track 1 and Track 2 */}
-      <div style={{ 
+      <div style={{
         display: 'flex',
-        justifyContent: 'center', 
+        justifyContent: 'center',
         flexWrap: 'wrap',
         gap: '40px',
         marginBottom: '30px',
       }}>
         {topicsData.slice(0, 2).map((data, index) => (
-          <TopicCard 
-            key={index} 
-            title={data.title} 
+          <TopicCard
+            key={index}
+            title={data.title}
             description={data.description}
-            topics={data.topics} 
-            icon={data.icon} 
+            topics={data.topics}
+            icon={data.icon}
           />
         ))}
       </div>
-      
+
       {/* Second row: Track 3 and Track 4 */}
-      <div style={{ 
+      <div style={{
         display: 'flex',
         justifyContent: 'center',
         flexWrap: 'wrap',
         gap: '40px',
       }}>
         {topicsData.slice(2, 4).map((data, index) => (
-          <TopicCard 
-            key={`row2-${index}`} 
-            title={data.title} 
+          <TopicCard
+            key={`row2-${index}`}
+            title={data.title}
             description={data.description}
-            topics={data.topics} 
-            icon={data.icon} 
+            topics={data.topics}
+            icon={data.icon}
           />
         ))}
       </div>

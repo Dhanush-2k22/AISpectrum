@@ -4,7 +4,7 @@ const TrackBox = ({ title, description }) => {
   return (
     <div
       style={{
-        background: 'linear-gradient(135deg, #004AAD, #00B4D8)',
+        background: '#0d58a9',
         color: '#FFFFFF',
         borderRadius: '14px',
         padding: '27px',
@@ -78,10 +78,11 @@ const ConferenceTracks = () => {
         textAlign: 'center',
         marginBottom: '30px',
         marginTop: '10px',
+        color: '#0d58a9',
       }}>CALL FOR PAPERS</h2>
       <section style={{
         marginBottom: '60px',
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
+        background: '#0d58a9',
         borderRadius: '20px',
         padding: '30px',
         boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',

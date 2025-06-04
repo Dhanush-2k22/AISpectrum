@@ -5,7 +5,7 @@ const PaperSubmission = () => {
   return (
     <div style={{ 
       marginBottom: '80px', 
-      background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
+      background: '#0d58a9',
       borderRadius: '20px',
       padding: '30px',
       boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
@@ -13,7 +13,7 @@ const PaperSubmission = () => {
       margin: '0 auto 60px',
       color: 'white'
     }}>
-      <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>PAPER SUBMISSION</h2>
+      <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', fontFamily: 'Georgia, serif',color:'#ffdd00' }}>PAPER SUBMISSION</h2>
       
       <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem', listStyleType: 'disc', borderColor: 'white' }}>
         <li style={{ textAlign: 'left', marginBottom: '10px', borderColor: 'white' }}>
@@ -116,7 +116,7 @@ const RegDetails = () => {
   return (
     <div id="registration" style={{ 
       marginBottom: '80px', 
-      background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
+      background: '#0d58a9',
       borderRadius: '20px',
       padding: '30px',
       boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
@@ -124,7 +124,7 @@ const RegDetails = () => {
       margin: '60px auto',
       color: 'white'
     }}>
-      <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>REGISTRATION DETAILS</h2>
+      <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', fontFamily: 'Georgia, serif',color:'#ffdd00' }}>REGISTRATION DETAILS</h2>
       
       <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem', listStyleType: 'disc' }}>
         <li style={{ textAlign: 'left', marginBottom: '8px' }}>All accepted papers must be registered</li>
@@ -173,11 +173,11 @@ const RegDetails = () => {
         </table>
       </div>
 
-      <p style={{ fontStyle: 'italic', marginBottom: '2rem', textAlign: 'center' }}>
+      <p style={{ fontStyle: 'italic', marginBottom: '2rem', textAlign: 'center',color:'#ffdd00' }}>
         <strong>Note:</strong> Registration fee inclusive of 18% GST.
       </p>
 
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', fontFamily: 'Georgia, serif' }}>Payment Type: Internet Banking</h2>
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', fontFamily: 'Georgia, serif',color:'#ffdd00' }}>Payment Type: Internet Banking</h2>
       
       <div style={{ overflowX: 'auto', marginBottom: '2rem' }}>
         <table style={{

@@ -29,7 +29,7 @@ const VenueContactSection = () => {
           width: "100%",
           margin: 0,
           padding: 0,
-          background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
+          background: '#0d58a9',
           borderRadius: "20px", // 👈 Added curved edges
         }}
       >
@@ -47,7 +47,7 @@ const VenueContactSection = () => {
           <div
             className="hover-card"
             style={{
-              background: "linear-gradient(135deg, #007FCF, #00B4DB)",
+              background: "0d58a9",
               borderRadius: "15px",
               padding: "15px",
               color: "#fff",
@@ -57,7 +57,7 @@ const VenueContactSection = () => {
               border: "2px solid #c9d6e3",
             }}
           >
-            <h2 style={{ fontSize: "1.2em", marginBottom: "6px" }}>
+            <h2 style={{ fontSize: "1.2em", marginBottom: "6px",color:'#ffdd00' }}>
               Event Venue
             </h2>
             <p style={{ fontSize: "0.9em" }}>
@@ -84,7 +84,7 @@ const VenueContactSection = () => {
           <div
             className="hover-card"
             style={{
-              background: "linear-gradient(135deg, #007FCF, #00B4DB)",
+              background: "#0d58a9",
               borderRadius: "15px",
               padding: "15px",
               color: "#fff",
@@ -94,7 +94,7 @@ const VenueContactSection = () => {
               border: "2px solid #c9d6e3",
             }}
           >
-            <h2 style={{ fontSize: "1.2em", marginBottom: "6px" }}>
+            <h2 style={{ fontSize: "1.2em", marginBottom: "6px",color:'#ffdd00' }}>
               Contact Us
             </h2>
             <table

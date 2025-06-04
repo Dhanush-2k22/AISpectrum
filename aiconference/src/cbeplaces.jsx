@@ -67,7 +67,7 @@ const WelcomeCardSection = () => {
       style={{
         width: "100%",
         padding: "40px 0",
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
+        background: '#0d58a9',
         color: "#fff",
         textAlign: "center",
         borderRadius: "30px",
@@ -76,7 +76,7 @@ const WelcomeCardSection = () => {
       }}
     >
       <div style={{ width: "90%", margin: "0 auto" }}>
-        <h2 style={{ fontSize: "2rem", marginBottom: "20px", fontWeight: "bold" }}>
+        <h2 style={{ fontSize: "2rem", marginBottom: "20px", fontWeight: "bold",color:"#ffdd00" }}>
           Welcome to Coimbatore
         </h2>
 

@@ -7,11 +7,14 @@ const ThemeSection = () => {
           fontSize: '2em',
           fontWeight: 'bold',
           textAlign: 'center',
-          marginBottom: '30px',
+          marginBottom: '15px',
           marginTop: '0',
+          color: '#0d58a9',
+
+          
       }}>THEME</h2><section style={{
         marginBottom: '80px', 
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
+        background: '#0d58a9',
         borderRadius: '20px',
         padding: '30px',
         boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
@@ -24,7 +27,9 @@ const ThemeSection = () => {
                   fontWeight: 'bold',
                   marginTop: '10px',
                   textAlign: 'center',
-                  marginBottom: '25px'
+                  marginBottom: '25px',
+                  color:'#ffdd00'
+                  
               }}>
                   "EPIQ AI: Shaping a Responsible and Transformative Future"
               </p>
