@@ -21,6 +21,78 @@ import SpeakerSection from './speaker.jsx';
 import ConferenceSection from './Topics/Topics.jsx';
 import PublicationSection from './PublicationSection.jsx';
 
+// Back to Top Button Component
+const BackToTopButton = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  return (
+    <button
+      onClick={scrollToTop}
+      style={{
+        position: 'fixed',
+        bottom: '30px',
+        right: '30px',
+        width: '50px',
+        height: '50px',
+        borderRadius: '50%',
+        backgroundColor: 'white',
+        border: 'none',
+        boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
+        cursor: 'pointer',
+        display: isVisible ? 'flex' : 'none',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 1000,
+        transition: 'all 0.3s ease',
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = 'scale(1.1)';
+        e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.3)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = 'scale(1)';
+        e.currentTarget.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+      }}
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 19V5M5 12L12 5L19 12"
+          stroke="#0D58A9"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </button>
+  );
+};
+
 function App() {
   const [count, setCount] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -146,6 +218,9 @@ function App() {
           </div>
         </>
       )}
+      
+      {/* Back to Top Button */}
+      <BackToTopButton />
     </>
   );
 }
@@ -166,8 +241,8 @@ function BackgroundAnimation({ mousePosition }) {
           x: Math.random() * 100,
           y: Math.random() * 100,
           size: Math.random() * 6 + 2,
-          speedX: (Math.random() - 0.5) * 0.2,
-          speedY: (Math.random() - 0.5) * 0.2,
+          speedX: (Math.random() - 0.5) * 0.3, // Constant speed
+          speedY: (Math.random() - 0.5) * 0.3, // Constant speed
           opacity: Math.random() * 0.5 + 0.1
         });
       }
@@ -181,38 +256,19 @@ function BackgroundAnimation({ mousePosition }) {
     const animateParticles = () => {
       setParticles(prevParticles => 
         prevParticles.map(particle => {
-          let { x, y, speedX, speedY, size, opacity } = particle;
+          let { x, y, speedX, speedY } = particle;
 
-          // Move particle
+          // Move particle with constant speed
           x += speedX;
           y += speedY;
 
-          // Bounce off walls
-          if (x > 100 || x < 0) speedX *= -1;
-          if (y > 100 || y < 0) speedY *= -1;
+          // Wrap around edges instead of bouncing
+          if (x > 100) x = 0;
+          if (x < 0) x = 100;
+          if (y > 100) y = 0;
+          if (y < 0) y = 100;
 
-          // Move towards mouse position
-          const attractionFactor = 0.005;
-          const dx = mousePosition.x / window.innerWidth * 100 - x;
-          const dy = mousePosition.y / window.innerHeight * 100 - y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 50) { // Only affect particles within 50 units
-            const forceDirectionX = dx / distance;
-            const forceDirectionY = dy / distance;
-            
-            // Apply a gentle force towards the mouse, stronger when closer
-            const force = (50 - distance) * attractionFactor;
-            speedX += forceDirectionX * force;
-            speedY += forceDirectionY * force;
-            
-            // Limit speed
-            const maxSpeed = 0.5;
-            speedX = Math.max(Math.min(speedX, maxSpeed), -maxSpeed);
-            speedY = Math.max(Math.min(speedY, maxSpeed), -maxSpeed);
-          }
-
-          return { ...particle, x, y, speedX, speedY };
+          return { ...particle, x, y };
         })
       );
 
@@ -222,7 +278,7 @@ function BackgroundAnimation({ mousePosition }) {
     const animationFrameId = requestAnimationFrame(animateParticles);
 
     return () => cancelAnimationFrame(animationFrameId);
-  }, [mousePosition]); // Re-run effect when mouse position changes
+  }, []); // Remove mousePosition dependency
   
   return (
     <div 
@@ -233,7 +289,7 @@ function BackgroundAnimation({ mousePosition }) {
         width: '100%',
         height: '100%',
         overflow: 'hidden',
-        zIndex: 0, // Ensure it's behind other content
+        zIndex: 0,
       }}
     >
       {particles.map(particle => (
@@ -245,10 +301,10 @@ function BackgroundAnimation({ mousePosition }) {
             top: `${particle.y}%`,
             width: `${particle.size}px`,
             height: `${particle.size}px`,
-            backgroundColor: 'rgba(0, 74, 173, 0.6)', // Blue color with some transparency
+            backgroundColor: 'rgba(0, 74, 173, 0.6)',
             borderRadius: '50%',
             opacity: particle.opacity,
-            pointerEvents: 'none', // Don't interfere with mouse events
+            transition: 'none', // Remove any transitions
           }}
         />
       ))}

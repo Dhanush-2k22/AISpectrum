@@ -29,9 +29,9 @@ const MainContent = () => {
         />
 
         <div style={{ textAlign: 'center', minWidth: '300px', margin: '0 1rem' }}>
-          <h1 style={{ margin: '0', fontSize: '1.8rem', color:'#ffdd00'}}>PSG COLLEGE OF TECHNOLOGY</h1>
-          <p style={{ margin: '0.5rem 0', fontSize: '1.1rem', color: '#ffdd00' }}>Coimbatore, Tamil Nadu , India - 641004</p>
-          <h2 style={{ margin: '0', fontSize: '1.4rem', color: '#ffdd00' }}>PSG - <span style={{ fontWeight: 'bold' }}>AI CONSORTIUM</span></h2>
+          <h1 style={{ margin: '0', fontSize: '1.8rem', color:'#0D58A9'}}>PSG COLLEGE OF TECHNOLOGY</h1>
+          <p style={{ margin: '0.5rem 0', fontSize: '1.1rem', color: '#0D58A9' }}>Coimbatore, Tamil Nadu , India - 641004</p>
+          <h2 style={{ margin: '0', fontSize: '1.4rem', color: '#0D58A9' }}>PSG - <span style={{ fontWeight: 'bold' }}>AI CONSORTIUM</span></h2>
         </div>
 
         <img
