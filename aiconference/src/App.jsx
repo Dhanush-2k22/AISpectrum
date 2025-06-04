@@ -54,8 +54,8 @@ const BackToTopButton = () => {
         position: 'fixed',
         bottom: '30px',
         right: '30px',
-        width: '50px',
-        height: '50px',
+        width: '60px',
+        height: '60px',
         borderRadius: '50%',
         backgroundColor: colors.white,
         border: 'none',
@@ -77,8 +77,8 @@ const BackToTopButton = () => {
       }}
     >
       <svg
-        width="24"
-        height="24"
+        width="32"
+        height="32"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
