@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Navbar from './Navbar/Navbar.jsx';
+import UpdatePopup from './components/UpdatePopup.jsx';
+import { GlobalStyles, colors } from './styles/commonStyles';
 
 import Comitte from './comitte';
 import ThemeSection from './Theme/theme.jsx';
@@ -55,7 +57,7 @@ const BackToTopButton = () => {
         width: '50px',
         height: '50px',
         borderRadius: '50%',
-        backgroundColor: 'white',
+        backgroundColor: colors.white,
         border: 'none',
         boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
         cursor: 'pointer',
@@ -83,7 +85,7 @@ const BackToTopButton = () => {
       >
         <path
           d="M12 19V5M5 12L12 5L19 12"
-          stroke="#0D58A9"
+          stroke={colors.blue}
           strokeWidth="4"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -96,9 +98,9 @@ const BackToTopButton = () => {
 function App() {
   const [count, setCount] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  // State to handle which component to show
   const [showTemp, setShowTemp] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [showPopup, setShowPopup] = useState(true);
 
   // Export showTemp state and setter for Navbar to use
   window.appState = {
@@ -162,8 +164,12 @@ function App() {
 
   return (
     <>
+      <GlobalStyles />
       {/* Background Animation */}
       <BackgroundAnimation mousePosition={mousePosition} />
+      
+      {/* Update Popup */}
+      {showPopup && <UpdatePopup onClose={() => setShowPopup(false)} />}
       
       {/* Only show Navbar when not displaying TempComponent */}
       {!showTemp && (
@@ -183,8 +189,8 @@ function App() {
             left: '20px',
             zIndex: 10,
             padding: '10px 20px',
-            background: '#004AAD',
-            color: 'white',
+            background: colors.blue,
+            color: colors.white,
             borderRadius: '8px',
             cursor: 'pointer',
             boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
@@ -201,7 +207,7 @@ function App() {
           </div>
 
           {/* Section Content */}
-          <div style={{ color: '#FFFFFF', position: 'relative', zIndex: 1 }}>
+          <div style={{ color: colors.white, position: 'relative', zIndex: 1 }}>
             <div id="about"><About /></div>
             <br />
             <div id="committee"><SpeakerSection/></div>
@@ -301,7 +307,7 @@ function BackgroundAnimation({ mousePosition }) {
             top: `${particle.y}%`,
             width: `${particle.size}px`,
             height: `${particle.size}px`,
-            backgroundColor: 'rgba(0, 74, 173, 0.6)',
+            backgroundColor: `${colors.blue}99`,
             borderRadius: '50%',
             opacity: particle.opacity,
             transition: 'none', // Remove any transitions

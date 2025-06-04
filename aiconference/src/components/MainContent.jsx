@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ImageSlider from './ImageSlider.jsx';
+import CountdownTimer from './CountdownTimer.jsx';
 import {
   AppContainer,
   InfoSection,
@@ -7,11 +8,40 @@ import {
   Title,
   Line
 } from './App.styles';
+import { colors } from '../styles/commonStyles';
 
 import PSGLogo from '../assets/PSG_College_of_Technology_logo.png';
 import AIConsLogo from '../assets/AI_Cons_logo.png';
 
 const MainContent = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const eventDate = new Date('2025-12-22T09:00:00').getTime();
+      const now = new Date().getTime();
+      const difference = eventDate - now;
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000)
+        });
+      }
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <AppContainer>
       <InfoSection style={{
@@ -20,7 +50,6 @@ const MainContent = () => {
         alignItems: 'center',
         padding: '1rem',
         flexWrap: 'wrap',
-        
       }}>
         <img
           src={PSGLogo}
@@ -50,6 +79,49 @@ const MainContent = () => {
           THE AI SPECTRUM: BRIDGING RESEARCH, INDUSTRY & INNOVATION
           <Line />
           Date : 22 - 24 December 2025
+          <Line />
+          <div style={{ 
+            marginTop: '30px',
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '20px',
+            flexWrap: 'wrap'
+          }}>
+            {[
+              { label: 'Days', value: timeLeft.days },
+              { label: 'Hours', value: timeLeft.hours },
+              { label: 'Minutes', value: timeLeft.minutes },
+              { label: 'Seconds', value: timeLeft.seconds }
+            ].map((unit, index) => (
+              <div key={index} style={{ 
+                background: 'rgba(255, 255, 255, 0.1)',
+                padding: '15px 25px',
+                borderRadius: '10px',
+                minWidth: '100px',
+                textAlign: 'center',
+                backdropFilter: 'blur(5px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)'
+              }}>
+                <div style={{ 
+                  fontSize: '2rem', 
+                  fontWeight: 'bold',
+                  color: '#ffdd00',
+                  marginBottom: '5px',
+                  textShadow: '0 1px 2px rgba(0,0,0,0.1)'
+                }}>
+                  {unit.value.toString().padStart(2, '0')}
+                </div>
+                <div style={{ 
+                  fontSize: '0.9rem',
+                  color: '#ffdd00',
+                  fontWeight: '400',
+                  opacity: '0.9'
+                }}>
+                  {unit.label}
+                </div>
+              </div>
+            ))}
+          </div>
         </Title>
         <ImageSlider style={{ width: '200%', height: '100%' }} />
       </SliderContainer>

@@ -41,46 +41,47 @@ const EventsSection = () => {
               
             }}
           />
-
-      <div style={{ 
-        display: 'flex', 
-        justifyContent: 'center', 
-        flexWrap: 'wrap', 
-        gap: '30px' 
-      }}>
-        {eventData.map((event, index) => (
-          <div 
-            key={index}
-            style={{
-              width: '250px',
-              background: '#0c3c6c', // updated dark blue color
-              borderRadius: '16px',
-              overflow: 'hidden',
-              textAlign: 'center',
-              boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
-              transition: 'transform 0.3s ease',
-              cursor: 'pointer'
-            }}
-            onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
-            onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
-          >
-            <img 
-              src={event.img} 
-              alt={event.title} 
-              style={{ width: '100%', height: '250px', objectFit:'cover' }}
-            />
-            <div style={{ padding: '10px' }}>
-              <h3 style={{ 
-                color: 'white', 
-                fontSize: '18px', 
-                fontWeight: 'bold', 
-                marginTop: '10px' 
-              }}>
-                {event.title}
-              </h3>
+      <div style={{ marginTop: '20px' }}>
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          flexWrap: 'wrap', 
+          gap: '30px' 
+        }}>
+          {eventData.map((event, index) => (
+            <div 
+              key={index}
+              style={{
+                width: '250px',
+                background: '#0c3c6c', // updated dark blue color
+                borderRadius: '16px',
+                overflow: 'hidden',
+                textAlign: 'center',
+                boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                transition: 'transform 0.3s ease',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
+              onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+            >
+              <img 
+                src={event.img} 
+                alt={event.title} 
+                style={{ width: '100%', height: '250px', objectFit:'cover' }}
+              />
+              <div style={{ padding: '10px' }}>
+                <h3 style={{ 
+                  color: 'white', 
+                  fontSize: '18px', 
+                  fontWeight: 'bold', 
+                  marginTop: '10px' 
+                }}>
+                  {event.title}
+                </h3>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

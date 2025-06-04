@@ -1,33 +1,34 @@
 import React from 'react';
-
-
-
+// Assuming commonStyles is needed for colors/typography if not already imported
+// import { colors, typography } from './styles/commonStyles';
 
 const PublicationSection = () => {
   return (
     <section
       id="publication"
       style={{
-        padding: '60px 20px',
+        padding: '30px', // Consistent padding
         textAlign: 'center',
-        background: 'rgb(255, 255, 255)',
-        color: '#fff',
-        borderRadius:'15px',
-        marginBottom:'17px',
-        marginTop:'15px',
+        background: 'rgb(255, 255, 255)', // White background
+        color: '#475569', // Text color for content inside the box
+        borderRadius:'20px', // Consistent border radius
+        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)', // Consistent box shadow
+        maxWidth: '1000px', // Matching width with Conference Tracks
+        margin: '60px auto 60px', // Centering and consistent vertical spacing
       }}
     >
       <h2
         style={{
           fontSize: '2em',
           fontWeight: 'bold',
-          marginBottom: '20px',
-          fontFamily: 'Libre Baskerville, Georgia, serif',
-          color:'#0d58a9',
+          marginBottom: '40px', // Adjusted space below title
+          fontFamily: 'Libre Baskerville, Georgia, serif', // Keep original font or use commonStyles if imported
+          color:'#0d58a9', // Blue title color
+          position: 'relative', // Needed for yellow line positioning
         }}
       >
         PUBLICATION
-      </h2>
+        {/* Yellow line div */}
                <div
             style={{
               width: '100px',
@@ -35,9 +36,13 @@ const PublicationSection = () => {
               background: '#ffdd00',
               margin: '0 auto',
               borderRadius: '2px',
-              
+              position: 'absolute',
+              bottom: '-15px',
+              left: '50%',
+              transform: 'translateX(-50%)',
             }}
           />
+      </h2>
 
       <img
         src="/aispectrum/assets/lecturenotes.png"
@@ -60,8 +65,7 @@ const PublicationSection = () => {
           color:'#475569',
         }}
       >
-        The conference proceedings will be published in the{' '}
-        <strong>Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering (LNICST)</strong>{' '}
+        The conference proceedings will be published in the{' '}<strong>Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering (LNICST)</strong>{' '}
         series by Springer. They will be indexed in <strong>Scopus</strong>, <strong>Ei Compendex</strong>, <strong>DBLP</strong>, and
         other leading citation databases.
       </p>
@@ -74,7 +78,7 @@ const PublicationSection = () => {
     padding: '20px',
     border: '2px solid #ccc',
     borderRadius: '20px',
-    backgroundColor: '#0d58a9', // dark background if using invert filter
+    backgroundColor: '#0d58a9', // Keep original background or use colors.blue
     maxWidth: '600px',
     margin: 'auto',
   }}
