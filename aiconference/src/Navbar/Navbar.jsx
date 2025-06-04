@@ -54,18 +54,11 @@ const Navbar = () => {
             Theme
           </li>
           <li 
-            className={activeSection === "cfp" ? "active" : ""} 
-            onClick={() => scrollToSection("cfp")}
-          >
-            Call for Papers
-          </li>
-          <li 
             className={activeSection === "Dates" ? "active" : ""} 
             onClick={() => scrollToSection("Dates")}
           >
             Important Dates
           </li>
-          
           <li 
             className={activeSection === "registration" ? "active" : ""} 
             onClick={() => scrollToSection("registration")}
@@ -90,7 +83,6 @@ const Navbar = () => {
           >
             Sponsors
           </li>
-          
         </ul>
       </div>
     </nav>

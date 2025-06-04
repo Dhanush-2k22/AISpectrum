@@ -29,7 +29,7 @@ const PublicationSection = () => {
       </h2>
 
       <img
-        src="/images/lnicst-book-cover.png"
+        src="/aispectrum/assets/lecturenotes.png"
         alt="Lecture Notes of the Institute for Computer Sciences cover"
         style={{
           maxHeight: '320px',
@@ -64,18 +64,18 @@ const PublicationSection = () => {
         }}
       >
         <img
-          src="aiconference/public/assets/eai-logo.jpeg"
+          src="/aispectrum/assets/Eai_logo_with_margins.png"
           alt="EAI Logo"
           style={{
-            maxHeight: '250px',
+            maxHeight: '150px',
             filter: 'brightness(0) invert(1)',
           }}
         />
         <img
-          src="aiconference/public/images/springer-logo.png"
+          src="/aispectrum/assets/Springer.png"
           alt="Springer Logo"
           style={{
-            maxHeight: '100px',
+            maxHeight: '150px',
             filter: 'brightness(0) invert(1)',
           }}
         />

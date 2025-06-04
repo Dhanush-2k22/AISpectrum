@@ -8,9 +8,8 @@ const NormalCard = ({ name, designation, organization, iconUrl, details, link })
         color: '#FFFFFF',
         borderRadius: '20px',
         padding: '25px',
-        width: '260px',
+        width: '100%',
         textAlign: 'center',
-        margin: '15px',
         boxShadow: '0 10px 20px rgba(0, 0, 0, 0.5)',
         border: '4px solid #BCC6CC',
         transition: 'transform 0.3s, box-shadow 0.3s',
@@ -101,16 +100,18 @@ const NormalCard = ({ name, designation, organization, iconUrl, details, link })
   );
 };
 
-const NormalCardGrid = ({ cards }) => {
+const NormalCardGrid = ({ cards, style }) => {
   return (
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, 1fr)',
-        gap: '20px',
-        padding: '10px',
-      }}
-    >
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(4, 1fr)',
+      gap: '20px',
+      padding: '10px',
+      width: '100%',
+      maxWidth: '1400px',
+      margin: '0 auto',
+      ...style
+    }}>
       {cards.map((card, index) => (
         <NormalCard
           key={index}
