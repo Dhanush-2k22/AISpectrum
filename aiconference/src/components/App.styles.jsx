@@ -5,7 +5,7 @@ export const AppContainer = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #023e8a 0%, #0077b6 100%);
+  background: #FFFFFF ;
   color: #FFFFFF;
   overflow-x: hidden;
 `;
@@ -34,7 +34,7 @@ export const ContentWrapper = styled.div`
 export const InfoSection = styled.div`
   width: 100%;
   padding: 2rem;
-  background:#023e8a;
+  background: #FFFFFF;
   backdrop-filter: blur(10px);
   color: white;
   text-align: center;
@@ -55,14 +55,14 @@ export const CollegeTitle = styled.h2`
   margin:auto;
   padding:auto;
   letter-spacing: 1px;
-  color: #ffffff;
+  color: #ffdd00;
 `;
 
 export const Address = styled.p`
   font-size: 1.3rem;
   margin:auto;
   padding:auto;
-  color: #ffffff;
+  color: #ffdd00;
   opacity: 0.9;
 `;
 
@@ -70,7 +70,7 @@ export const ConsortiumTitle = styled.h3`
   font-size: 1.4rem;
   margin:auto;
   padding:auto;
-  color: #ffffff;
+  color: #ffdd00;
   font-weight: 500;
 `;
 

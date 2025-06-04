@@ -4,13 +4,13 @@ const Dates = () => {
   return (
     <div id="important-dates" style={{ 
       marginBottom: '40px', 
-      background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
+      background: '#0d58a9',
       borderRadius: '20px',
       padding: '30px',
       boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
       maxWidth: '90%',
       margin: '0 auto 60px',
-      color: 'white'
+      color: '#ffdd00'
     }}>
       <h2 style={{ fontSize: '2rem', fontWeight: 'bold', textAlign: 'center', margin: '30px 0', fontFamily: 'Georgia, serif' }}>IMPORTANT DATES</h2>
 

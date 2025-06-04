@@ -5,7 +5,7 @@ import Navbar from './Navbar/Navbar.jsx';
 import Comitte from './comitte';
 import ThemeSection from './Theme/theme.jsx';
 import TopicsSection from './Topics/Topics.jsx';
-import CallForPapers from './CallForPaper/CallForPaper.jsx';
+// import CallForPapers from './CallForPaper/CallForPaper.jsx';
 import Sponsor from './Sponsor.jsx';
 import EventsSection from './events.jsx';
 import VenueContactSection from './VenueContactSection.jsx';
@@ -18,13 +18,15 @@ import MainContent from './components/MainContent.jsx';
 import TempComponent from './temp.jsx';
 import Dates from './imp.jsx';
 import SpeakerSection from './speaker.jsx';
-
+import ConferenceSection from './Topics/Topics.jsx';
+import PublicationSection from './PublicationSection.jsx';
 
 function App() {
   const [count, setCount] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   // State to handle which component to show
   const [showTemp, setShowTemp] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   // Export showTemp state and setter for Navbar to use
   window.appState = {
@@ -46,6 +48,45 @@ function App() {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = [
+        'home', 'about', 'committee', 'theme', 'cfp',
+        'topics', 'Dates', 'registration', 'events', 'venue-contact',
+        'sponsors', 'welcome',
+      ];
+      
+      let currentActiveSection = 'home';
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+            currentActiveSection = sectionId;
+            break;
+          }
+        }
+      }
+      setActiveSection(currentActiveSection);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offsetTop = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: offsetTop - 70, // Adjust offset for fixed navbar
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
     <>
@@ -88,23 +129,21 @@ function App() {
           </div>
 
           {/* Section Content */}
-{/* Section Content */}
-<div style={{ color: '#FFFFFF', position: 'relative', zIndex: 1 }}>
-  <div id="about"><About /></div>
-  <br />
-  <div id="committee"><SpeakerSection/></div>
-  <div id="theme"><ThemeSection /></div><br />
-  <div id="cfp"><CallForPapers /></div>
-  <div id="topics"><TopicsSection /></div>
-  <div id="Dates"><Dates /></div>
-  <div id="registration"><RegDetails /></div>
-  <div id="events"><EventsSection/></div>
-  <div id="venue-contact"><VenueContactSection /></div>
-  <div id="sponsors"><Sponsor /></div>
-  <div id="welcome"><WelcomeCardSection /></div> {/* Places in Coimbatore */}
-  <Footer/>
-</div>
-
+          <div style={{ color: '#FFFFFF', position: 'relative', zIndex: 1 }}>
+            <div id="about"><About /></div>
+            <br />
+            <div id="committee"><SpeakerSection/></div>
+            <div id="theme"><ThemeSection /></div><br />
+            <div id="topics"><TopicsSection /></div>
+            <div id="Publication"><PublicationSection /></div>
+            <div id="Dates"><Dates /></div>
+            <div id="registration"><RegDetails /></div>
+            <div id="events"><EventsSection/></div>
+            <div id="venue-contact"><VenueContactSection /></div>
+            <div id="sponsors"><Sponsor /></div>
+            <div id="welcome"><WelcomeCardSection /></div> {/* Places in Coimbatore */}
+            <Footer/>
+          </div>
         </>
       )}
     </>
@@ -119,7 +158,7 @@ function BackgroundAnimation({ mousePosition }) {
     // Generate initial particles
     const generateParticles = () => {
       const newParticles = [];
-      const count = 30; // Number of particles
+      const count = 60; // Number of particles
       
       for (let i = 0; i < count; i++) {
         newParticles.push({
@@ -139,29 +178,51 @@ function BackgroundAnimation({ mousePosition }) {
     generateParticles();
     
     // Animation loop
-    const animationFrame = setInterval(() => {
+    const animateParticles = () => {
       setParticles(prevParticles => 
         prevParticles.map(particle => {
-          let newX = particle.x + particle.speedX + (mousePosition.x - 0.5) * 0.05;
-          let newY = particle.y + particle.speedY + (mousePosition.y - 0.5) * 0.05;
-          
-          // Wrap around edges
-          if (newX > 100) newX = 0;
-          if (newX < 0) newX = 100;
-          if (newY > 100) newY = 0;
-          if (newY < 0) newY = 100;
-          
-          return {
-            ...particle,
-            x: newX,
-            y: newY
-          };
+          let { x, y, speedX, speedY, size, opacity } = particle;
+
+          // Move particle
+          x += speedX;
+          y += speedY;
+
+          // Bounce off walls
+          if (x > 100 || x < 0) speedX *= -1;
+          if (y > 100 || y < 0) speedY *= -1;
+
+          // Move towards mouse position
+          const attractionFactor = 0.005;
+          const dx = mousePosition.x / window.innerWidth * 100 - x;
+          const dy = mousePosition.y / window.innerHeight * 100 - y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 50) { // Only affect particles within 50 units
+            const forceDirectionX = dx / distance;
+            const forceDirectionY = dy / distance;
+            
+            // Apply a gentle force towards the mouse, stronger when closer
+            const force = (50 - distance) * attractionFactor;
+            speedX += forceDirectionX * force;
+            speedY += forceDirectionY * force;
+            
+            // Limit speed
+            const maxSpeed = 0.5;
+            speedX = Math.max(Math.min(speedX, maxSpeed), -maxSpeed);
+            speedY = Math.max(Math.min(speedY, maxSpeed), -maxSpeed);
+          }
+
+          return { ...particle, x, y, speedX, speedY };
         })
       );
-    }, 50);
-    
-    return () => clearInterval(animationFrame);
-  }, [mousePosition]);
+
+      requestAnimationFrame(animateParticles);
+    };
+
+    const animationFrameId = requestAnimationFrame(animateParticles);
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [mousePosition]); // Re-run effect when mouse position changes
   
   return (
     <div 
@@ -171,8 +232,8 @@ function BackgroundAnimation({ mousePosition }) {
         left: 0,
         width: '100%',
         height: '100%',
-        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
-        zIndex: 0
+        overflow: 'hidden',
+        zIndex: 0, // Ensure it's behind other content
       }}
     >
       {particles.map(particle => (
@@ -184,12 +245,10 @@ function BackgroundAnimation({ mousePosition }) {
             top: `${particle.y}%`,
             width: `${particle.size}px`,
             height: `${particle.size}px`,
+            backgroundColor: 'rgba(0, 74, 173, 0.6)', // Blue color with some transparency
             borderRadius: '50%',
-            backgroundColor: '#ffffff',
             opacity: particle.opacity,
-            boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
-            transform: 'translate(-50%, -50%)',
-            transition: 'left 0.5s ease, top 0.5s ease'
+            pointerEvents: 'none', // Don't interfere with mouse events
           }}
         />
       ))}
