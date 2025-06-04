@@ -101,6 +101,7 @@ const WelcomeCardSection = () => {
             msOverflowStyle: "none",
             WebkitOverflowScrolling: "touch",
             willChange: "scroll-position", // Hint for browser optimization
+            marginTop: "20px",
           }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}

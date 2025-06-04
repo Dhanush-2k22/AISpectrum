@@ -25,7 +25,7 @@ const PaperSubmission = () => {
           />
 
       
-      <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem', listStyleType: 'disc', borderColor: 'white' }}>
+      <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem', listStyleType: 'disc', borderColor: 'white', marginTop: '20px' }}>
         <li style={{ textAlign: 'left', marginBottom: '10px', borderColor: 'white' }}>
           <strong>Submission Guidelines:</strong> We invite authors to submit original research papers, case studies, and review articles relevant to the conference themes. Submissions must adhere to the following guidelines:
         </li>
@@ -79,17 +79,27 @@ const PaperSubmission = () => {
 // Important Dates Component
 const ImpDates = () => {
   return (
-    <div id="important-dates" style={{ 
+    <div id="important-dates" style={{
       marginBottom: '40px', 
       background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
       borderRadius: '20px',
       padding: '30px',
       boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
       maxWidth: '90%',
-      margin: '0 auto 60px',
-      color: 'white'
+      margin: '60px auto 60px',
+      color: 'white',
+      textAlign: 'center',
     }}>
-      <h2 style={{ fontSize: '2rem', fontWeight: 'bold', textAlign: 'center', margin: '30px 0', fontFamily: 'Georgia, serif' }}>IMPORTANT DATES</h2>
+      <h2 style={{
+        fontSize: '2.5rem',
+        fontWeight: 'bold',
+        textAlign: 'center',
+        margin: '0 0 40px 0',
+        fontFamily: 'Georgia, serif',
+        color: 'white',
+        position: 'relative',
+      }}>
+        IMPORTANT DATES
              <div
             style={{
               width: '100px',
@@ -97,8 +107,13 @@ const ImpDates = () => {
               background: '#ffdd00',
               margin: '0 auto',
               borderRadius: '2px',
+              position: 'absolute',
+              bottom: '-15px',
+              left: '50%',
+              transform: 'translateX(-50%)',
             }}
           />
+      </h2>
 
       <table style={{
         width: '80%',
@@ -109,7 +124,8 @@ const ImpDates = () => {
         overflow: 'hidden',
         color: '#000',
         margin: '0 auto 30px',
-        boxShadow: '0 0 0 3px white'
+        boxShadow: '0 0 0 3px white',
+        fontSize: '1.1em',
       }}>
         <tbody>
           {[
@@ -154,7 +170,7 @@ const RegDetails = () => {
             }}
           />
       
-      <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem', listStyleType: 'disc' }}>
+      <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem', listStyleType: 'disc', marginTop: '20px' }}>
         <li style={{ textAlign: 'left', marginBottom: '8px' }}>All accepted papers must be registered</li>
         <li style={{ textAlign: 'left', marginBottom: '8px' }}>At least one author must attend the conference to present the paper</li>
         <li style={{ textAlign: 'left', marginBottom: '8px' }}>Registration includes conference kit, lunch, and access to all sessions</li>
@@ -201,7 +217,7 @@ const RegDetails = () => {
         </table>
       </div>
 
-      <p style={{ fontStyle: 'italic', marginBottom: '2rem', textAlign: 'center',color:'#ffdd00' }}>
+      <p style={{ fontStyle: 'italic', marginBottom: '2rem', textAlign: 'center', color: '#000', fontWeight: '600' }}>
         <strong>Note:</strong> Registration fee inclusive of 18% GST.
       </p>
 

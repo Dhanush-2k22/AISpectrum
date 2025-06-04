@@ -1,11 +1,12 @@
 import React from 'react';
+import { colors, typography } from '../styles/commonStyles';
 
-const TrackBox = ({ title, description }) => {
+const TrackBox = ({ themeTitle, topics }) => {
   return (
     <div
       style={{
-        background: '#0d58a9',
-        color: '#FFFFFF',
+        background: colors.blue,
+        color: colors.white,
         borderRadius: '14px',
         padding: '27px',
         width: '350px',
@@ -14,9 +15,12 @@ const TrackBox = ({ title, description }) => {
         boxShadow: '0 9px 18px rgba(0, 0, 0, 0.5)',
         border: '4.5px solid #BCC6CC',
         transition: 'transform 0.3s, box-shadow 0.3s',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.transform = 'scale(1.1)';
+        e.currentTarget.style.transform = 'scale(1.05)';
         e.currentTarget.style.boxShadow = '0 13.5px 27px rgba(0, 0, 0, 0.7)';
       }}
       onMouseLeave={(e) => {
@@ -26,25 +30,43 @@ const TrackBox = ({ title, description }) => {
     >
       <h3
         style={{
-          margin: '9px 0 4.5px 0',
-          fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif',
+          margin: '0 0 15px 0',
+          fontFamily: typography.heading.fontFamily,
           fontWeight: '800',
           letterSpacing: '0.5px',
-          color: '#FFFFFF',
-          fontSize: '1.5em',
+          color: colors.yellow,
+          fontSize: '1.4em',
+          minHeight: '3.6em', // Ensure consistent height for title area
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
-        {title}
+        {themeTitle}
       </h3>
-      <p
+      <ul
         style={{
-          margin: '10px 0 0 0',
-          fontSize: '1em',
-          fontFamily: 'Segoe UI, Arial, sans-serif',
+          textAlign: 'left',
+          paddingLeft: '20px',
+          margin: '0',
+          flexGrow: 1, // Allow list to take up available space
         }}
       >
-        {description}
-      </p>
+        {topics.map((topic, index) => (
+          <li
+            key={index}
+            style={{
+              color: colors.white,
+              fontFamily: typography.body.fontFamily,
+              fontSize: '0.95em',
+              lineHeight: '1.6',
+              marginBottom: '8px',
+            }}
+          >
+            {topic}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
@@ -52,42 +74,88 @@ const TrackBox = ({ title, description }) => {
 const ConferenceTracks = () => {
   const tracks = [
     {
-      title: "Track 1: AI Genesis",
-      description: "Origin, Evolution, and Development of AI Technologies"
+      themeTitle: "Origin, Evolution, and Development of AI Technologies",
+      topics: [
+        "Evolution of Machine Learning Algorithms",
+        "Neural Networks: From Perceptrons to Deep Learning",
+        "Perspectives on AI Research",
+        "Reinforcement Learning Development",
+        "AI Hardware Evolution (CPUs → GPUs → TPUs)",
+        "Benchmarking and Dataset Evolution",
+        "Explainability in Early AI Systems",
+      ],
     },
     {
-      title: "Track 2: AI Impact",
-      description: "Transforming Industries, Societies, and Workspaces"
+      themeTitle: "Transforming Industries, Societies, and Workspaces",
+      topics: [
+        "AI in Healthcare: Diagnosis, Imaging, Drug Discovery",
+        "Smart Manufacturing and Industry 4.0",
+        "AI in Education and Personalized Learning",
+        "Smart Cities and Urban Intelligence",
+        "AI and Ethics in Society",
+        "Societal and Behavioral Impacts of AI",
+        "AI Regulations and Policy Frameworks",
+      ],
     },
     {
-      title: "Track 3: AI Horizon",
-      description: "Future Trends, Innovations, and the Next Frontiers of AI"
+      themeTitle: "Future Trends, Innovations, and the Next Frontiers of AI",
+      topics: [
+        "Artificial General Intelligence (AGI)",
+        "Quantum Machine Learning",
+        "Federated Learning and Data Privacy",
+        "Trustworthy and Transparent AI",
+        "Emotionally Intelligent AI",
+        "Autonomous Vehicles and Robotics",
+        "Edge AI and Next-Gen Hardware",
+      ],
     },
     {
-      title: "Track 4: AI Disruptor",
-      description: "Breakthrough Applications and Paradigm-Shifting Technologies"
-    }
+      themeTitle: "Breakthroughs & Cross-Disciplinary Disruptions",
+      topics: [
+        "Agentic AI and Next-Gen Autonomous Agents",
+        "Large Language Models as Generalist Agents (GPT, Claude, Gemini)",
+        "AI-Augmented Creativity and Generative Design",
+        "AI + Blockchain: Decentralized Intelligence",
+        "Digital Twins and Simulation-Based AI",
+        "AI in the Metaverse and XR (VR/AR/MR)",
+        "Synthetic Data and Data-Centric AI",
+      ],
+    },
   ];
 
   return (
     <>
       <h2 style={{
-        fontFamily: 'Libre Baskerville, Georgia, serif',
-        fontSize: '2em',
+        fontFamily: typography.heading.fontFamily,
+        fontSize: '2.5em',
         fontWeight: 'bold',
         textAlign: 'center',
-        marginBottom: '30px',
-        marginTop: '10px',
-        color: '#0d58a9',
-      }}>CALL FOR PAPERS</h2>
+        marginBottom: '60px',
+        marginTop: '60px',
+        color: colors.blue,
+        position: 'relative',
+      }}>
+        CONFERENCE TRACKS & TOPICS
+        <div style={{
+          position: 'absolute',
+          bottom: '-15px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '100px',
+          height: '4px',
+          background: colors.yellow,
+          borderRadius: '2px',
+        }} />
+      </h2>
       <section style={{
         marginBottom: '60px',
-        background: '#0d58a9',
+        background: colors.blue,
         borderRadius: '20px',
         padding: '30px',
         boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
         maxWidth: '1000px',
         margin: '0 auto',
+        marginTop: '20px',
       }}>
         <p style={{
           fontSize: '1.1em',
@@ -96,7 +164,9 @@ const ConferenceTracks = () => {
           maxWidth: '900px',
           margin: '0 auto 15px',
           textAlign: 'justify-center',
-          textJustify: 'inter-word'
+          textJustify: 'inter-word',
+          color: colors.white,
+          fontFamily: typography.body.fontFamily,
         }}>
           We invite researchers, academicians, industry professionals, and practitioners to submit original papers on the foundations, applications, and future directions of Artificial Intelligence. The conference welcomes research articles, reviews, and technical contributions across various fields. Submissions spanning the full spectrum of AI, particularly those that bridge disciplines or explore emerging areas, are especially encouraged.
         </p>
@@ -111,8 +181,8 @@ const ConferenceTracks = () => {
           {tracks.map((track, index) => (
             <TrackBox
               key={index}
-              title={track.title}
-              description={track.description}
+              themeTitle={track.themeTitle}
+              topics={track.topics}
             />
           ))}
         </div>

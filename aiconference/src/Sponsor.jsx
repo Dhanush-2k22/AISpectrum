@@ -41,7 +41,7 @@ const Sponsor = () => {
           style={{
             color: "#0d58a9",
             fontSize: "2rem",
-            marginBottom: "40px",
+            marginBottom: "20px",
           }}
         >
           Sponsors
@@ -53,7 +53,8 @@ const Sponsor = () => {
               background: '#ffdd00',
               margin: '0 auto',
               borderRadius: '2px',
-              
+              marginTop: '10px',
+              marginBottom: '30px',
             }}
           />
 
