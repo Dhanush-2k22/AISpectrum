@@ -10,23 +10,34 @@ const PublicationSection = () => {
       style={{
         padding: '60px 20px',
         textAlign: 'center',
-        background: '#0d58a9',
+        background: 'rgb(255, 255, 255)',
         color: '#fff',
         borderRadius:'15px',
         marginBottom:'17px',
+        marginTop:'15px',
       }}
     >
       <h2
         style={{
           fontSize: '2em',
           fontWeight: 'bold',
-          marginBottom: '30px',
+          marginBottom: '20px',
           fontFamily: 'Libre Baskerville, Georgia, serif',
-          color:'#ffdd00',
+          color:'#0d58a9',
         }}
       >
         PUBLICATION
       </h2>
+               <div
+            style={{
+              width: '100px',
+              height: '4px',
+              background: '#ffdd00',
+              margin: '0 auto',
+              borderRadius: '2px',
+              
+            }}
+          />
 
       <img
         src="/aispectrum/assets/lecturenotes.png"
@@ -46,6 +57,7 @@ const PublicationSection = () => {
           maxWidth: '900px',
           margin: '0 auto 50px',
           opacity: 0.95,
+          color:'#475569',
         }}
       >
         The conference proceedings will be published in the{' '}
@@ -54,32 +66,37 @@ const PublicationSection = () => {
         other leading citation databases.
       </p>
 
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: '40px',
-          flexWrap: 'wrap',
-        }}
-      >
-        <img
-          src="/aispectrum/assets/Eai_logo_with_margins.png"
-          alt="EAI Logo"
-          style={{
-            maxHeight: '150px',
-            filter: 'brightness(0) invert(1)',
-          }}
-        />
-        <img
-          src="/aispectrum/assets/Springer.png"
-          alt="Springer Logo"
-          style={{
-            maxHeight: '150px',
-            filter: 'brightness(0) invert(1)',
-          }}
-        />
-      </div>
+     <div
+  style={{
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '40px',
+    padding: '20px',
+    border: '2px solid #ccc',
+    borderRadius: '20px',
+    backgroundColor: '#0d58a9', // dark background if using invert filter
+    maxWidth: '600px',
+    margin: 'auto',
+  }}
+>
+  <img
+    src="/aispectrum/assets/Eai_logo_with_margins.png"
+    alt="EAI Logo"
+    style={{
+      maxHeight: '100px',
+      filter: 'brightness(0) invert(1)',
+    }}
+  />
+  <img
+    src="/aispectrum/assets/Springer.png"
+    alt="Springer Logo"
+    style={{
+      maxHeight: '100px',
+      filter: 'brightness(0) invert(1)',
+    }}
+  />
+</div>
+
     </section>
   );
 };

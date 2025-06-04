@@ -17,13 +17,13 @@ const EventsSection = () => {
     <div style={{ 
       margin: '40px auto', 
       padding: '30px', 
-      background: '#0d58a9', 
+      background: 'rgb(255, 255, 255)', 
       borderRadius: '20px', 
       maxWidth: '1200px', 
       boxShadow: '0 4px 12px rgba(0,0,0,0.3)' 
     }}>
       <h2 style={{ 
-        color: '#ffdd00', 
+        color: '#0d58a9', 
         textAlign: 'center', 
         marginBottom: '30px', 
         fontSize: '32px', 
@@ -31,6 +31,16 @@ const EventsSection = () => {
       }}>
         Events
       </h2>
+      <div
+            style={{
+              width: '100px',
+              height: '4px',
+              background: '#ffdd00',
+              margin: '0 auto',
+              borderRadius: '2px',
+              
+            }}
+          />
 
       <div style={{ 
         display: 'flex', 
@@ -57,7 +67,7 @@ const EventsSection = () => {
             <img 
               src={event.img} 
               alt={event.title} 
-              style={{ width: '100%', height: '250px', objectFit: 'cover' }}
+              style={{ width: '100%', height: '250px', objectFit:'cover' }}
             />
             <div style={{ padding: '10px' }}>
               <h3 style={{ 
