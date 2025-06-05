@@ -42,8 +42,8 @@ const Navbar = () => {
             Committee
           </li>
           <li 
-            className={activeSection === "theme" ? "active" : ""} 
-            onClick={() => scrollToSection("committee")}
+            className={activeSection === "speakers" ? "active" : ""} 
+            onClick={() => scrollToSection("speakers")}
           >
             Speakers
           </li>
@@ -60,6 +60,12 @@ const Navbar = () => {
             Important Dates
           </li>
           <li 
+            className={activeSection === "publications" ? "active" : ""} 
+            onClick={() => scrollToSection("publications")}
+          >
+            Publications
+          </li>
+          <li 
             className={activeSection === "registration" ? "active" : ""} 
             onClick={() => scrollToSection("registration")}
           >
@@ -71,6 +77,7 @@ const Navbar = () => {
           >
             Events
           </li>
+          
           <li 
             className={activeSection === "venue-contact" ? "active" : ""} 
             onClick={() => scrollToSection("venue-contact")}
