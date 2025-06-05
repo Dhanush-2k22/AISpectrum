@@ -126,9 +126,9 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = [
-        'home', 'about', 'committee', 'theme', 'cfp',
+        'home', 'about', 'speakers', 'theme', 'cfp',
         'topics', 'Dates', 'registration', 'events', 'venue-contact',
-        'sponsors', 'welcome',
+        'sponsors', 'welcome', 'publications',
       ];
       
       let currentActiveSection = 'home';
@@ -156,7 +156,7 @@ function App() {
     if (element) {
       const offsetTop = element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
-        top: offsetTop - 70, // Adjust offset for fixed navbar
+        top: offsetTop - 70, 
         behavior: 'smooth',
       });
     }
@@ -209,10 +209,10 @@ function App() {
           {/* Section Content */}
           <div style={{ color: colors.white, position: 'relative', zIndex: 1 }}>
             <div id="about" style={{ marginTop: '-50px' }}><About /></div>
-            <div id="committee" style={{ marginTop: '-60px' }}><SpeakerSection/></div>
+            <div id="speakers" style={{ marginTop: '-60px' }}><SpeakerSection/></div>
             <div id="theme" style={{ marginTop: '-30px' }}><ThemeSection /></div><br />
             <div id="topics"><TopicsSection /></div>
-            <div id="Publication"><PublicationSection /></div>
+            <div id="publications"><PublicationSection /></div>
             <div id="Dates"><Dates /></div>
             <div id="registration"><RegDetails /></div>
             <div id="events"><EventsSection/></div>

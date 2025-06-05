@@ -5,7 +5,7 @@ import React from 'react';
 const PublicationSection = () => {
   return (
     <section
-      id="publication"
+      id="publications"
       style={{
         padding: '30px', // Consistent padding
         textAlign: 'center',

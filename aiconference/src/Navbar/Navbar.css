@@ -13,17 +13,16 @@
 .navbar-container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 .nav-links {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: space-evenly; /* equal spacing between and around items */
   list-style: none;
-  gap: 20px;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap; /* allow wrapping on smaller screens */
 }
 
 .nav-links li {
@@ -34,10 +33,13 @@
   padding: 8px 12px;
   border-radius: 4px;
   transition: all 0.3s ease;
+  white-space: nowrap;
+  text-align: center;
+  margin: 0; /* remove side margin */
 }
 
 .nav-links li:hover {
-  color: #FFD700; /* Bright gold color that contrasts well with your blue gradients */
+  color: #FFD700;
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
@@ -50,9 +52,9 @@
 /* Mobile responsive design */
 @media screen and (max-width: 768px) {
   .nav-links {
-    gap: 10px;
+    justify-content: space-evenly; /* retain even spacing on small screens */
   }
-  
+
   .nav-links li {
     font-size: 12px;
     padding: 6px 8px;

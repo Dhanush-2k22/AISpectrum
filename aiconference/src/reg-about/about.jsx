@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import psgImage from '../assets/PSGTECH.jpeg';
+import ablockImage from '../assets/Ablock.jpeg';
 import psgAiImage from '../assets/AICons_logo.jpg';
 import psgCareImage from '../assets/PSGCARE.jpg';
+
 
 
 const SeeMore = ({ children }) => {
@@ -109,7 +110,7 @@ return (
             onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
           >
             <img
-              src={psgImage}
+              src={ablockImage}
               alt="PSG College main building"
               style={{
                 width: '100%',
