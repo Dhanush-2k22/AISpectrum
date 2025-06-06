@@ -183,9 +183,6 @@ const SpeakerSection = () => {
       designation: (
         <>
           IBM Quantum India Leader<br />
-          Mentor at IIT Delhi<br />
-          Board of Studies member at DAIICT<br />
-          Delhi, India
         </>
       ),
       iconUrl: venkataImage,

@@ -51,7 +51,7 @@ const PaperSubmission = () => {
 
       <div style={{ textAlign: 'center', marginTop: '2rem' }}>
         <a
-          href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2F"
+          href="https://cmt3.research.microsoft.com/AIS2025/Submission/Index"
           style={{
             padding: '0.75rem 1.5rem',
             backgroundColor: '#001f54',
