@@ -35,7 +35,7 @@ const PublicationSection = () => {
           width: '150px',
           height: '4px',
           background: '#D9A353',
-          margin: '0 auto',
+          margin: '15px auto',
           borderRadius: '2px',
         }} />
       </h2>

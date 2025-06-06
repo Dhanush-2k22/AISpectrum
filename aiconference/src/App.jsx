@@ -22,6 +22,8 @@ import PublicationSection from './PublicationSection.jsx';
 import PaperSubmission from './reg-about/paper-submission';
 import RegDetails from './reg-about/registration';
 
+import Testimonials from './testimonials';
+
 // Back to Top Button Component
 const BackToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -205,6 +207,9 @@ function App() {
           </div>
           <div id="reg-details">
             <RegDetails />
+          </div>
+          <div id="testimonials">
+            <Testimonials />
           </div>
           <div id="events">
             <EventsSection />
