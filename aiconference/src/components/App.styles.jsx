@@ -30,16 +30,25 @@ export const ContentWrapper = styled.div`
     padding: 1.5rem 0;
   }
 `;
-
 export const InfoSection = styled.div`
   width: 100%;
-  padding: 2rem;
+  padding: 2rem 1rem;
   background: #FFFFFF;
-  backdrop-filter: blur(10px);
-  color: white;
   text-align: center;
   z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
 `;
+
 
 export const InfoContent = styled.div`
   max-width: 1200px;
@@ -77,6 +86,8 @@ export const ConsortiumTitle = styled.h3`
 export const SliderContainer = styled.div`
   flex: 1;
   position: relative;
+  margin-top: -50px;
+
 `;
 
 export const Title = styled.h1`
@@ -111,6 +122,7 @@ export const Title = styled.h1`
     font-size: 1.2rem;
     padding: 1rem;
   }
+    
 `;
 
 export const Line = styled.div`

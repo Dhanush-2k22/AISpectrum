@@ -44,33 +44,42 @@ const MainContent = () => {
 
   return (
     <AppContainer>
-      <InfoSection style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '1rem',
-        flexWrap: 'wrap',
-      }}>
+      <InfoSection>
         <img
           src={PSGLogo}
           alt="PSGCT Logo"
-          style={{ height: '105px', width: 'auto', marginRight: '2rem', filter: 'brightness(0.9)', objectFit: 'contain' }}
+          style={{
+            height: '105px',
+            width: 'auto',
+            objectFit: 'contain',
+            filter: 'brightness(0.9)',
+          }}
         />
 
-        <div style={{ textAlign: 'center', minWidth: '300px', margin: '0 1rem' }}>
-          <h1 style={{ margin: '0', fontSize: '1.8rem', color:'#0D58A9'}}>PSG COLLEGE OF TECHNOLOGY</h1>
-          <p style={{ margin: '0.5rem 0', fontSize: '1.1rem', color: '#0D58A9' }}>Coimbatore, Tamil Nadu , India - 641004</p>
-          <h2 style={{ margin: '0', fontSize: '1.4rem', color: '#0D58A9' }}>PSG - <span style={{ fontWeight: 'bold' }}>AI CONSORTIUM</span></h2>
+        <div style={{ minWidth: '300px' }}>
+          <h1 style={{ margin: 0, fontSize: '1.8rem', color: '#0D58A9' }}>
+            PSG COLLEGE OF TECHNOLOGY
+          </h1>
+          <p style={{ margin: '0.5rem 0', fontSize: '1.1rem', color: '#0D58A9' }}>
+            Coimbatore, Tamil Nadu, India - 641004
+          </p>
+          <h2 style={{ margin: 0, fontSize: '1.4rem', color: '#0D58A9' }}>
+            PSG - <span style={{ fontWeight: 'bold' }}>AI CONSORTIUM</span>
+          </h2>
         </div>
 
         <img
           src={AIConsLogo}
           alt="AI Consortium Logo"
-          style={{ height: '140px', width: 'auto', marginLeft: '1rem',marginBottom:'1.8rem',objectFit: 'contain' }}
-        />
-      </InfoSection>
-
-      <SliderContainer>
+          style={{
+            height: '140px',
+            width: 'auto',
+            objectFit: 'contain',
+            marginBottom: '1.8rem',
+          }}
+          />
+    </InfoSection>
+   <SliderContainer>
         <Title style={{ width: '100%', whiteSpace: 'nowrap', textAlign: 'center' }}>
           INTERNATIONAL CONFERENCE
           <Line />
