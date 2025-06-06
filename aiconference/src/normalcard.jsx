@@ -2,84 +2,76 @@ import React from 'react';
 
 const NormalCard = ({ name, designation, organization, iconUrl, details, link }) => {
   return (
-    <div
-      style={{
-        background: 'linear-gradient(135deg, #004AAD, #00B4D8)',
-        color: '#FFFFFF',
-        borderRadius: '20px',
-        padding: '25px',
-        width: '100%',
-        textAlign: 'center',
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.5)',
-        border: '4px solid #BCC6CC',
-        transition: 'transform 0.3s, box-shadow 0.3s',
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = 'scale(1.03)';
-        e.currentTarget.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.7)';
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = 'scale(1)';
-        e.currentTarget.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.5)';
-      }}
+    <div style={{
+      background: '#0d58a9',
+      color: '#FFFFFF',
+      borderRadius: '14px',
+      padding: '20px',
+      width: '100%',
+      maxWidth: '300px',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      textAlign: 'center',
+      transition: 'transform 0.3s ease',
+      cursor: 'pointer',
+      height: '100%',
+      minHeight: '400px'
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = 'translateY(-5px)';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = 'translateY(0)';
+    }}
     >
       {iconUrl && (
-        <div
-          style={{
-            width: '140px',
-            height: '140px',
-            borderRadius: '50%',
-            background: 'linear-gradient(135deg, #E5E4E2, #BCC6CC)',
-            padding: '5px',
-            display: 'inline-block',
-            marginBottom: '15px',
-          }}
-        >
-          <img
-            src={iconUrl}
+        <div style={{
+          width: '220px',
+          height: '220px',
+          borderRadius: '63%',
+          background: 'linear-gradient(135deg, #E5E4E2, #BCC6CC)',
+          padding: '3px',
+          marginBottom: '15px',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+          overflow: 'hidden'
+        }}>
+          <img 
+            src={iconUrl} 
             alt={name}
             style={{
               width: '100%',
               height: '100%',
-              borderRadius: '50%',
               objectFit: 'cover',
+              borderRadius: '50%'
             }}
           />
         </div>
       )}
-      <h2
-        style={{
-          margin: '15px 0 10px 0',
-          fontFamily: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
-          fontWeight: '1000',
-          letterSpacing: '0.4px',
-          fontSize: '1.2em',
-          color: '#FFFFFF',
-        }}
-      >
-        {name}
-      </h2>
-      <h5
-        style={{
-          margin: '4.5px 0',
-          fontSize: '1em',
-          fontFamily: 'Georgia, Times, "Times New Roman", serif',
-          fontWeight: '500',
-        }}
-      >
-        {designation}
-      </h5>
+      <h2 style={{
+        margin: '9px 0 20px 0',
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '700',
+        letterSpacing: '0.5px',
+        color: '#FFD700',
+        fontSize: '1.8em'
+      }}>{name}</h2>
+      <h5 style={{ 
+        margin: '4.5px 0', 
+        fontSize: '1.1em',
+        fontFamily: '"Inter", sans-serif',
+        fontWeight: '500',
+        letterSpacing: '0.3px'
+      }}>{designation}</h5>
       {organization && (
-        <h6
-          style={{
-            margin: '10px 0 0 0',
-            fontSize: '1.0em',
-            fontFamily: 'Georgia, Times, "Times New Roman", serif',
-            fontWeight: '500',
-          }}
-        >
-          {organization}
-        </h6>
+        <h6 style={{ 
+          margin: '10px 0 0 0', 
+          fontSize: '1em',
+          fontFamily: '"Inter", sans-serif',
+          fontWeight: '500',
+          letterSpacing: '0.3px'
+        }}>{organization}</h6>
       )}
       <button
         style={{

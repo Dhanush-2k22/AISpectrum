@@ -81,9 +81,9 @@ return (
           </h2>
           <div
             style={{
-              width: '100px',
+              width: '150px',
               height: '4px',
-              background: '#ffdd00',
+              background: '#D9A353',
               margin: '0 auto',
               borderRadius: '2px',
             }}
@@ -214,9 +214,9 @@ return (
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <h2
             style={{
-              fontSize: '2.5rem',
+              fontSize: '3rem',
               fontWeight: '800',
-              color: '#1e293b',
+              color: '#0d58a9',
               marginBottom: '1rem',
               background: '#0d58a9',
               WebkitBackgroundClip: 'text',
@@ -228,9 +228,9 @@ return (
           </h2>
           <div
             style={{
-              width: '100px',
+              width: '150px',
               height: '4px',
-              background: '#ffdd00',
+              background: '#D9A353',
               margin: '0 auto',
               borderRadius: '2px',
             }}
@@ -341,9 +341,9 @@ return (
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <h2
             style={{
-              fontSize: '2.5rem',
+              fontSize: '3rem',
               fontWeight: '800',
-              color: '#1e293b',
+              color: '#0d58a9',
               marginBottom: '1rem',
               background: '#0d58a9',
               WebkitBackgroundClip: 'text',
@@ -355,9 +355,9 @@ return (
           </h2>
           <div
             style={{
-              width: '100px',
+              width: '150px',
               height: '4px',
-              background: '#ffdd00',
+              background: '#D9A353',
               margin: '0 auto',
               borderRadius: '2px',
             }}
@@ -459,9 +459,9 @@ return (
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <h2
             style={{
-              fontSize: '2.5rem',
+              fontSize: '3rem',
               fontWeight: '800',
-              color: '#1e293b',
+              color: '#0d58a9',
               marginBottom: '1rem',
               background: '#0d58a9',
               WebkitBackgroundClip: 'text',
@@ -473,9 +473,9 @@ return (
           </h2>
           <div
             style={{
-              width: '100px',
+              width: '150px',
               height: '4px',
-              background: '#ffdd00',
+              background: '#D9A353',
               margin: '0 auto',
               borderRadius: '2px',
             }}

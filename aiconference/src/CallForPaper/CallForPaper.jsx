@@ -36,7 +36,7 @@ const TrackBox = ({ themeTitle, topics }) => {
           letterSpacing: '0.5px',
           color: colors.yellow,
           fontSize: '1.4em',
-          minHeight: '3.6em', // Ensure consistent height for title area
+          minHeight: '3.6em',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -49,7 +49,7 @@ const TrackBox = ({ themeTitle, topics }) => {
           textAlign: 'left',
           paddingLeft: '20px',
           margin: '0',
-          flexGrow: 1, // Allow list to take up available space
+          flexGrow: 1,
         }}
       >
         {topics.map((topic, index) => (
@@ -71,7 +71,7 @@ const TrackBox = ({ themeTitle, topics }) => {
   );
 };
 
-const ConferenceTracks = () => {
+const TopicsSection = () => {
   const tracks = [
     {
       themeTitle: "Origin, Evolution, and Development of AI Technologies",
@@ -124,71 +124,69 @@ const ConferenceTracks = () => {
   ];
 
   return (
-    <>
+    <section style={{
+      marginBottom: '80px', 
+      background: 'rgb(255, 255, 255)',
+      borderRadius: '20px',
+      padding: '30px',
+      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
+      maxWidth: '800px',
+      margin: '60px auto 0',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    }}>
       <h2 style={{
-        fontFamily: typography.heading.fontFamily,
-        fontSize: '2.5em',
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginBottom: '60px',
-        marginTop: '60px',
-        color: colors.blue,
-        position: 'relative',
+        fontSize: '3rem',
+        fontWeight: '100',
+        color: '#0d58a9',
+        marginBottom: '1rem',
+        background: '#0d58a9',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        backgroundClip: 'text',
+        textAlign: 'center'
       }}>
         CONFERENCE TRACKS & TOPICS
         <div style={{
-          position: 'absolute',
-          bottom: '-15px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '100px',
+          width: '150px',
           height: '4px',
-          background: colors.yellow,
+          background: '#D9A353',
+          margin: '0 auto',
           borderRadius: '2px',
+          marginTop: '15px'
         }} />
       </h2>
-      <section style={{
-        marginBottom: '60px',
-        background: colors.blue,
-        borderRadius: '20px',
-        padding: '30px',
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
-        maxWidth: '1000px',
+      <p style={{
+        fontSize: '1.1em',
+        marginTop: '15px',
+        lineHeight: '1.6',
+        maxWidth: '900px',
         margin: '0 auto',
-        marginTop: '20px',
+        textAlign: 'justify-center',
+        textJustify: 'inter-word',
+        color: '#475569',
       }}>
-        <p style={{
-          fontSize: '1.1em',
-          marginTop: '15px',
-          lineHeight: '1.6',
-          maxWidth: '900px',
-          margin: '0 auto 15px',
-          textAlign: 'justify-center',
-          textJustify: 'inter-word',
-          color: colors.white,
-          fontFamily: typography.body.fontFamily,
-        }}>
-          We invite researchers, academicians, industry professionals, and practitioners to submit original papers on the foundations, applications, and future directions of Artificial Intelligence. The conference welcomes research articles, reviews, and technical contributions across various fields. Submissions spanning the full spectrum of AI, particularly those that bridge disciplines or explore emerging areas, are especially encouraged.
-        </p>
+        We invite researchers, academicians, industry professionals, and practitioners to submit original papers on the foundations, applications, and future directions of Artificial Intelligence. The conference welcomes research articles, reviews, and technical contributions across various fields. Submissions spanning the full spectrum of AI, particularly those that bridge disciplines or explore emerging areas, are especially encouraged.
+      </p>
 
-        <div style={{ 
-          display: 'flex', 
-          flexWrap: 'wrap', 
-          justifyContent: 'center',
-          gap: '30px',
-          marginTop: '40px'
-        }}>
-          {tracks.map((track, index) => (
-            <TrackBox
-              key={index}
-              themeTitle={track.themeTitle}
-              topics={track.topics}
-            />
-          ))}
-        </div>
-      </section>
-    </>
+      <div style={{ 
+        display: 'flex', 
+        flexWrap: 'wrap', 
+        justifyContent: 'center',
+        gap: '30px',
+        marginTop: '40px'
+      }}>
+        {tracks.map((track, index) => (
+          <TrackBox
+            key={index}
+            themeTitle={track.themeTitle}
+            topics={track.topics}
+          />
+        ))}
+      </div>
+    </section>
   );
 };
 
-export default ConferenceTracks;
+export default TopicsSection;

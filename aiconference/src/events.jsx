@@ -23,24 +23,22 @@ const EventsSection = () => {
       boxShadow: '0 4px 12px rgba(0,0,0,0.3)' 
     }}>
       <h2 style={{ 
-        color: '#0d58a9', 
-        textAlign: 'center', 
-        marginBottom: '30px', 
-        fontSize: '32px', 
-        fontWeight: 'bold' 
+        fontSize: '3rem',
+        fontWeight: '800',
+        color: '#0d58a9',
+        marginBottom: '1rem',
+        textAlign: 'center'
       }}>
         Events
+        <div style={{
+          width: '150px',
+          height: '4px',
+          background: '#D9A353',
+          margin: '0 auto',
+          borderRadius: '2px',
+          marginTop: '15px'
+        }} />
       </h2>
-      <div
-            style={{
-              width: '100px',
-              height: '4px',
-              background: '#ffdd00',
-              margin: '0 auto',
-              borderRadius: '2px',
-              
-            }}
-          />
       <div style={{ marginTop: '20px' }}>
         <div style={{ 
           display: 'flex', 

@@ -7,21 +7,20 @@ import { GlobalStyles, colors } from './styles/commonStyles';
 import Comitte from './comitte';
 import ThemeSection from './Theme/theme.jsx';
 import TopicsSection from './Topics/Topics.jsx';
-// import CallForPapers from './CallForPaper/CallForPaper.jsx';
 import Sponsor from './Sponsor.jsx';
 import EventsSection from './events.jsx';
 import VenueContactSection from './VenueContactSection.jsx';
 import Footer from './Footer.jsx';
 import About from './reg-about/about.jsx';
 import ImpDates from './reg-about/reg.jsx';
-import RegDetails from './reg-about/reg.jsx';
 import WelcomeCardSection from './cbeplaces.jsx';
 import MainContent from './components/MainContent.jsx';
 import TempComponent from './temp.jsx';
-import Dates from './imp.jsx';
 import SpeakerSection from './speaker.jsx';
 import ConferenceSection from './Topics/Topics.jsx';
 import PublicationSection from './PublicationSection.jsx';
+import PaperSubmission from './reg-about/paper-submission';
+import RegDetails from './reg-about/registration';
 
 // Back to Top Button Component
 const BackToTopButton = () => {
@@ -97,7 +96,6 @@ const BackToTopButton = () => {
 
 function App() {
   const [count, setCount] = useState(0);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showTemp, setShowTemp] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [showPopup, setShowPopup] = useState(true);
@@ -107,21 +105,6 @@ function App() {
     showTemp,
     setShowTemp
   };
-
-  // Handle mouse movement to influence the animation
-  useEffect(() => {
-    const handleMouseMove = (event) => {
-      setMousePosition({
-        x: event.clientX / window.innerWidth,
-        y: event.clientY / window.innerHeight
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -165,8 +148,6 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      {/* Background Animation */}
-      <BackgroundAnimation mousePosition={mousePosition} />
       
       {/* Update Popup */}
       {showPopup && <UpdatePopup onClose={() => setShowPopup(false)} />}
@@ -200,120 +181,52 @@ function App() {
           </div>
         </div>
       ) : (
-        <>
-          {/* Main Content */}
-          <div id="main-content" className="mainctnt" style={{ position: 'relative', zIndex: 1 }}>
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <div id="main-content">
             <MainContent />
           </div>
-
-          {/* Section Content */}
-          <div style={{ color: colors.white, position: 'relative', zIndex: 1 }}>
-            <div id="about" style={{ marginTop: '-50px' }}><About /></div>
-            <div id="speakers" style={{ marginTop: '-60px' }}><SpeakerSection/></div>
-            <div id="theme" style={{ marginTop: '-30px' }}><ThemeSection /></div><br />
-            <div id="topics"><TopicsSection /></div>
-            <div id="publications"><PublicationSection /></div>
-            <div id="Dates"><Dates /></div>
-            <div id="registration"><RegDetails /></div>
-            <div id="events"><EventsSection/></div>
-            <div id="venue-contact"><VenueContactSection /></div>
-            <div id="sponsors"><Sponsor /></div>
-            <div id="welcome"><WelcomeCardSection /></div> {/* Places in Coimbatore */}
-            <Footer/>
+          <div id="about">
+            <About />
           </div>
-        </>
+          <div id="speakers">
+            <SpeakerSection />
+          </div>
+          <div id="theme">
+            <ThemeSection />
+          </div>
+          <div id="topics">
+            <TopicsSection />
+          </div>
+          <div id="Dates">
+            <ImpDates />
+          </div>
+          <div id="paper-submission">
+            <PaperSubmission />
+          </div>
+          <div id="reg-details">
+            <RegDetails />
+          </div>
+          <div id="events">
+            <EventsSection />
+          </div>
+          <div id="publications">
+            <PublicationSection />
+          </div>
+          <div id="venue-contact">
+            <VenueContactSection />
+          </div>
+          <div id="sponsors">
+            <Sponsor />
+          </div>
+          <div id="welcome">
+            <WelcomeCardSection />
+          </div>
+          <Footer />
+        </div>
       )}
       
-      {/* Back to Top Button */}
       <BackToTopButton />
     </>
-  );
-}
-
-// Background Animation Component
-function BackgroundAnimation({ mousePosition }) {
-  const [particles, setParticles] = useState([]);
-  
-  useEffect(() => {
-    // Generate initial particles
-    const generateParticles = () => {
-      const newParticles = [];
-      const count = 60; // Number of particles
-      
-      for (let i = 0; i < count; i++) {
-        newParticles.push({
-          id: i,
-          x: Math.random() * 100,
-          y: Math.random() * 100,
-          size: Math.random() * 6 + 2,
-          speedX: (Math.random() - 0.5) * 0.3, // Constant speed
-          speedY: (Math.random() - 0.5) * 0.3, // Constant speed
-          opacity: Math.random() * 0.5 + 0.1
-        });
-      }
-      
-      setParticles(newParticles);
-    };
-    
-    generateParticles();
-    
-    // Animation loop
-    const animateParticles = () => {
-      setParticles(prevParticles => 
-        prevParticles.map(particle => {
-          let { x, y, speedX, speedY } = particle;
-
-          // Move particle with constant speed
-          x += speedX;
-          y += speedY;
-
-          // Wrap around edges instead of bouncing
-          if (x > 100) x = 0;
-          if (x < 0) x = 100;
-          if (y > 100) y = 0;
-          if (y < 0) y = 100;
-
-          return { ...particle, x, y };
-        })
-      );
-
-      requestAnimationFrame(animateParticles);
-    };
-
-    const animationFrameId = requestAnimationFrame(animateParticles);
-
-    return () => cancelAnimationFrame(animationFrameId);
-  }, []); // Remove mousePosition dependency
-  
-  return (
-    <div 
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        overflow: 'hidden',
-        zIndex: 0,
-      }}
-    >
-      {particles.map(particle => (
-        <div
-          key={particle.id}
-          style={{
-            position: 'absolute',
-            left: `${particle.x}%`,
-            top: `${particle.y}%`,
-            width: `${particle.size}px`,
-            height: `${particle.size}px`,
-            backgroundColor: `${colors.blue}99`,
-            borderRadius: '50%',
-            opacity: particle.opacity,
-            transition: 'none', // Remove any transitions
-          }}
-        />
-      ))}
-    </div>
   );
 }
 

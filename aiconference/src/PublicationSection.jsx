@@ -19,29 +19,25 @@ const PublicationSection = () => {
     >
       <h2
         style={{
-          fontSize: '2em',
-          fontWeight: 'bold',
-          marginBottom: '40px', // Adjusted space below title
-          fontFamily: 'Libre Baskerville, Georgia, serif', // Keep original font or use commonStyles if imported
-          color:'#0d58a9', // Blue title color
-          position: 'relative', // Needed for yellow line positioning
+          fontSize: '3rem',
+          fontWeight: '800',
+          color: '#0d58a9',
+          marginBottom: '1rem',
+          background: '#0d58a9',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+          textAlign: 'center'
         }}
       >
-        PUBLICATION
-        {/* Yellow line div */}
-               <div
-            style={{
-              width: '100px',
-              height: '4px',
-              background: '#ffdd00',
-              margin: '0 auto',
-              borderRadius: '2px',
-              position: 'absolute',
-              bottom: '-15px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-            }}
-          />
+        Publication
+        <div style={{
+          width: '150px',
+          height: '4px',
+          background: '#D9A353',
+          margin: '0 auto',
+          borderRadius: '2px',
+        }} />
       </h2>
 
       <img

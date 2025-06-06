@@ -17,24 +17,22 @@ const ThemeSection = () => {
         alignItems: 'center',
       }}>
         <h2 style={{
-          fontFamily: typography.heading.fontFamily,
-          fontSize: '2.5em',
-          fontWeight: 'bold',
-          textAlign: 'center',
-          marginBottom: '40px',
-          marginTop: '0',
-          color: colors.blue,
-          position: 'relative',
+          fontSize: '3rem',
+          fontWeight: '100',
+          color: '#0d58a9',
+          marginBottom: '1rem',
+          background: '#0d58a9',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+          textAlign: 'center'
         }}>
-          THEME
+          Theme
           <div style={{
-            position: 'absolute',
-            bottom: '-15px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: '100px',
+            width: '150px',
             height: '4px',
-            background: colors.yellow,
+            background: '#D9A353',
+            margin: '0 auto',
             borderRadius: '2px',
           }} />
         </h2>

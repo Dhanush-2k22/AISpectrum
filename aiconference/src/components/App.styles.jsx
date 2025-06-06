@@ -31,16 +31,18 @@ export const ContentWrapper = styled.div`
   }
 `;
 export const InfoSection = styled.div`
-  width: 100%;
+  width: 100vw;
   padding: 2rem 1rem;
   background: #FFFFFF;
   text-align: center;
   z-index: 3;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  box-sizing: border-box;
 
   @media (max-width: 768px) {
     flex-direction: column;

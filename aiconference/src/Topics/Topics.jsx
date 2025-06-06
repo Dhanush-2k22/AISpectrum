@@ -209,24 +209,30 @@ const TopicsSection = () => {
       margin: '40px auto',
     }}>
       <h2 style={{
-        fontFamily: 'Libre Baskerville, Georgia, serif',
-        fontSize: '2em',
-        fontWeight: 'bold',
+        fontFamily: '"DM Serif Display", serif',
+        fontSize: '3rem',
+        fontWeight: '100',
         textAlign: 'center',
-        marginBottom: '15px',
+        marginBottom: '40px',
         color: '#0d58a9',
+        background: '#0d58a9',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        backgroundClip: 'text',
+        position: 'relative'
       }}>
-        CONFERENCE TRACKS & TOPICS
+        Conference Tracks & Topics
+        <div style={{
+          position: 'absolute',
+          bottom: '-15px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '150px',
+          height: '4px',
+          background: '#D9A353',
+          borderRadius: '2px'
+        }} />
       </h2>
-               <div
-            style={{
-              width: '100px',
-              height: '4px',
-              background: '#ffdd00',
-              margin: '0 auto',
-              borderRadius: '2px',
-            }}
-          />
 
       <p style={{
         fontSize: '1.1em',

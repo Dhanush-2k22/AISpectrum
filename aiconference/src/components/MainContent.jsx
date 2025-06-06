@@ -45,41 +45,72 @@ const MainContent = () => {
   return (
     <AppContainer>
       <InfoSection>
-        <img
-          src={PSGLogo}
-          alt="PSGCT Logo"
-          style={{
-            height: '105px',
-            width: 'auto',
-            objectFit: 'contain',
-            filter: 'brightness(0.9)',
-          }}
-        />
-
-        <div style={{ minWidth: '300px' }}>
-          <h1 style={{ margin: 0, fontSize: '1.8rem', color: '#0D58A9' }}>
-            PSG COLLEGE OF TECHNOLOGY
-          </h1>
-          <p style={{ margin: '0.5rem 0', fontSize: '1.1rem', color: '#0D58A9' }}>
-            Coimbatore, Tamil Nadu, India - 641004
-          </p>
-          <h2 style={{ margin: 0, fontSize: '1.4rem', color: '#0D58A9' }}>
-            PSG - <span style={{ fontWeight: 'bold' }}>AI CONSORTIUM</span>
-          </h2>
-        </div>
-
-        <img
-          src={AIConsLogo}
-          alt="AI Consortium Logo"
-          style={{
-            height: '140px',
-            width: 'auto',
-            objectFit: 'contain',
-            marginBottom: '1.8rem',
-          }}
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center', 
+          gap: '3rem',
+          width: '100%',
+          maxWidth: '1200px',
+          margin: '0 auto'
+        }}>
+          <img
+            src={PSGLogo}
+            alt="PSGCT Logo"
+            style={{
+              height: '105px',
+              width: 'auto',
+              objectFit: 'contain',
+              filter: 'brightness(0.9)',
+            }}
           />
-    </InfoSection>
-   <SliderContainer>
+
+          <div style={{ 
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '0.5rem'
+          }}>
+            <h1 style={{ 
+              margin: 0, 
+              fontSize: '2.2rem', 
+              color: '#0D58A9', 
+              fontWeight: '700',
+              textAlign: 'center'
+            }}>
+              PSG COLLEGE OF TECHNOLOGY
+            </h1>
+            <p style={{ 
+              margin: 0, 
+              fontSize: '1.2rem', 
+              color: '#0D58A9',
+              textAlign: 'center'
+            }}>
+              Coimbatore, Tamil Nadu, India - 641004
+            </p>
+            <h2 style={{ 
+              margin: 0, 
+              fontSize: '1.8rem', 
+              color: '#0D58A9', 
+              fontWeight: '700',
+              textAlign: 'center'
+            }}>
+              PSG - <span style={{ fontWeight: 'bold' }}>AI CONSORTIUM</span>
+            </h2>
+          </div>
+
+          <img
+            src={AIConsLogo}
+            alt="AI Consortium Logo"
+            style={{
+              height: '140px',
+              width: 'auto',
+              objectFit: 'contain',
+            }}
+          />
+        </div>
+      </InfoSection>
+      <SliderContainer>
         <Title style={{ width: '100%', whiteSpace: 'nowrap', textAlign: 'center' }}>
           INTERNATIONAL CONFERENCE
           <Line />
