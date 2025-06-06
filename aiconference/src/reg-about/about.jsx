@@ -8,6 +8,8 @@ import psgCareImage from '../assets/PSGCARE.jpg';
 const SeeMore = ({ children }) => {
   const [showMore, setShowMore] = useState(false);
 
+
+
   return (
     <>
       {showMore && <div>{children}</div>}
@@ -129,7 +131,7 @@ return (
                 lineHeight: '1.8',
                 color: '#475569',
                 fontSize: '1.1rem',
-                textAlign:'justify',
+                textAlign: 'justify',
               }}
             >
               PSG College of Technology (PSG CT), established by PSG & Sons' Charities in 1951, is a premier institution
@@ -142,7 +144,7 @@ return (
                 lineHeight: '1.8',
                 color: '#475569',
                 fontSize: '1.1rem',
-                textAlign:'justify',
+                textAlign: 'justify',
               }}
             >
               PSG CT offers 21 undergraduate and 24 postgraduate programmes, covering Engineering, Technology, Computer
@@ -156,7 +158,7 @@ return (
                   lineHeight: '1.8',
                   color: '#475569',
                   fontSize: '1.1rem',
-                  textAlign:'justify',
+                  textAlign: 'justify',
                 }}
               >
                 The college hosts advanced Centers of Excellence like TIFAC Core, Virtual Reality Centre, Nano-tool Centre,
@@ -168,7 +170,7 @@ return (
                   lineHeight: '1.8',
                   color: '#475569',
                   fontSize: '1.1rem',
-                  textAlign:'justify',
+                  textAlign: 'justify',
                 }}
               >
                 PSG CT ranked second in ARIIA 2021 and received AICTE-CII's Best Industry-linked Institute award in 2012.
@@ -178,7 +180,7 @@ return (
                   lineHeight: '1.8',
                   color: '#475569',
                   fontSize: '1.1rem',
-                  textAlign:'justify',
+                  textAlign: 'justify',
                 }}
               >
                 Recognized among the 75 institutions during India's G20 Presidency in 2022, PSG CT was tasked with national
@@ -276,7 +278,7 @@ return (
                 lineHeight: '1.8',
                 color: '#475569',
                 fontSize: '1.1rem',
-                textAlign:'justify',
+                textAlign: 'justify',
               }}
             >
               The growth of Artificial Intelligence must be guided by strong ethical principles and Responsible AI, ensuring that its development promotes fairness, transparency, and societal well-being.
@@ -284,8 +286,8 @@ return (
             </p>
 
             <div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '1rem', color: '#0d58a9',textAlign:'justify', }}>Key Measures for AI Integration</h3>
-              <ul style={{ paddingLeft: '1.5rem', color: '#374151', lineHeight: '1.6',textAlign:'justify',marginBottom: '1.5rem' }}>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '1rem', color: '#0d58a9',textAlign: 'justify', }}>Key Measures for AI Integration</h3>
+              <ul style={{ paddingLeft: '1.5rem', color: '#374151', lineHeight: '1.6',textAlign: 'justify',marginBottom: '1.5rem' }}>
                 <li>AI Affirmation Pledge</li>
                 <li>Campus-wide AI Awareness Campaigns</li>
                 <li>AI First Curriculum</li>
@@ -294,17 +296,17 @@ return (
               </ul>
             </div>
 
-            <p style={{ marginBottom: '1.5rem', lineHeight: '1.8', color: '#475569', fontSize: '1.1rem' ,textAlign:'justify',}}>
+            <p style={{ marginBottom: '1.5rem', lineHeight: '1.8', color: '#475569', fontSize: '1.1rem' ,textAlign: 'justify',}}>
               AI excellence at PSG Tech began in 2019 with the launch of the Centre for Artificial Intelligence Research (AIR), laying the groundwork for impactful research and collaborations.
             </p>
 
             <SeeMore>
               <div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '1rem', color: '#0d58a9' ,textAlign:'justify'}}>AI Wing and Specialized Centers</h3>
-                <p style={{ marginBottom: '1rem', lineHeight: '1.8', color: '#374151' ,textAlign:'justify'}}>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '1rem', color: '#0d58a9' ,textAlign: 'justify'}}>AI Wing and Specialized Centers</h3>
+                <p style={{ marginBottom: '1rem', lineHeight: '1.8', color: '#374151' ,textAlign: 'justify'}}>
                   Located on the 3rd floor of E-Block and managed by the CSE Department, the AI Wing houses four specialized centers:
                 </p>
-                <ul style={{ paddingLeft: '1.5rem', color: '#374151', lineHeight: '1.6',textAlign:'justify' }}>
+                <ul style={{ paddingLeft: '1.5rem', color: '#374151', lineHeight: '1.6',textAlign: 'justify' }}>
                   <li>Centre for Algorithms and Applied AI (3AI)</li>
                   <li>Centre for AI Research (AIR)</li>
                   <li>Centre for Smart Cyber-Physical Systems (SCPS)</li>
@@ -403,7 +405,7 @@ return (
                 lineHeight: '1.8',
                 color: '#475569',
                 fontSize: '1.1rem',
-                textAlign:'justify',
+                textAlign: 'justify',
               }}
             >
               The PSG Center for Academic Research and Excellence was founded in October, 2015 by the PSG & Sons' Charities Trust with a mission to promote teaching excellence in all the colleges under the Trust. Toward this end, CARE will encourage the use of learner-centric pedagogical practices that facilitate effective learning and will foster dialogue and reflection on effective teaching through workshops, seminars.
@@ -414,7 +416,7 @@ return (
                 lineHeight: '1.8',
                 color: '#475569',
                 fontSize: '1.1rem',
-                textAlign:'justify',
+                textAlign: 'justify',
               }}
             >
               <strong style={{ color: '#0d58a9' }}>Dr. R. Rudramoorthy</strong> is the Director of PSG CARE. The center also focuses on creating and sustaining effective faculty student relationships and aims to pursue its mission.
@@ -422,8 +424,8 @@ return (
             
             <SeeMore>
               <div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '1rem', color: '#0d58a9' ,textAlign:'justify'}}>Mission Objectives</h3>
-                <ul style={{ paddingLeft: '1.5rem', color: '#374151', lineHeight: '1.7',textAlign:'justify' }}>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '1rem', color: '#0d58a9' ,textAlign: 'justify'}}>Mission Objectives</h3>
+                <ul style={{ paddingLeft: '1.5rem', color: '#374151', lineHeight: '1.7',textAlign: 'justify' }}>
                   <li>Helping faculty members assess the effectiveness of their teaching through appropriate student and peer feedback mechanisms</li>
                   <li>Encouraging research activities that enhance the quality of teaching at PSG</li>
                   <li>Supporting dissemination of research findings about the teaching learning process</li>
