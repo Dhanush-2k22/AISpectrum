@@ -85,12 +85,12 @@ const TempComponent = () => {
       document.body.style.backgroundColor = '';
     };
   }, []);
-  
+
   return (
     <div style={{
       padding: '70px 20px 40px 20px',
       color: '#000000',
-      fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif',
+      fontFamily: '"Inter", sans-serif',
       maxWidth: '1280px',
       margin: '0 auto',
       overflowX: 'hidden',
@@ -100,10 +100,11 @@ const TempComponent = () => {
       <h1 style={{ 
         textAlign: 'center', 
         marginBottom: '40px',
-        fontSize: 'calc(1.5rem + 1vw)',
+        fontSize: 'calc(1.8rem + 1vw)',
         color: colors.blue,
-        fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif',
-        fontWeight: '600'
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '700',
+        letterSpacing: '0.5px'
       }}>ORGANIZING COMMITTEE</h1>
 
       <h2 style={{ 
@@ -433,14 +434,15 @@ const TempComponent = () => {
       <h1 style={{ 
         textAlign: 'center', 
         marginBottom: '40px',
-        fontSize: 'calc(1.5rem + 1vw)',
+        fontSize: 'calc(1.8rem + 1vw)',
         color: colors.blue,
-        fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif',
-        fontWeight: '600'
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '700',
+        letterSpacing: '0.5px'
       }}>ADVISORY COMMITTEE</h1>
       <div style={{ 
         marginBottom: '40px', 
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
+        background: '#0d58a9',
         borderRadius: '20px',
         padding: '20px 15px',
         boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
@@ -453,7 +455,11 @@ const TempComponent = () => {
           textAlign: 'center', 
           marginBottom: '25px',
           fontSize: 'calc(1.2rem + 0.5vw)',
-          color: colors.blue
+          color: '#FFEB3B',
+          fontFamily: '"Playfair Display", serif',
+          fontWeight: '700',
+          letterSpacing: '0.5px',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)'
         }}>NATIONAL ADVISORY COMMITTEE</h2>
         
         <div style={{
@@ -641,7 +647,11 @@ const TempComponent = () => {
           textAlign: 'center', 
           marginBottom: '25px',
           fontSize: 'calc(1.2rem + 0.5vw)',
-          color: colors.blue
+          color: '#FFEB3B',
+          fontFamily: '"Playfair Display", serif',
+          fontWeight: '700',
+          letterSpacing: '0.5px',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)'
         }}>INTERNATIONAL ADVISORY COMMITTEE</h2>
         
         <div style={{

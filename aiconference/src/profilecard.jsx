@@ -3,66 +3,73 @@ import React from 'react';
 const ProfileCard = ({ name, designation, organization, photoUrl }) => {
   return (
     <div style={{
-      background: 'linear-gradient(135deg, #004AAD, #00B4D8)',
+      background: '#0d58a9',
       color: '#FFFFFF',
       borderRadius: '14px',
-      padding: '27px',
-      width: '306px',
+      padding: '20px',
+      width: '100%',
+      maxWidth: '300px',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
       textAlign: 'center',
-      marginBottom: '27px',
-      boxShadow: '0 9px 18px rgba(0, 0, 0, 0.5)',
-      border: '4.5px solid #BCC6CC',
-      transition: 'transform 0.3s, box-shadow 0.3s',
+      transition: 'transform 0.3s ease',
+      cursor: 'pointer',
+      height: '100%',
+      minHeight: '400px'
     }}
     onMouseEnter={(e) => {
-      e.currentTarget.style.transform = 'scale(1.03)';
-      e.currentTarget.style.boxShadow = '0 13.5px 27px rgba(1, 1, 1, 0.79)';
+      e.currentTarget.style.transform = 'translateY(-5px)';
     }}
     onMouseLeave={(e) => {
-      e.currentTarget.style.transform = 'scale(1.0)';
-      e.currentTarget.style.boxShadow = '0 9px 18px rgba(0, 0, 0, 0.5)';
+      e.currentTarget.style.transform = 'translateY(0)';
     }}
     >
       {photoUrl && (
         <div style={{
-          width: '180px',
-          height: '180px',
+          width: '220px',
+          height: '220px',
           borderRadius: '63%',
           background: 'linear-gradient(135deg, #E5E4E2, #BCC6CC)',
-          padding: '4.5px',
-          display: 'inline-block',
-          marginBottom: '13.5px',
+          padding: '3px',
+          marginBottom: '15px',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+          overflow: 'hidden'
         }}>
-          <img
-            src={photoUrl}
+          <img 
+            src={photoUrl} 
             alt={name}
             style={{
               width: '100%',
               height: '100%',
-              borderRadius: '50%',
               objectFit: 'cover',
+              borderRadius: '50%'
             }}
           />
         </div>
       )}
       <h2 style={{
-        margin: '9px 0 4.5px 0',
-        fontFamily: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
-        fontWeight: '1000',
+        margin: '9px 0 20px 0',
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '700',
         letterSpacing: '0.5px',
-        color: '#FFFFFF',
+        color: '#FFD700',
+        fontSize: '1.8em'
       }}>{name}</h2>
       <h5 style={{ 
         margin: '4.5px 0', 
-        fontSize: '1em',
-        fontFamily: 'Georgia, Times, "Times New Roman", serif',
+        fontSize: '1.1em',
+        fontFamily: '"Inter", sans-serif',
         fontWeight: '500',
+        letterSpacing: '0.3px'
       }}>{designation}</h5>
       <h6 style={{ 
         margin: '10px 0 0 0', 
-        fontSize: '1.0em',
-        fontFamily: 'Georgia, Times, "Times New Roman", serif',
+        fontSize: '1em',
+        fontFamily: '"Inter", sans-serif',
         fontWeight: '500',
+        letterSpacing: '0.3px'
       }}>{organization}</h6>
     </div>
   );

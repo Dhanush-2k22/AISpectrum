@@ -28,12 +28,11 @@ const SectionContainer = styled.section`
 
 const SectionTitle = styled.h2`
   font-family: ${typography.heading.fontFamily};
-  font-size: 2.5em;
-  font-weight: bold;
+  font-size: 3rem;
+  font-weight: 800;
   text-align: center;
-  margin-bottom: 60px;
-  color: ${colors.blue};
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+  color: #0d58a9;
   position: relative;
 
   &::after {
@@ -42,32 +41,28 @@ const SectionTitle = styled.h2`
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
+    width: 150px;
     height: 4px;
-    background: ${colors.yellow};
+    background: #D9A353;
     border-radius: 2px;
   }
 `;
 
 const CardGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 20px;
   margin-top: 20px;
 
   @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -84,7 +79,7 @@ const SpeakerCard = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  height: 450px;
+  height: 620px;
   width: 100%;
 
   &:hover {
@@ -94,48 +89,52 @@ const SpeakerCard = styled.div`
 `;
 
 const SpeakerImage = styled.img`
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid ${colors.white};
+  border: 4px solid ${colors.white};
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 `;
 
 const SpeakerName = styled.h3`
   font-family: ${typography.heading.fontFamily};
-  font-size: 1.4em;
+  font-size: 1.5em;
   margin: 0;
   color: ${colors.white};
   min-height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 10px;
+  padding: 0 15px;
 `;
 
 const SpeakerDesignation = styled.div`
   font-family: ${typography.body.fontFamily};
-  font-size: 1em;
+  font-size: 1.1em;
   line-height: 1.5;
   color: ${colors.white};
-  min-height: 120px;
+  min-height: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 10px;
+  padding: 0 15px;
 `;
 
 const SpeakerLink = styled.a`
   color: ${colors.yellow};
   text-decoration: none;
   font-family: ${typography.body.fontFamily};
-  font-size: 0.9em;
+  font-size: 1.1em;
   margin-top: auto;
-  transition: color 0.3s ease;
+  padding: 8px 20px;
+  border: 2px solid ${colors.yellow};
+  border-radius: 25px;
+  transition: all 0.3s ease;
 
   &:hover {
     color: ${colors.white};
+    background: ${colors.yellow};
   }
 `;
 
@@ -259,17 +258,6 @@ const SpeakerSection = () => {
       link: 'https://www.linkedin.com/in/dr-anjani-priyadarsini/?originalSubdomain=in',
     },
     {
-      name: 'Dr Arun Rajkumar',
-      designation: (
-        <>
-          Assistant Professor<br />
-          IIT Madras, India
-        </>
-      ),
-      iconUrl: arunImage,
-      link: 'https://www.cse.iitm.ac.in/profile.php?arg=MjA0MA==',
-    },
-    {
       name: 'Mr Mukund Bhoovaraghavan',
       designation: (
         <>
@@ -280,11 +268,23 @@ const SpeakerSection = () => {
       iconUrl: mukundImage,
       link: 'https://www.linkedin.com/in/mukundbhoovaraghavan/?originalSubdomain=in',
     },
+    {
+      name: 'Dr Arun Rajkumar',
+      designation: (
+        <>
+          Assistant Professor<br />
+          IIT Madras, India
+        </>
+      ),
+      iconUrl: arunImage,
+      link: 'https://www.cse.iitm.ac.in/profile.php?arg=MjA0MA==',
+    },
+    
   ];
 
   return (
     <SectionContainer>
-      <SectionTitle>KEYNOTE SPEAKERS AND PANELISTS</SectionTitle>
+      <SectionTitle>Keynote Speakers and Panelists</SectionTitle>
       <CardGrid>
         {speakers.map((speaker, index) => (
           <SpeakerCard key={index}>

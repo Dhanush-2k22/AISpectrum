@@ -39,24 +39,27 @@ const Sponsor = () => {
         {/* Section Title */}
         <h2
           style={{
-            color: "#0d58a9",
-            fontSize: "2rem",
-            marginBottom: "20px",
+            fontSize: '3rem',
+            fontWeight: '800',
+            color: '#0d58a9',
+            marginBottom: '3rem',
+            background: '#0d58a9',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            textAlign: 'center'
           }}
         >
           Sponsors
+          <div style={{
+            width: '150px',
+            height: '4px',
+            background: '#D9A353',
+            margin: '0 auto',
+            borderRadius: '2px',
+            marginTop: '15px'
+          }} />
         </h2>
-        <div
-            style={{
-              width: '100px',
-              height: '4px',
-              background: '#ffdd00',
-              margin: '0 auto',
-              borderRadius: '2px',
-              marginTop: '10px',
-              marginBottom: '30px',
-            }}
-          />
 
         {/* Sponsor Cards Grid */}
         <div
