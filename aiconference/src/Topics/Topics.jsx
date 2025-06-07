@@ -11,7 +11,7 @@ const cardStyle = {
 
 const frontBackSharedStyle = {
   background: '#0d58a9',
-  color: '#ffdd00',
+  color: '#D9A353',
   padding: '30px',
   borderRadius: '20px',
   border: '4.5px solid #BCC6CC',
@@ -63,7 +63,8 @@ const TopicCard = ({ title, description, topics, icon }) => {
             fontFamily: 'Libre Baskerville, Georgia, serif',
             fontSize: '1.5em',
             fontWeight: 'bold',
-            margin: '0 0 10px 0'
+            margin: '0 0 10px 0',
+            color: '#D9A353'
           }}>{title}</h3>
           <p style={{ fontSize: '0.9em', marginTop: '15px', opacity: 0.8 }}>Click to view topics</p>
         </div>

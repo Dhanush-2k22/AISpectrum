@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { colors, typography } from './styles/commonStyles';
+
 import yadatiImage from './assets/yadati.jpg';
 import srinivasImage from './assets/srinivas.png';
 import milliImage from './assets/mille.jpg';
@@ -19,11 +22,8 @@ const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
   padding: 40px 20px;
   width: 100%;
-  background: transparent;
 `;
 
 const SectionTitle = styled.h2`
@@ -54,9 +54,8 @@ const CardGrid = styled.div`
   gap: 40px;
   width: 100%;
   max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 20px;
   margin-top: 20px;
+  padding: 0 20px;
 
   @media (max-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
@@ -68,7 +67,7 @@ const CardGrid = styled.div`
 `;
 
 const SpeakerCard = styled.div`
-  background: linear-gradient(135deg, ${colors.blue}, #0a3d7a);
+  background: ${colors.blue};
   border-radius: 15px;
   padding: 30px 20px;
   color: ${colors.white};
@@ -95,12 +94,18 @@ const SpeakerImage = styled.img`
   object-fit: cover;
   border: 4px solid ${colors.white};
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  filter: saturate(75%);
+  transition: filter 0.5s ease;
+
+  ${SpeakerCard}:hover & {
+    filter: saturate(150%);
+  }
 `;
+
 
 const SpeakerName = styled.h3`
   font-family: ${typography.heading.fontFamily};
   font-size: 1.5em;
-  margin: 0;
   color: ${colors.white};
   min-height: 60px;
   display: flex;
@@ -122,31 +127,39 @@ const SpeakerDesignation = styled.div`
 `;
 
 const SpeakerLink = styled.a`
-  color: ${colors.yellow};
+  background: #D9A353;
+  color: ${colors.blue}; /* Or use white if you want light text */
   text-decoration: none;
   font-family: ${typography.body.fontFamily};
   font-size: 1.1em;
+  font-weight: bold;
   margin-top: auto;
-  padding: 8px 20px;
-  border: 2px solid ${colors.yellow};
-  border-radius: 25px;
-  transition: all 0.3s ease;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
 
   &:hover {
-    color: ${colors.white};
-    background: ${colors.yellow};
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(217, 163, 83, 0.5);
   }
 `;
 
+
+
 const SpeakerSection = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   const speakers = [
     {
-      name: 'Professor Yadati Narahari',
+      name: 'Prof. Yadati Narahari',
       designation: (
         <>
           Honorary Professor<br />
-          Department of Computer Science and Automation (CSA)<br />
-          IISC Bangalore
+          Department of CSA, IISC Bangalore
         </>
       ),
       iconUrl: yadatiImage,
@@ -156,10 +169,8 @@ const SpeakerSection = () => {
       name: 'Dr Srinivas Padmanabhuni',
       designation: (
         <>
-          AI Advisor, Marax AI, Inc.<br />
-          Faculty Member, IIIT Lucknow<br />
-          Co-Founder, testAIng.com<br />
-          Co-Founder, CityMandi.com
+          AI Advisor, Marax AI<br />
+          Faculty, IIIT Lucknow
         </>
       ),
       iconUrl: srinivasImage,
@@ -169,8 +180,7 @@ const SpeakerSection = () => {
       name: 'Dr Millie Pant',
       designation: (
         <>
-          Professor and Head<br />
-          Department of Applied Mathematics and Scientific Computing<br />
+          Professor & Head<br />
           IIT Roorkee
         </>
       ),
@@ -179,21 +189,16 @@ const SpeakerSection = () => {
     },
     {
       name: 'Dr L Venkata Subramaniam',
-      designation: (
-        <>
-          IBM Quantum India Leader<br />
-        </>
-      ),
+      designation: <>IBM Quantum India Leader</>,
       iconUrl: venkataImage,
       link: 'https://www.linkedin.com/in/lvsubramaniam/?originalSubdomain=in',
     },
     {
-      name: 'Professor Ferrante Neri',
+      name: 'Prof. Ferrante Neri',
       designation: (
         <>
-          Professor of Machine Learning and Artificial Intelligence<br />
-          Associate Dean (International) FEPS<br />
-          University of Surrey, UK
+          Professor of ML & AI<br />
+          University of Surrey
         </>
       ),
       iconUrl: ferranteImage,
@@ -204,8 +209,7 @@ const SpeakerSection = () => {
       designation: (
         <>
           Professor of Data Science<br />
-          School of Information and Physical Sciences<br />
-          University of Newcastle, Australia
+          University of Newcastle
         </>
       ),
       iconUrl: pabloImage,
@@ -215,8 +219,7 @@ const SpeakerSection = () => {
       name: 'Dr Sudha Ramalingam',
       designation: (
         <>
-          Professor and Head, Community Medicine<br />
-          Director - Research & Innovation<br />
+          Professor & Head<br />
           PSG IMSR, India
         </>
       ),
@@ -228,8 +231,7 @@ const SpeakerSection = () => {
       designation: (
         <>
           Assistant Professor<br />
-          Software Engineering Research Center<br />
-          IIIT Hyderabad, India
+          IIIT Hyderabad
         </>
       ),
       iconUrl: karthikVaidhyanathanImage,
@@ -239,8 +241,8 @@ const SpeakerSection = () => {
       name: 'Mr Srikanth Subramanian',
       designation: (
         <>
-          Vice President, Engineering<br />
-          Salesforce, Bengaluru
+          VP, Engineering<br />
+          Salesforce India
         </>
       ),
       iconUrl: srikanthImage,
@@ -250,7 +252,7 @@ const SpeakerSection = () => {
       name: 'Dr Anjani Priyadarsini',
       designation: (
         <>
-          Quantum Technologies Lead<br />
+          Quantum Lead<br />
           AWS India
         </>
       ),
@@ -261,8 +263,8 @@ const SpeakerSection = () => {
       name: 'Mr Mukund Bhoovaraghavan',
       designation: (
         <>
-          Principal Group Engineering Manager<br />
-          Microsoft Hyderabad, India
+          Principal Group Eng. Manager<br />
+          Microsoft India
         </>
       ),
       iconUrl: mukundImage,
@@ -273,13 +275,12 @@ const SpeakerSection = () => {
       designation: (
         <>
           Assistant Professor<br />
-          IIT Madras, India
+          IIT Madras
         </>
       ),
       iconUrl: arunImage,
       link: 'https://www.cse.iitm.ac.in/profile.php?arg=MjA0MA==',
     },
-    
   ];
 
   return (
@@ -287,7 +288,11 @@ const SpeakerSection = () => {
       <SectionTitle>Keynote Speakers and Panelists</SectionTitle>
       <CardGrid>
         {speakers.map((speaker, index) => (
-          <SpeakerCard key={index}>
+          <SpeakerCard
+            key={index}
+            data-aos={index % 3 === 0 ? 'fade-right' : index % 3 === 1 ? 'fade-up' : 'fade-left'}
+            data-aos-delay={`${index * 35}`}
+          >
             <SpeakerImage src={speaker.iconUrl} alt={speaker.name} />
             <SpeakerName>{speaker.name}</SpeakerName>
             <SpeakerDesignation>{speaker.designation}</SpeakerDesignation>

@@ -34,7 +34,7 @@ const TrackBox = ({ themeTitle, topics }) => {
           fontFamily: typography.heading.fontFamily,
           fontWeight: '800',
           letterSpacing: '0.5px',
-          color: colors.yellow,
+          color: '#D9A353',
           fontSize: '1.4em',
           minHeight: '3.6em',
           display: 'flex',

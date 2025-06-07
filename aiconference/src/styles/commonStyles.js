@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const colors = {
   white: 'rgb(255, 255, 255)',
   blue: '#0d58a9',
-  yellow: '#ffdd00',
+  yellow: '#D9A353',
 };
 
 export const typography = {

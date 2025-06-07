@@ -73,7 +73,15 @@ const Sponsor = () => {
           }}
         >
           {[1, 2, 3, 4].map((_, i) => (
-            <div key={i} className="sponsor-card" style={{ width: "200px",color:'#0d58a9' }}>
+            <div key={i} className="sponsor-card" style={{ 
+              width: "200px",
+              color: '#ffffff',
+              background: '#D9A353',
+              padding: '20px',
+              borderRadius: '10px',
+              textAlign: 'center',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+            }}>
               To be announced
             </div>
           ))}

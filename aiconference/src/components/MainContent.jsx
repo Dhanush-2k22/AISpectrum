@@ -91,7 +91,7 @@ const MainContent = () => {
             <h2 style={{ 
               margin: 0, 
               fontSize: '1.8rem', 
-              color: '#0D58A9', 
+              color: '#D9A353', 
               fontWeight: '700',
               textAlign: 'center'
             }}>
@@ -145,7 +145,7 @@ const MainContent = () => {
                 <div style={{ 
                   fontSize: '2rem', 
                   fontWeight: 'bold',
-                  color: '#ffdd00',
+                  color: '#D9A353',
                   marginBottom: '5px',
                   textShadow: '0 1px 2px rgba(0,0,0,0.1)'
                 }}>
@@ -153,7 +153,7 @@ const MainContent = () => {
                 </div>
                 <div style={{ 
                   fontSize: '0.9rem',
-                  color: '#ffdd00',
+                  color: '#D9A353',
                   fontWeight: '400',
                   opacity: '0.9'
                 }}>

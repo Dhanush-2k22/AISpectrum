@@ -5,7 +5,7 @@ import testimonialImage from './assets/5856.jpg';
 // Theme object
 const colors = {
   white: '#ffffff',
-  yellow: '#FFD700',
+  yellow: '#D9A353',
   blue: '#0d58a9'
 };
 
