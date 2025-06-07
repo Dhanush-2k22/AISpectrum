@@ -69,45 +69,64 @@ const CardGrid = styled.div`
 const SpeakerCard = styled.div`
   background: ${colors.blue};
   border-radius: 15px;
-  padding: 30px 20px;
+  padding: 15px;
   color: ${colors.white};
   text-align: center;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  height: 620px;
+  gap: 12px;
+  height: 500px;
   width: 100%;
+  filter: saturate(85%);
+  transform-origin: center center;
+  position: relative;
+  will-change: transform;
+  cursor: pointer;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    filter: saturate(100%);
+    z-index: 2;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 15px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
   }
 `;
 
 const SpeakerImage = styled.img`
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid ${colors.white};
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  filter: saturate(75%);
-  transition: filter 0.5s ease;
-
-  ${SpeakerCard}:hover & {
-    filter: saturate(150%);
-  }
 `;
-
 
 const SpeakerName = styled.h3`
   font-family: ${typography.heading.fontFamily};
-  font-size: 1.5em;
+  font-size: 1.3em;
   color: ${colors.white};
-  min-height: 60px;
+  min-height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,10 +135,10 @@ const SpeakerName = styled.h3`
 
 const SpeakerDesignation = styled.div`
   font-family: ${typography.body.fontFamily};
-  font-size: 1.1em;
-  line-height: 1.5;
+  font-size: 0.95em;
+  line-height: 1.3;
   color: ${colors.white};
-  min-height: 130px;
+  min-height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,8 +164,6 @@ const SpeakerLink = styled.a`
     box-shadow: 0 4px 15px rgba(217, 163, 83, 0.5);
   }
 `;
-
-
 
 const SpeakerSection = () => {
   useEffect(() => {

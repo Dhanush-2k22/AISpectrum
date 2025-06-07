@@ -7,10 +7,11 @@ const PaperSubmission = () => {
       background: 'rgb(255, 255, 255)',
       borderRadius: '20px',
       padding: '30px',
-      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
+      boxShadow: '0 10px 20px rgba(217, 163, 83, 0.2)',
       maxWidth: '70%',
       margin: '0 auto 60px',
-      color: '#475569'
+      color: '#475569',
+      border: '1px solid rgba(217, 163, 83, 0.2)'
     }}>
       <h2 style={{ 
         fontSize: '3rem',
@@ -34,49 +35,106 @@ const PaperSubmission = () => {
         }} />
       </h2>
       
-      <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem', listStyleType: 'disc', borderColor: 'white', marginTop: '20px' }}>
-        <li style={{ textAlign: 'left', marginBottom: '10px', borderColor: 'white' }}>
-          <strong>Submission Guidelines:</strong> We invite authors to submit original research papers, case studies, and review articles relevant to the conference themes. Submissions must adhere to the following guidelines:
+      <ul style={{ 
+        paddingLeft: '1.5rem', 
+        marginBottom: '1.5rem', 
+        listStyleType: 'disc', 
+        marginTop: '20px'
+      }}>
+        <li style={{ 
+          textAlign: 'left', 
+          marginBottom: '10px', 
+          color: '#0d58a9',
+          fontWeight: '500'
+        }}>
+          <strong style={{ color: '#D9A353' }}>Submission Guidelines:</strong> We invite authors to submit original research papers, case studies, and review articles relevant to the conference themes. Submissions must adhere to the following guidelines:
         </li>
-        <li style={{ textAlign: 'left', fontWeight: 'bold', marginBottom: '10px', borderColor: 'white' }}>
+        <li style={{ 
+          textAlign: 'left', 
+          fontWeight: 'bold', 
+          marginBottom: '10px', 
+          color: '#0d58a9',
+          padding: '8px',
+          backgroundColor: 'rgba(217, 163, 83, 0.1)',
+          borderRadius: '5px',
+          border: '1px solid rgba(217, 163, 83, 0.3)'
+        }}>
           Accepted full papers [12–15 pages]
         </li>
-        <li style={{ textAlign: 'left', fontWeight: 'bold', marginBottom: '10px', borderColor: 'white' }}>
+        <li style={{ 
+          textAlign: 'left', 
+          fontWeight: 'bold', 
+          marginBottom: '10px', 
+          color: '#0d58a9',
+          padding: '8px',
+          backgroundColor: 'rgba(217, 163, 83, 0.1)',
+          borderRadius: '5px',
+          border: '1px solid rgba(217, 163, 83, 0.3)'
+        }}>
           Accepted short papers [6–8 pages]
         </li>
-        <li style={{ textAlign: 'left', marginBottom: '10px', borderColor: 'white' }}>
+        <li style={{ 
+          textAlign: 'left', 
+          marginBottom: '10px', 
+          color: '#0d58a9'
+        }}>
           Selected registered papers will be published in Scopus indexed proceedings / Journals.
         </li>
-        <li style={{ textAlign: 'left', marginBottom: '10px', borderColor: 'white' }}>
+        <li style={{ 
+          textAlign: 'left', 
+          marginBottom: '10px', 
+          color: '#0d58a9'
+        }}>
           All the submitted manuscripts will be sent for peer review and the corresponding author will be notified the outcome of the review process.
         </li>
-        <li style={{ textAlign: 'left', marginBottom: '10px', borderColor: 'white' }}>
+        <li style={{ 
+          textAlign: 'left', 
+          marginBottom: '10px', 
+          color: '#0d58a9',
+          padding: '12px',
+          backgroundColor: 'rgba(217, 163, 83, 0.1)',
+          borderRadius: '5px',
+          border: '1px solid rgba(217, 163, 83, 0.3)'
+        }}>
           Submitted research work must be original in content amd free from plagiarism. Authors are requested to submit a plagiarism report using <br />iThenticate / Turnitin. Plagiarism should be less than 20% to qualify for the paper to be reviewed.
         </li>
       </ul>
 
-      <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+      <div style={{ textAlign: 'center', marginTop: '30px' }}>
         <a
           href="https://cmt3.research.microsoft.com/AIS2025/Submission/Index"
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
-            padding: '0.75rem 1.5rem',
-            backgroundColor: '#0d58a9',
+            backgroundColor: '#D9A353',
             color: 'white',
-            fontWeight: '500',
-            borderRadius: '0.5rem',
-            textDecoration: 'none',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-            display: 'inline-block',
-            transition: 'all 0.3s ease',
+            padding: '12px 30px',
+            fontSize: '1.1rem',
+            fontWeight: '600',
+            border: 'none',
+            borderRadius: '5px',
             cursor: 'pointer',
+            transition: 'all 0.3s ease',
+            boxShadow: '0 4px 6px rgba(217, 163, 83, 0.2)',
+            textDecoration: 'none',
+            display: 'inline-block'
           }}
-          onMouseOver={(e) => e.target.style.backgroundColor = '#0a3d7a'}
-          onMouseOut={(e) => e.target.style.backgroundColor = '#0d58a9'}
+          onMouseEnter={(e) => {
+            e.target.style.backgroundColor = '#c08a42';
+            e.target.style.transform = 'translateY(-2px)';
+            e.target.style.boxShadow = '0 6px 8px rgba(217, 163, 83, 0.3)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.backgroundColor = '#D9A353';
+            e.target.style.transform = 'translateY(0)';
+            e.target.style.boxShadow = '0 4px 6px rgba(217, 163, 83, 0.2)';
+          }}
         >
-          Submit Your Paper
+          Submit Paper
         </a>
-        <br /><br />
-        The Microsoft CMT service was used for managing the peer-reviewing process for this conference. <br />This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+        <p style={{ marginTop: '15px', color: '#0d58a9', fontSize: '0.9rem' }}>
+          The Microsoft CMT service is used for managing the peer-reviewing process for this conference.
+        </p>
       </div>
     </div>
   );
