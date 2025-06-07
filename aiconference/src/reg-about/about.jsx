@@ -63,17 +63,18 @@ const About = () => {
             borderRadius: '24px',
             padding: '3rem',
             marginBottom: '3rem',
-            boxShadow: '0 4px 12px rgba(13, 88, 169, 0.5) ',
+            boxShadow: '0 4px 12px rgba(217, 163, 83, 0.2)',
             transform: 'translateY(0)',
             transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+            border: '1px solid rgba(217, 163, 83, 0.2)'
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-8px)';
-            e.currentTarget.style.boxShadow = '0 4px 12px rgba(13, 88, 169, 0.5)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(217, 163, 83, 0.2)';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 4px 12px rgba(13, 88, 169, 0.5) ';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(217, 163, 83, 0.2) ';
           }}
         >
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
@@ -126,9 +127,10 @@ const About = () => {
                 backgroundColor: '#f8fafc',
                 borderRadius: '20px',
                 padding: '1.5rem',
-                boxShadow: '0 4px 12px rgba(13, 88, 169, 0.5) ',
+                boxShadow: '0 4px 12px rgba(217, 163, 83, 0.2)',
                 transform: 'translateY(0)',
                 transition: 'transform 0.3s ease',
+                border: '1px solid rgba(217, 163, 83, 0.2)'
               }}
               onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
               onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
@@ -228,17 +230,18 @@ const About = () => {
             borderRadius: '24px',
             padding: '3rem',
             marginBottom: '3rem',
-            boxShadow: '0 4px 12px rgba(13, 88, 169, 0.5)',
+            boxShadow: '0 4px 12px rgba(217, 163, 83, 0.2)',
             transform: 'translateY(0)',
             transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+            border: '1px solid rgba(217, 163, 83, 0.2)'
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-8px)';
-            e.currentTarget.style.boxShadow = '0 4px 12px rgba(13, 88, 169, 0.5)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(217, 163, 83, 0.2)';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 4px 12px rgba(13, 88, 169, 0.5)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(217, 163, 83, 0.2)';
           }}
         >
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
@@ -291,9 +294,10 @@ const About = () => {
                 backgroundColor: '#f8fafc',
                 borderRadius: '20px',
                 padding: '1.5rem',
-                boxShadow: '0 4px 12px rgba(13, 88, 169, 0.5) ',
+                boxShadow: '0 4px 12px rgba(217, 163, 83, 0.2)',
                 transform: 'translateY(0)',
                 transition: 'transform 0.3s ease',
+                border: '1px solid rgba(217, 163, 83, 0.2)'
               }}
               onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
               onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
@@ -369,17 +373,18 @@ const About = () => {
             borderRadius: '24px',
             padding: '3rem',
             marginBottom: '3rem',
-            boxShadow: '0 4px 12px rgba(13, 88, 169, 0.5)',
+            boxShadow: '0 4px 12px rgba(217, 163, 83, 0.2)',
             transform: 'translateY(0)',
             transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+            border: '1px solid rgba(217, 163, 83, 0.2)'
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-8px)';
-            e.currentTarget.style.boxShadow = '0 4px 12px rgba(13, 88, 169, 0.5)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(217, 163, 83, 0.2)';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 4px 12px rgba(13, 88, 169, 0.5)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(217, 163, 83, 0.2)';
           }}
         >
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
@@ -432,9 +437,10 @@ const About = () => {
                 backgroundColor: '#f8fafc',
                 borderRadius: '20px',
                 padding: '1.5rem',
-                boxShadow: '0 10px 25px -5px rgba(168, 85, 247, 0.1), 0 10px 10px -5px rgba(168, 85, 247, 0.04)',
+                boxShadow: '0 4px 12px rgba(217, 163, 83, 0.2)',
                 transform: 'translateY(0)',
                 transition: 'transform 0.3s ease',
+                border: '1px solid rgba(217, 163, 83, 0.2)'
               }}
               onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
               onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
@@ -501,17 +507,18 @@ const About = () => {
             borderRadius: '24px',
             padding: '3rem',
             marginBottom: '3rem',
-            boxShadow: '0 4px 12px rgba(13, 88, 169, 0.5)',
+            boxShadow: '0 4px 12px rgba(217, 163, 83, 0.2)',
             transform: 'translateY(0)',
             transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+            border: '1px solid rgba(217, 163, 83, 0.2)'
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-8px)';
-            e.currentTarget.style.boxShadow = '0 4px 12px rgba(13, 88, 169, 0.5)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(217, 163, 83, 0.2)';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 4px 12px rgba(13, 88, 169, 0.5)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(217, 163, 83, 0.2)';
           }}
         >
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
@@ -549,11 +556,11 @@ const About = () => {
 
           <div
             style={{
-              backgroundColor: '#fffbeb',
+              backgroundColor: 'rgba(217, 163, 83, 0.05)',
               borderRadius: '16px',
               padding: '2.5rem',
-              border: '1px solid #fed7aa',
-              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+              border: '1px solid rgba(217, 163, 83, 0.2)',
+              boxShadow: '0 4px 12px rgba(217, 163, 83, 0.1)',
             }}
           >
             <p
