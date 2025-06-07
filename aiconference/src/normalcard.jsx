@@ -1,8 +1,8 @@
 import React from 'react';
 
-const NormalCard = ({ name, designation, organization, iconUrl, details, link }) => {
+const NormalCard = ({ name, designation, organization, iconUrl, details, link, index }) => {
   return (
-    <div style={{
+    <div data-aos="fade-up" data-aos-delay={index * 100} style={{
       background: '#0d58a9',
       color: '#FFFFFF',
       borderRadius: '14px',
@@ -54,7 +54,7 @@ const NormalCard = ({ name, designation, organization, iconUrl, details, link })
         fontFamily: '"Playfair Display", serif',
         fontWeight: '700',
         letterSpacing: '0.5px',
-        color: '#FFD700',
+        color: '#D9A353',
         fontSize: '1.8em'
       }}>{name}</h2>
       <h5 style={{ 
@@ -94,7 +94,7 @@ const NormalCard = ({ name, designation, organization, iconUrl, details, link })
 
 const NormalCardGrid = ({ cards, style }) => {
   return (
-    <div style={{
+    <div data-aos="fade-up" style={{
       display: 'grid',
       gridTemplateColumns: 'repeat(4, 1fr)',
       gap: '20px',
@@ -107,6 +107,7 @@ const NormalCardGrid = ({ cards, style }) => {
       {cards.map((card, index) => (
         <NormalCard
           key={index}
+          index={index}
           name={card.name}
           designation={card.designation}
           organization={card.organization}

@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import ProfileCard from './profilecard'; 
 import NormalCardGrid from './normalcard';
 import { colors } from './styles/commonStyles';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // Import images from committee file
 import TrusteeImage from './assets/trustee.jpg';
@@ -79,6 +81,7 @@ const TempComponent = () => {
   useEffect(() => {
     document.body.style.backgroundColor = '#FFFFFF';
     document.body.style.margin = '0';
+    AOS.init({ duration: 1000, once: true });
     
     // Cleanup function to reset styles when component unmounts
     return () => {
@@ -97,28 +100,36 @@ const TempComponent = () => {
       width: '100%',
       boxSizing: 'border-box'
     }}>
-      <h1 style={{ 
+      <h1 data-aos="fade-up" style={{ 
         textAlign: 'center', 
         marginBottom: '40px',
         fontSize: 'calc(1.8rem + 1vw)',
-        color: colors.blue,
+        color: '#D9A353',
         fontFamily: '"Playfair Display", serif',
         fontWeight: '700',
-        letterSpacing: '0.5px'
+        letterSpacing: '0.5px',
+        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)'
       }}>ORGANIZING COMMITTEE</h1>
 
-      <h2 style={{ 
+      <h2 data-aos="fade-up" style={{ 
         textAlign: 'center', 
         marginBottom: '25px',
         fontSize: 'calc(1.2rem + 0.5vw)',
-        color: colors.blue
+        color: '#D9A353',
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '600',
+        letterSpacing: '0.5px'
       }}>PATRON</h2>
-      <div style={{ 
+      <div data-aos="fade-up" style={{ 
         marginBottom: '40px', 
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: '30px'
+        gap: '30px',
+        background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
+        padding: '30px',
+        borderRadius: '15px',
+        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.1)'
       }}>
         <ProfileCard
           name="Shri L Gopalakrishnan"
@@ -128,18 +139,25 @@ const TempComponent = () => {
         />
       </div>
       
-      <h2 style={{ 
+      <h2 data-aos="fade-up" style={{ 
         textAlign: 'center', 
         marginBottom: '25px',
         fontSize: 'calc(1.2rem + 0.5vw)',
-        color: colors.blue
+        color: '#D9A353',
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '600',
+        letterSpacing: '0.5px'
       }}>CO - PATRON</h2>
-      <div style={{ 
+      <div data-aos="fade-up" style={{ 
         marginBottom: '40px', 
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: '30px'
+        gap: '30px',
+        background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
+        padding: '30px',
+        borderRadius: '15px',
+        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.1)'
       }}>
         <ProfileCard
           name="Dr K Prakasan"
@@ -149,24 +167,30 @@ const TempComponent = () => {
         />
       </div>
       
-      <h2 style={{ 
+      <h2 data-aos="fade-up" style={{ 
         textAlign: 'center', 
         marginBottom: '25px',
         fontSize: 'calc(1.2rem + 0.5vw)',
-        color: colors.blue
+        color: '#D9A353',
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '600',
+        letterSpacing: '0.5px'
       }}>GENERAL CHAIRS</h2>
-      <div style={{ 
+      <div data-aos="fade-up" style={{ 
         display: 'grid',
         gridTemplateColumns: 'repeat(4, minmax(250px, 1fr))',
         gap: '30px',
         maxWidth: '1400px',
         margin: '0 auto 40px',
-        padding: '0 20px',
+        padding: '30px',
         width: '100%',
         boxSizing: 'border-box',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
+        borderRadius: '15px',
+        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.1)'
       }}>
-        <div style={{ 
+        <div data-aos="fade-up" data-aos-delay="100" style={{ 
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -186,7 +210,7 @@ const TempComponent = () => {
           />
         </div>
         
-        <div style={{ 
+        <div data-aos="fade-up" data-aos-delay="200" style={{ 
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -207,23 +231,29 @@ const TempComponent = () => {
         </div>
       </div>
       
-      <h2 style={{ 
+      <h2 data-aos="fade-up" style={{ 
         textAlign: 'center', 
         marginBottom: '25px',
         fontSize: 'calc(1.2rem + 0.5vw)',
-        color: colors.blue
+        color: '#D9A353',
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '600',
+        letterSpacing: '0.5px'
       }}>ORGANIZING CHAIRS</h2>
-      <div style={{ 
+      <div data-aos="fade-up" style={{ 
         display: 'grid',
         gridTemplateColumns: 'repeat(4, minmax(250px, 1fr))',
         gap: '30px',
         maxWidth: '1400px',
         margin: '0 auto 40px',
-        padding: '0 20px',
+        padding: '30px',
         width: '100%',
-        boxSizing: 'border-box'
+        boxSizing: 'border-box',
+        background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
+        borderRadius: '15px',
+        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.1)'
       }}>
-        <div style={{ 
+        <div data-aos="fade-up" style={{ 
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -238,7 +268,7 @@ const TempComponent = () => {
           />
         </div>
         
-        <div style={{ 
+        <div data-aos="fade-up" style={{ 
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -253,7 +283,7 @@ const TempComponent = () => {
           />
         </div>
         
-        <div style={{ 
+        <div data-aos="fade-up" style={{ 
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -268,7 +298,7 @@ const TempComponent = () => {
           />
         </div>
         
-        <div style={{ 
+        <div data-aos="fade-up" style={{ 
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -284,18 +314,25 @@ const TempComponent = () => {
         </div>
       </div>
       
-      <h2 style={{ 
+      <h2 data-aos="fade-up" style={{ 
         textAlign: 'center', 
         marginBottom: '25px',
         fontSize: 'calc(1.2rem + 0.5vw)',
-        color: colors.blue
+        color: '#D9A353',
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '600',
+        letterSpacing: '0.5px'
       }}>ORGANIZING CO - CHAIR</h2>
-      <div style={{ 
+      <div data-aos="fade-up" style={{ 
         marginBottom: '40px', 
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: '30px'
+        gap: '30px',
+        background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
+        padding: '30px',
+        borderRadius: '15px',
+        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.1)'
       }}>
         <ProfileCard
           name="Dr Ferrante Neri"
@@ -305,23 +342,29 @@ const TempComponent = () => {
         />
       </div>
       
-      <h2 style={{ 
+      <h2 data-aos="fade-up" style={{ 
         textAlign: 'center', 
         marginBottom: '25px',
         fontSize: 'calc(1.2rem + 0.5vw)',
-        color: colors.blue
+        color: '#D9A353',
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '600',
+        letterSpacing: '0.5px'
       }}>SCIENTIFIC COMMITTEE CHAIRS</h2>
-      <div style={{ 
+      <div data-aos="fade-up" style={{ 
         display: 'grid',
         gridTemplateColumns: 'repeat(4, minmax(250px, 1fr))',
         gap: '30px',
         maxWidth: '1400px',
         margin: '0 auto 40px',
-        padding: '0 20px',
+        padding: '30px',
         width: '100%',
-        boxSizing: 'border-box'
+        boxSizing: 'border-box',
+        background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
+        borderRadius: '15px',
+        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.1)'
       }}>
-        <div style={{ 
+        <div data-aos="fade-up" style={{ 
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -336,7 +379,7 @@ const TempComponent = () => {
           />
         </div>
         
-        <div style={{ 
+        <div data-aos="fade-up" style={{ 
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -356,7 +399,7 @@ const TempComponent = () => {
           />
         </div>
         
-        <div style={{ 
+        <div data-aos="fade-up" style={{ 
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -371,7 +414,7 @@ const TempComponent = () => {
           />
         </div>
         
-        <div style={{ 
+        <div data-aos="fade-up" style={{ 
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -387,18 +430,21 @@ const TempComponent = () => {
         </div>
       </div>
 
-      <div style={{ 
+      <div data-aos="fade-up" style={{ 
         display: 'grid',
         gridTemplateColumns: 'repeat(4, minmax(250px, 1fr))',
         gap: '30px',
         maxWidth: '1400px',
         margin: '0 auto 40px',
-        padding: '0 20px',
+        padding: '30px',
         width: '100%',
         boxSizing: 'border-box',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
+        borderRadius: '15px',
+        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.1)'
       }}>
-        <div style={{ 
+        <div data-aos="fade-up" style={{ 
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -414,7 +460,7 @@ const TempComponent = () => {
           />
         </div>
         
-        <div style={{ 
+        <div data-aos="fade-up" style={{ 
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -431,211 +477,220 @@ const TempComponent = () => {
         </div>
       </div>
       
-      <h1 style={{ 
+      <h1 data-aos="fade-up" style={{ 
         textAlign: 'center', 
         marginBottom: '40px',
         fontSize: 'calc(1.8rem + 1vw)',
-        color: colors.blue,
+        color: '#D9A353',
         fontFamily: '"Playfair Display", serif',
         fontWeight: '700',
-        letterSpacing: '0.5px'
+        letterSpacing: '0.5px',
+        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)'
       }}>ADVISORY COMMITTEE</h1>
       <div style={{ 
         marginBottom: '40px', 
-        background: '#0d58a9',
-        borderRadius: '20px',
-        padding: '20px 15px',
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
+        background: 'linear-gradient(145deg, #0d58a9 0%, #0a4a8f 100%)',
+        padding: '40px 20px',
+        borderRadius: '15px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: '30px'
+        gap: '30px',
+        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.2)'
       }}>
         <h2 style={{ 
           textAlign: 'center', 
           marginBottom: '25px',
           fontSize: 'calc(1.2rem + 0.5vw)',
-          color: '#FFEB3B',
+          color: '#D9A353',
           fontFamily: '"Playfair Display", serif',
-          fontWeight: '700',
+          fontWeight: '600',
           letterSpacing: '0.5px',
-          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)'
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)'
         }}>NATIONAL ADVISORY COMMITTEE</h2>
         
         <div style={{
           width: '100%',
           maxWidth: '800px',
           margin: '0 auto',
-          border: '2px solid rgba(255, 255, 255, 0.3)',
+          padding: '20px',
           borderRadius: '10px',
-          overflow: 'auto',
-          backgroundColor: 'rgba(0, 0, 0, 0.2)'
+          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          backdropFilter: 'blur(10px)',
+          border: '1px solid rgba(217, 163, 83, 0.2)'
         }}>
           <table style={{
             width: '100%',
             minWidth: '600px',
             borderCollapse: 'collapse',
-            color: 'white',
-            textAlign: 'left'
+            color: '#ffffff'
           }}>
             <tbody>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ 
+                  padding: '12px 20px', 
+                  borderBottom: '1px solid rgba(217, 163, 83, 0.2)',
+                  transition: 'all 0.3s ease'
+                }}>
                   Dr Albert Sunny
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ 
+                  padding: '12px 20px', 
+                  borderBottom: '1px solid rgba(217, 163, 83, 0.2)',
+                  transition: 'all 0.3s ease'
+                }}>
                   Indian Institute of Science Bangalore, Karnataka
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Badri Narayan Subudhi
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Indian Institute of Technology Jammu , Jammu & Kashmir
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Vineeth N Balasubramaniam
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Indian Institute of Technology Hyderabad 
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Siva Kumar K
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Indian Institute of Technology Hyderabad 
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Sonali Agarwal
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Indian Institute of Information Technology Allahabad
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Vijayakumar Krishnasamy
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Indian Institute of Information Technology Design and Manufacturing Kancheepuram
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr R Dhanalakshmi
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Indian Institute of Information Technology, Trichy
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Shelly Sachdeva
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   National Institute of Technology, Delhi
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Fazal A Talukdar
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   National Institute of Technology Silchar, Assam
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Santhi Thilagam
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   National Institute of Technology  Karnataka ,Surathkal
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Surendran B
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   National Institute of Technology Puducherry, Karaikal
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr S Nickolas
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   National Institute of Technology Trichy 
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr V Govindasamy
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Pondicherry Engineering College, Puducherry
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Amit Konar
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Jadavpur University, Kolkata
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr C S Saravana Kumar
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Bosch Global Software Technologies Private Limited, Coimbatore
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Mr Siddarth Narayanan
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Office of Principal Scientific Adviser, Government of India
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Ms Sudha Velusamy
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Samsung R&D Institute, Bangalore
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Mr Mukund Bhoovaraghavan
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Microsoft, Hyderabad
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Mr Thiyagarajan Subramani
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Continental Technical Center, India
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Mr Srikanth Subramaniam
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Salesforce , Banglore
                 </td>
               </tr>
@@ -647,131 +702,131 @@ const TempComponent = () => {
           textAlign: 'center', 
           marginBottom: '25px',
           fontSize: 'calc(1.2rem + 0.5vw)',
-          color: '#FFEB3B',
+          color: '#D9A353',
           fontFamily: '"Playfair Display", serif',
-          fontWeight: '700',
+          fontWeight: '600',
           letterSpacing: '0.5px',
-          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)'
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)'
         }}>INTERNATIONAL ADVISORY COMMITTEE</h2>
         
         <div style={{
           width: '100%',
           maxWidth: '800px',
           margin: '0 auto',
-          border: '2px solid rgba(255, 255, 255, 0.3)',
+          padding: '20px',
           borderRadius: '10px',
-          overflow: 'auto',
-          backgroundColor: 'rgba(0, 0, 0, 0.2)'
+          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          backdropFilter: 'blur(10px)',
+          border: '1px solid rgba(217, 163, 83, 0.2)'
         }}>
           <table style={{
             width: '100%',
             minWidth: '600px',
             borderCollapse: 'collapse',
-            color: 'white',
-            textAlign: 'left'
+            color: '#ffffff'
           }}>
             <tbody>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Chunting Chris Mi
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   San Diego State University, USA
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Dong-Soo Kwon
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   KAIST, South Korea
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Vikram Kapila
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   NYU Tandon School of Engineering, USA
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Xiao-Zhi Gao
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   University of Eastern Finland, Finland
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Yuval Shavitt
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Tel Aviv University, Israel
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Richard Voyles
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Purdue University, USA
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Jai Govind Singh
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Asian Institute of Technology, Bangkok
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Vigna Kumaran Ramachandaramurthy
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Universiti Tenaga Nasional, Malaysia
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Ahmed Zobaa
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Brunel University, London, UK
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Tan Wei Hong
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Universiti Malaysia Perlis, Malaysia
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr Barath Narayanan
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   University of Dayton Research Institute, USA
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Dr M Murugappan
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Kuwait College of Science and Technology , Kuwait
                 </td>
               </tr>
               <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   Ms Abinaya Nagarajan
                 </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
                   JP Morgan Chase & Co., Singapore
                 </td>
               </tr>

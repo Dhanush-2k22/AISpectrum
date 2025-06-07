@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import ProfileCard from './profilecard'; 
 import NormalCardGrid from './normalcard';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import TrusteeImage from './assets/trustee.jpg';
 import PrakasanImage from './assets/Prakasan.png';
@@ -74,6 +76,7 @@ function Comitte() {
   useEffect(() => {
     document.body.style.backgroundColor = '#1E3A8A'; 
     document.body.style.margin = '0';
+    AOS.init({ duration: 1000, once: true });
 
     return () => {
       document.body.style.backgroundColor = ''; 
@@ -674,7 +677,7 @@ const panelist = [
     }}>
       <div className="committee-background"></div>
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-      <h2 style={{
+      <h2 data-aos="fade-up" style={{
         textAlign: 'center',
         fontSize: '2.5em',
         marginBottom: '40px',
@@ -685,7 +688,7 @@ const panelist = [
       }}>ORGANIZING COMMITTEE</h2>
 
       {/* Chief Patron and Patron */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '100px', flexWrap: 'wrap', marginBottom: '60px' }}>
+      <div data-aos="fade-up" style={{ display: 'flex', justifyContent: 'center', gap: '100px', flexWrap: 'wrap', marginBottom: '60px' }}>
         <div>
           <h2 style={{ textAlign: 'center' }}>CHIEF PATRON</h2>
           <ProfileCard
@@ -700,7 +703,7 @@ const panelist = [
           />
         </div>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '100px', flexWrap: 'wrap', marginBottom: '60px' }}>
+      <div data-aos="fade-up" style={{ display: 'flex', justifyContent: 'center', gap: '100px', flexWrap: 'wrap', marginBottom: '60px' }}>
         <div>
           <h2 style={{ textAlign: 'center'}}>PATRON</h2>
           <ProfileCard
@@ -939,7 +942,7 @@ const panelist = [
     <br />
 
       {/* Main Section Tabs */}
-      <div style={{
+      <div data-aos="fade-up" style={{
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'center',
@@ -1149,7 +1152,7 @@ const panelist = [
       </div>
 
       {/* Render Main Section */}
-      <div style={{
+      <div data-aos="fade-up" style={{
         background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
         borderRadius: '20px',
         padding: '30px',

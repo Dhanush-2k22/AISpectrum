@@ -21,9 +21,17 @@ const ProfileCard = ({ name, designation, organization, photoUrl }) => {
     }}
     onMouseEnter={(e) => {
       e.currentTarget.style.transform = 'translateY(-5px)';
+      const img = e.currentTarget.querySelector('img');
+      if (img) {
+        img.style.filter = 'saturate(150%)';
+      }
     }}
     onMouseLeave={(e) => {
       e.currentTarget.style.transform = 'translateY(0)';
+      const img = e.currentTarget.querySelector('img');
+      if (img) {
+        img.style.filter = 'saturate(75%)';
+      }
     }}
     >
       {photoUrl && (
@@ -44,7 +52,9 @@ const ProfileCard = ({ name, designation, organization, photoUrl }) => {
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              borderRadius: '50%'
+              borderRadius: '50%',
+              filter: 'saturate(75%)',
+              transition: 'filter 0.5s ease'
             }}
           />
         </div>
@@ -54,7 +64,7 @@ const ProfileCard = ({ name, designation, organization, photoUrl }) => {
         fontFamily: '"Playfair Display", serif',
         fontWeight: '700',
         letterSpacing: '0.5px',
-        color: '#FFD700',
+        color: '#D9A353',
         fontSize: '1.8em'
       }}>{name}</h2>
       <h5 style={{ 
