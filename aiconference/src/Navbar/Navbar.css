@@ -82,7 +82,7 @@
     top: 60px;          /* below navbar */
     left: 0;
     height: 80vh;       /* half vertical height */
-    width: 50vw;
+    width: 85vw;        /* increased from 50vw to 85vw */
     padding-top: 10px;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
     border-radius: 0 6px 6px 0;
