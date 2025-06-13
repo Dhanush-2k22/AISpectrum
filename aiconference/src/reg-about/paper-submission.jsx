@@ -51,25 +51,17 @@ const PaperSubmission = () => {
         </li>
         <li style={{ 
           textAlign: 'left', 
-          fontWeight: 'bold', 
           marginBottom: '10px', 
           color: '#0d58a9',
           padding: '8px',
-          backgroundColor: 'rgba(217, 163, 83, 0.1)',
-          borderRadius: '5px',
-          border: '1px solid rgba(217, 163, 83, 0.3)'
         }}>
           Accepted full papers [12–15 pages]
         </li>
         <li style={{ 
-          textAlign: 'left', 
-          fontWeight: 'bold', 
+          textAlign: 'left',         
           marginBottom: '10px', 
           color: '#0d58a9',
           padding: '8px',
-          backgroundColor: 'rgba(217, 163, 83, 0.1)',
-          borderRadius: '5px',
-          border: '1px solid rgba(217, 163, 83, 0.3)'
         }}>
           Accepted short papers [6–8 pages]
         </li>
@@ -92,10 +84,7 @@ const PaperSubmission = () => {
           marginBottom: '10px', 
           color: '#0d58a9',
           padding: '12px',
-          backgroundColor: 'rgba(217, 163, 83, 0.1)',
-          borderRadius: '5px',
-          border: '1px solid rgba(217, 163, 83, 0.3)'
-        }}>
+         }}>
           Submitted research work must be original in content amd free from plagiarism. Authors are requested to submit a plagiarism report using <br />iThenticate / Turnitin. Plagiarism should be less than 20% to qualify for the paper to be reviewed.
         </li>
       </ul>

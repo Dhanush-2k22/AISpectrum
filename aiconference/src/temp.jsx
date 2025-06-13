@@ -161,8 +161,7 @@ const TempComponent = () => {
       }}>
         <ProfileCard
           name="Dr K Prakasan"
-          designation="Principal"
-          organization="PSG College of Technology"
+          designation="Principal"    
           photoUrl={PrakasanImage}
         />
       </div>
@@ -204,8 +203,7 @@ const TempComponent = () => {
               <>
                 Professor<br />Department of Computer Science and Engineering<br />Director, PSG - AI Consortium
               </>
-            }
-            organization="PSG College of Technology"
+            }     
             photoUrl={Dr_GRK}
           />
         </div>
@@ -225,7 +223,6 @@ const TempComponent = () => {
                 Professor<br />Department of Information Technology<br />IT Infrastructure and Networking -Technical Lead, PSG - AI Consortium
               </>
             }
-            organization="PSG College of Technology"
             photoUrl={VinothImage}
           />
         </div>
@@ -263,7 +260,7 @@ const TempComponent = () => {
           <ProfileCard
             name="Dr D Indumathi"
             designation="Associate Professor"
-            organization="Department of Computer Science and Engineering, PSG College of Technology"
+            organization="Department of Computer Science and Engineering"
             photoUrl={IndhumathiImage}
           />
         </div>
@@ -278,7 +275,7 @@ const TempComponent = () => {
           <ProfileCard
             name="Dr R Rekha"
             designation="Associate Professor"
-            organization="Department of Information Technology, PSG College of Technology"
+            organization="Department of Information Technology"
             photoUrl={Dr_Rekha}
           />
         </div>
@@ -293,7 +290,7 @@ const TempComponent = () => {
           <ProfileCard
             name="Dr K Sathiyapriya"
             designation="Associate Professor"
-            organization="Department of Computer Science and Engineering, PSG College of Technology"
+            organization="Department of Computer Science and Engineering"
             photoUrl={SathiyapriyaImage}
           />
         </div>
@@ -308,7 +305,7 @@ const TempComponent = () => {
           <ProfileCard
             name="Dr R Senthil Prabha"
             designation="Associate Professor"
-            organization="Department of Information Technology, PSG College of Technology"
+            organization="Department of Information Technology"
             photoUrl={SenthilPrabhaImage}
           />
         </div>
@@ -498,9 +495,154 @@ const TempComponent = () => {
         gap: '30px',
         boxShadow: '0 4px 15px rgba(217, 163, 83, 0.2)'
       }}>
+
+         <h2 style={{ 
+          textAlign: 'center', 
+          marginBottom: '5px',
+          fontSize: 'calc(1.2rem + 0.5vw)',
+          color: '#D9A353',
+          fontFamily: '"Playfair Display", serif',
+          fontWeight: '600',
+          letterSpacing: '0.5px',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)'
+        }}>INTERNATIONAL ADVISORY COMMITTEE</h2>
+        
+        <div style={{
+          width: '100%',
+          maxWidth: '800px',
+          margin: '0 auto',
+          padding: '20px',
+          borderRadius: '10px',
+          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          backdropFilter: 'blur(10px)',
+          textAlign:'left',
+          border: '1px solid rgba(217, 163, 83, 0.2)'
+        }}>
+          <table style={{
+            width: '100%',
+            minWidth: '600px',
+            borderCollapse: 'collapse',
+            color: '#ffffff'
+          }}>
+            <tbody>
+              <tr>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Dr Chunting Chris Mi
+                </td>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  San Diego State University, USA
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Dr Dong-Soo Kwon
+                </td>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  KAIST, South Korea
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Dr Vikram Kapila
+                </td>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  NYU Tandon School of Engineering, USA
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Dr Xiao-Zhi Gao
+                </td>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  University of Eastern Finland, Finland
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Dr Yuval Shavitt
+                </td>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Tel Aviv University, Israel
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Dr Richard Voyles
+                </td>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Purdue University, USA
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Dr Jai Govind Singh
+                </td>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Asian Institute of Technology, Bangkok
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Dr Vigna Kumaran Ramachandaramurthy
+                </td>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Universiti Tenaga Nasional, Malaysia
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Dr Ahmed Zobaa
+                </td>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Brunel University, London, UK
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Dr Tan Wei Hong
+                </td>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Universiti Malaysia Perlis, Malaysia
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Dr Barath Narayanan
+                </td>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  University of Dayton Research Institute, USA
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Dr M Murugappan
+                </td>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Kuwait College of Science and Technology , Kuwait
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  Ms Abinaya Nagarajan
+                </td>
+                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
+                  JP Morgan Chase & Co., Singapore
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: '12px 20px' }}>
+                  Dr P N Suganthan
+                </td>
+                <td style={{ padding: '12px 20px' }}>
+                  Qatar University , Qatar
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <h2 style={{ 
           textAlign: 'center', 
-          marginBottom: '25px',
+          marginBottom: '3px',
           fontSize: 'calc(1.2rem + 0.5vw)',
           color: '#D9A353',
           fontFamily: '"Playfair Display", serif',
@@ -517,6 +659,7 @@ const TempComponent = () => {
           borderRadius: '10px',
           backgroundColor: 'rgba(255, 255, 255, 0.1)',
           backdropFilter: 'blur(10px)',
+          textAlign:'left',
           border: '1px solid rgba(217, 163, 83, 0.2)'
         }}>
           <table style={{
@@ -698,149 +841,7 @@ const TempComponent = () => {
           </table>
         </div>
         
-        <h2 style={{ 
-          textAlign: 'center', 
-          marginBottom: '25px',
-          fontSize: 'calc(1.2rem + 0.5vw)',
-          color: '#D9A353',
-          fontFamily: '"Playfair Display", serif',
-          fontWeight: '600',
-          letterSpacing: '0.5px',
-          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)'
-        }}>INTERNATIONAL ADVISORY COMMITTEE</h2>
-        
-        <div style={{
-          width: '100%',
-          maxWidth: '800px',
-          margin: '0 auto',
-          padding: '20px',
-          borderRadius: '10px',
-          backgroundColor: 'rgba(255, 255, 255, 0.1)',
-          backdropFilter: 'blur(10px)',
-          border: '1px solid rgba(217, 163, 83, 0.2)'
-        }}>
-          <table style={{
-            width: '100%',
-            minWidth: '600px',
-            borderCollapse: 'collapse',
-            color: '#ffffff'
-          }}>
-            <tbody>
-              <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Dr Chunting Chris Mi
-                </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  San Diego State University, USA
-                </td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Dr Dong-Soo Kwon
-                </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  KAIST, South Korea
-                </td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Dr Vikram Kapila
-                </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  NYU Tandon School of Engineering, USA
-                </td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Dr Xiao-Zhi Gao
-                </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  University of Eastern Finland, Finland
-                </td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Dr Yuval Shavitt
-                </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Tel Aviv University, Israel
-                </td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Dr Richard Voyles
-                </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Purdue University, USA
-                </td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Dr Jai Govind Singh
-                </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Asian Institute of Technology, Bangkok
-                </td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Dr Vigna Kumaran Ramachandaramurthy
-                </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Universiti Tenaga Nasional, Malaysia
-                </td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Dr Ahmed Zobaa
-                </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Brunel University, London, UK
-                </td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Dr Tan Wei Hong
-                </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Universiti Malaysia Perlis, Malaysia
-                </td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Dr Barath Narayanan
-                </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  University of Dayton Research Institute, USA
-                </td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Dr M Murugappan
-                </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Kuwait College of Science and Technology , Kuwait
-                </td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  Ms Abinaya Nagarajan
-                </td>
-                <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(217, 163, 83, 0.2)' }}>
-                  JP Morgan Chase & Co., Singapore
-                </td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 20px' }}>
-                  Dr P N Suganthan
-                </td>
-                <td style={{ padding: '12px 20px' }}>
-                  Qatar University , Qatar
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+       
       </div>
       
       <style jsx>{`

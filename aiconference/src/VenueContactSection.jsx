@@ -97,50 +97,26 @@ const VenueContactSection = () => {
             <h2 style={{ fontSize: "1.2em", marginBottom: "6px",color:'#ffdd00' }}>
               Contact Us
             </h2>
-            <table
-              style={{
-                width: "100%",
-                borderCollapse: "collapse",
-              }}
-            >
-              <tbody>
-                {[["Dr D Indumathi", "+91 7708126502"],
-                  ["Dr R Rekha", "+91 9842163683"],
-                  ["Dr K Sathiyapriya", "+91 9952419595"],
-                  ["Dr R Senthil Prabha", "+91 9942912788"]].map(
-                  ([name, phone], i) => (
-                    <tr key={i}>
-                      <td
-                        style={{
-                          padding: "6px 6px 6px 0",
-                          fontSize: "0.9em",
-                          textAlign: "left",
-                          width: "60%",
-                        }}
-                      >
-                        <strong>{name}</strong>
-                      </td>
-                      <td
-                        style={{
-                          padding: "6px 0",
-                          fontSize: "0.9em",
-                          textAlign: "left",
-                          width: "40%",
-                        }}
-                      >
-                        <a
-                          className="contact-link"
-                          href={`tel:${phone.replace(/\s+/g, "")}`}
-                        >
-                          {phone}
-                        </a>
-                      </td>
-                    </tr>
-                  )
-                )}
-              </tbody>
-            </table>
-            <p style={{ fontSize: "0.9em", marginTop: "10px" }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', padding: '8px 0' }}>
+              {[["Dr D Indumathi", "+91 7708126502"],
+                ["Dr R Rekha", "+91 9842163683"],
+                ["Dr K Sathiyapriya", "+91 9952419595"],
+                ["Dr R Senthil Prabha", "+91 9942912788"]].map(
+                ([name, phone], i) => (
+                  <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <strong style={{ fontSize: "0.9em" }}>{name}</strong>
+                    <a
+                      className="contact-link"
+                      href={`tel:${phone.replace(/\s+/g, "")}`}
+                      style={{ fontSize: "0.9em" }}
+                    >
+                      {phone}
+                    </a>
+                  </div>
+                )
+              )}
+            </div>
+            <p style={{ fontSize: "0.9em", marginTop: "20px" }}>
               <strong>Email:</strong>{" "}
               <a
                 href="mailto:aiconsortium@psgtech.ac.in"
