@@ -1,87 +1,142 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+import styled from 'styled-components';
+
+const CardContainer = styled.div`
+  background: #0d58a9;
+  color: #FFFFFF;
+  border-radius: 14px;
+  padding: 15px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(13, 88, 169, 0.3);
+    height: ${props => props.expandedHeight}px;
+    
+    .details {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .image-container {
+      transform: scale(0.9);
+      margin-bottom: 5px;
+    }
+  }
+`;
+
+const ImageContainer = styled.div`
+  width: 200px;
+  height: 200px;
+  border-radius: 63%;
+  background: linear-gradient(135deg, #E5E4E2, #BCC6CC);
+  padding: 3px;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+`;
+
+const ProfileImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: saturate(75%);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+`;
+
+const Name = styled.h2`
+  margin: 0;
+  padding: 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #D9A353;
+  font-size: 1.5em;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+`;
+
+const DetailsContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(13, 88, 169, 0.95), rgba(13, 88, 169, 0.8));
+  padding: 8px 15px 12px 15px;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 0 14px 14px;
+  backdrop-filter: blur(5px);
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const Designation = styled.h5`
+  margin: 0;
+  padding: 0;
+  font-size: 1.1em;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: #FFFFFF;
+  transition: all 0.5s ease;
+  line-height: 1.2;
+`;
+
+const Organization = styled.h6`
+  margin: 2px 0 0 0;
+  padding: 0;
+  font-size: 1em;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: #D9A353;
+  transition: all 0.5s ease;
+  line-height: 1.2;
+`;
 
 const ProfileCard = ({ name, designation, organization, photoUrl }) => {
+  const detailsRef = useRef(null);
+  const [expandedHeight, setExpandedHeight] = useState(380);
+
+  useEffect(() => {
+    if (detailsRef.current) {
+      const detailsHeight = detailsRef.current.offsetHeight;
+      // Base height (320px) + details height + minimal padding
+      setExpandedHeight(320 + detailsHeight + 5);
+    }
+  }, [designation, organization]);
+
   return (
-    <div style={{
-      background: '#0d58a9',
-      color: '#FFFFFF',
-      borderRadius: '14px',
-      padding: '20px',
-      width: '100%',
-      maxWidth: '300px',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      textAlign: 'center',
-      transition: 'transform 0.3s ease',
-      cursor: 'pointer',
-      height: '100%',
-      minHeight: '400px'
-    }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.transform = 'translateY(-5px)';
-      const img = e.currentTarget.querySelector('img');
-      if (img) {
-        img.style.filter = 'saturate(150%)';
-      }
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.transform = 'translateY(0)';
-      const img = e.currentTarget.querySelector('img');
-      if (img) {
-        img.style.filter = 'saturate(75%)';
-      }
-    }}
-    >
-      {photoUrl && (
-        <div style={{
-          width: '220px',
-          height: '220px',
-          borderRadius: '63%',
-          background: 'linear-gradient(135deg, #E5E4E2, #BCC6CC)',
-          padding: '3px',
-          marginBottom: '15px',
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-          overflow: 'hidden'
-        }}>
-          <img 
-            src={photoUrl} 
-            alt={name}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              borderRadius: '50%',
-              filter: 'saturate(75%)',
-              transition: 'filter 0.5s ease'
-            }}
-          />
-        </div>
-      )}
-      <h2 style={{
-        margin: '9px 0 20px 0',
-        fontFamily: '"Playfair Display", serif',
-        fontWeight: '700',
-        letterSpacing: '0.5px',
-        color: '#D9A353',
-        fontSize: '1.8em'
-      }}>{name}</h2>
-      <h5 style={{ 
-        margin: '4.5px 0', 
-        fontSize: '1.1em',
-        fontFamily: '"Inter", sans-serif',
-        fontWeight: '500',
-        letterSpacing: '0.3px'
-      }}>{designation}</h5>
-      <h6 style={{ 
-        margin: '10px 0 0 0', 
-        fontSize: '1em',
-        fontFamily: '"Inter", sans-serif',
-        fontWeight: '500',
-        letterSpacing: '0.3px'
-      }}>{organization}</h6>
-    </div>
+    <CardContainer expandedHeight={expandedHeight}>
+      <ImageContainer className="image-container">
+        <ProfileImage src={photoUrl} alt={name} />
+      </ImageContainer>
+      <Name className="name">{name}</Name>
+      <DetailsContainer className="details" ref={detailsRef}>
+        <Designation>{designation}</Designation>
+        <Organization>{organization}</Organization>
+      </DetailsContainer>
+    </CardContainer>
   );
 };
 

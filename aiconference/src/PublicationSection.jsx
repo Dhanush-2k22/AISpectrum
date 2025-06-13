@@ -1,4 +1,7 @@
 import React from 'react';
+import lectureNotesImage from './assets/lecturenotes.png';
+import eaiLogoImage from './assets/Eai_logo_with_margins.png';
+import springerLogoImage from './assets/Springer.png';
 // Assuming commonStyles is needed for colors/typography if not already imported
 // import { colors, typography } from './styles/commonStyles';
 
@@ -38,7 +41,7 @@ const PublicationSection = () => {
       </h2>
 
       <img
-        src="/assets/lecturenotes.png"
+        src={lectureNotesImage}
         alt="Lecture Notes of the Institute for Computer Sciences cover"
         style={{
           maxHeight: '320px',
@@ -84,7 +87,7 @@ const PublicationSection = () => {
         }}
       >
         <img
-          src="/assets/Eai_logo_with_margins.png"
+          src={eaiLogoImage}
           alt="EAI Logo"
           style={{
             maxHeight: '100px',
@@ -92,7 +95,7 @@ const PublicationSection = () => {
           }}
         />
         <img
-          src="/assets/Springer.png"
+          src={springerLogoImage}
           alt="Springer Logo"
           style={{
             maxHeight: '100px',

@@ -90,10 +90,10 @@ const WelcomeCardSection = () => {
           Welcome to Coimbatore
           <div style={{
             width: '150px',
-            height: '4px',
+              height: '4px',
             background: '#D9A353',
-            margin: '0 auto',
-            borderRadius: '2px',
+              margin: '0 auto',
+              borderRadius: '2px',
             marginTop: '15px'
           }} />
         </h2>
@@ -102,50 +102,46 @@ const WelcomeCardSection = () => {
           ref={scrollRef}
           style={{
             display: "flex",
-            overflowX: "auto",
+            overflowX: "hidden",
             gap: "20px",
-            paddingBottom: "10px",
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-            WebkitOverflowScrolling: "touch",
-            willChange: "scroll-position", // Hint for browser optimization
-            marginTop: "20px",
+            padding: "20px 0",
+            cursor: "grab",
+            position: "relative",
           }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          onTouchStart={() => setIsPaused(true)}
-          onTouchEnd={() => setTimeout(() => setIsPaused(false), 1000)}
         >
-          {repeatedImages.map((place, index) => (
+          {repeatedImages.map((image, index) => (
             <div 
               key={index} 
               style={{ 
-                minWidth: "250px", 
-                textAlign: "center", 
-                flexShrink: 0,
-                transform: "translateZ(0)", // Force GPU acceleration
+                flex: "0 0 auto",
+                width: "300px",
+                height: "200px",
+                position: "relative",
+                transition: "all 0.3s ease",
+                cursor: "pointer",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.2)";
+                e.currentTarget.style.zIndex = "10";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.zIndex = "1";
               }}
             >
-              <div
+              <img
+                src={image.img}
+                alt={image.name}
                 style={{
-                  position: "relative",
-                  overflow: "hidden",
-                  borderRadius: "16px",
-                  transition: "transform 0.3s ease",
-                }}
-              >
-                <img
-                  src={place.img}
-                  alt={place.name}
-                  style={{
-                    width: "250px",
-                    height: "180px",
+                  width: "100%",
+                  height: "100%",
                     objectFit: "cover",
-                    boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
-                    transition: "transform 0.3s ease",
-                    transform: "translateZ(0)", // Force GPU acceleration
+                  borderRadius: "10px",
+                  boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+                  transition: "all 0.3s ease",
                   }}
-                  loading={index < 6 ? "eager" : "lazy"} // Load visible images first
                 />
                 <div
                   style={{
@@ -153,18 +149,19 @@ const WelcomeCardSection = () => {
                     bottom: 0,
                     left: 0,
                     right: 0,
-                    background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)",
-                    padding: "20px 10px 10px 10px",
-                    transform: "translateY(100%)",
-                    transition: "transform 0.3s ease",
-                    opacity: 0,
-                  }}
-                  className="card-overlay"
-                >
-                  <span style={{ fontWeight: "bold" }}>{place.name}</span>
-                </div>
+                  background: "linear-gradient(transparent, rgba(0,0,0,0.8))",
+                  color: "white",
+                  padding: "15px",
+                  borderRadius: "0 0 10px 10px",
+                  fontSize: "1.1em",
+                  fontWeight: "600",
+                  textShadow: "2px 2px 4px rgba(0,0,0,0.8)",
+                  letterSpacing: "0.5px",
+                  backdropFilter: "blur(2px)"
+                }}
+              >
+                {image.name}
               </div>
-              <div style={{ marginTop: "8px", fontWeight: "bold" }}>{place.name}</div>
             </div>
           ))}
         </div>

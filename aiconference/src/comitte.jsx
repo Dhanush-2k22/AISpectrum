@@ -3,6 +3,7 @@ import ProfileCard from './profilecard';
 import NormalCardGrid from './normalcard';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import styled from 'styled-components';
 
 import TrusteeImage from './assets/trustee.jpg';
 import PrakasanImage from './assets/Prakasan.png';
@@ -71,6 +72,24 @@ import mukundh from './assets/mukund.jpg';
 import srikanth from './assets/srikanth.jpg';
 import sudha_R from './assets/sudha_R.png';
 import Dr_Rekha from './assets/Dr_Rekha.jpg';
+
+const Heading = styled.h2`
+  color: #0D58A9;
+  font-weight: bold;
+  margin: 2rem 0 1rem 0;
+  text-align: center;
+  font-family: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif';
+`;
+
+const CommitteeSection = styled.div`
+  margin-bottom: 2rem;
+`;
+
+const CommitteeContainer = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+`;
 
 function Comitte() {
   useEffect(() => {
@@ -665,202 +684,202 @@ const panelist = [
  
 
   return (
-    <div className="committee-container" style={{ 
-      padding: '40px', 
-      fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif', 
-      color: '#000000', 
-      position: 'relative', 
-      width: '100vw', 
-      marginLeft: 'calc(-50vw + 50%)', 
-      boxSizing: 'border-box',
-      backgroundColor: '#FFFFFF'
-    }}>
-      <div className="committee-background"></div>
-      <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-      <h2 data-aos="fade-up" style={{
-        textAlign: 'center',
-        fontSize: '2.5em',
-        marginBottom: '40px',
-        color: colors.blue,
-        position: 'relative',
-        fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif',
-        fontWeight: '600'
-      }}>ORGANIZING COMMITTEE</h2>
+    <CommitteeContainer>
+      <Heading>ORGANIZING COMMITTEE</Heading>
+      <CommitteeSection>
+        <Heading>PATRON</Heading>
+        <p>Prof. B. V. R. Chowdari</p>
+        <p>Vice Chancellor, NIT Warangal</p>
+      </CommitteeSection>
 
-      {/* Chief Patron and Patron */}
-      <div data-aos="fade-up" style={{ display: 'flex', justifyContent: 'center', gap: '100px', flexWrap: 'wrap', marginBottom: '60px' }}>
-        <div>
-          <h2 style={{ textAlign: 'center' }}>CHIEF PATRON</h2>
-          <ProfileCard
-            name="Shri L Gopalakrishnan"
-            designation={
-              <>
-                Managing Trustee <br /> PSG & Sons' Charities Trust
-              </>
-            }
-            organization=""
-            photoUrl={TrusteeImage}
-          />
-        </div>
-      </div>
-      <div data-aos="fade-up" style={{ display: 'flex', justifyContent: 'center', gap: '100px', flexWrap: 'wrap', marginBottom: '60px' }}>
-        <div>
-          <h2 style={{ textAlign: 'center'}}>PATRON</h2>
-          <ProfileCard
-            name="Dr K Prakasan"
-            designation={
-              <>
-                Principal <br />PSG College of Technology 
-              </>
-            }
-            organization=""
-            photoUrl={PrakasanImage}
-          />
-        </div>
-      </div>
+      <CommitteeSection>
+        <Heading>CO - PATRON</Heading>
+        <p>Prof. K. S. R. K. Rao</p>
+        <p>Dean (R&C), NIT Warangal</p>
+      </CommitteeSection>
 
-      {/* Institutional Steering Committee */}
-      <div style={{ 
-        marginBottom: '60px', 
-        display: 'flex', 
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%',
-      }}>
+      <CommitteeSection>
+        <Heading>GENERAL CHAIRS</Heading>
+        <p>Prof. P. Rajesh Kumar</p>
+        <p>Prof. S. B. L. Seksena</p>
+      </CommitteeSection>
+
+      <CommitteeSection>
+        <Heading>ORGANIZING CHAIRS</Heading>
+        <p>Prof. P. Rajesh Kumar</p>
+        <p>Prof. S. B. L. Seksena</p>
+      </CommitteeSection>
+
+      <CommitteeSection>
+        <Heading>ORGANIZING CO - CHAIR</Heading>
+        <p>Prof. P. Rajesh Kumar</p>
+        <p>Prof. S. B. L. Seksena</p>
+      </CommitteeSection>
+
+      <CommitteeSection>
+        <Heading>SCIENTIFIC COMMITTEE CHAIRS</Heading>
+        <p>Prof. P. Rajesh Kumar</p>
+        <p>Prof. S. B. L. Seksena</p>
+      </CommitteeSection>
+
+      <CommitteeSection>
+        <Heading>ADVISORY COMMITTEE</Heading>
+        <p>Prof. P. Rajesh Kumar</p>
+        <p>Prof. S. B. L. Seksena</p>
+      </CommitteeSection>
+
+      <CommitteeSection>
+        <Heading>CHIEF PATRON</Heading>
+        <ProfileCard
+          name="Shri L Gopalakrishnan"
+          designation={
+            <>
+              Managing Trustee <br /> PSG & Sons' Charities Trust
+            </>
+          }
+          organization=""
+          photoUrl={TrusteeImage}
+        />
+      </CommitteeSection>
+
+      <CommitteeSection>
+        <Heading>PATRON</Heading>
+        <ProfileCard
+          name="Dr K Prakasan"
+          designation={
+            <>
+              Principal <br />PSG College of Technology 
+            </>
+          }
+          organization=""
+          photoUrl={PrakasanImage}
+        />
+      </CommitteeSection>
+
+      <CommitteeSection>
+        <Heading>INSTITUTION STEERING COMMITTEE</Heading>
+        <ProfileCard
+          name={
+            <>
+              Director - PSG CARE ,<br />Deans and <br />Head of the Departments
+            </>
+          }
+          designation=""
+          organization="PSG College of Technology"
+        />
+      </CommitteeSection>
+
+      <CommitteeSection>
+        <Heading>GENERAL CHAIRS</Heading>
         <div style={{ 
-          textAlign: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          width: '100%',
-          maxWidth: '400px',
-        }}>
-          <h2 style={{ marginBottom: '20px' }}>INSTITUTION STEERING COMMITTEE</h2>
-          <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-            <ProfileCard
-              name={
-                <>
-                  Director - PSG CARE ,<br />Deans and <br />Head of the Departments
-                </>
-              }
-              designation=""
-              organization="PSG College of Technology"
-            />
-          </div>
-        </div>
-      </div>
-
-      <h2 style={{ textAlign: 'center', marginBottom: '25px', fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif', letterSpacing: '1px' }}>GENERAL CHAIRS</h2>
-      {/* General Chairs */}
-      <div style={{ 
-        marginBottom: '60px', 
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
-        borderRadius: '20px',
-        padding: '30px',
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)'
-      }}>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '100px', flexWrap: 'wrap' }}>
-          <div>
-            <ProfileCard
-              name="Dr G R Karpagam"
-              designation={
-                <>
-                  Professor<br />Dept. of Computer Science and Engineering<br /> Director , PSG - AI Consortium
-                </>
-              }
-              organization=""
-              photoUrl={Dr_GRK}
-            />
-          </div>
-          <div>
-            <ProfileCard
-              name="Dr B Vinoth Kumar"
-              designation={
-                <>
-                  Professor<br /> Dept. of Information Technology<br />Infrastructure Technical Lead ,<br /> PSG - AI Consortium
-                </>
-              }
-              organization=""
-              photoUrl={VinothImage}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Sample Normal Cards Section */}
-      <div style={{ marginBottom: '60px' }}>
-        <h2 style={{ textAlign: 'center', marginBottom: '25px', fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif', letterSpacing: '1px' }}>ORGANIZING CHAIRS</h2>
-        <div style={{ 
-           background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
+          marginBottom: '60px', 
+          background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
           borderRadius: '20px',
           padding: '30px',
           boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)'
         }}>
-          <NormalCardGrid cards={sampleNormalCards} />
-        </div>
-      </div>
-      <h2 style={{ textAlign: 'center', marginBottom: '25px', fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif', letterSpacing: '1px' }}>ADVISORY BOARD</h2>
-      {/* Advisory Board Carousel */}
-      <div style={{ 
-        marginBottom: '60px', 
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
-        borderRadius: '20px',
-        padding: '30px',
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)'
-      }}>
-        {/* Carousel container */}
-        <div style={{ position: 'relative', maxWidth: '100%' }}>
-          {/* Cards container with transition effect */}
-          <div style={{ 
-            display: 'flex', 
-            justifyContent: 'center', 
-            gap: '100px', 
-            transition: 'opacity 0.5s ease',
-          }}>
-            {visibleAdvisoryCards().map((profile, index) => (
-              <div key={index}>
-                <ProfileCard
-                  name={profile.name}
-                  designation={profile.designation}
-                  organization={profile.organization}
-                  photoUrl={profile.photoUrl}
-                />
-              </div>
-            ))}
-          </div>
-          
-          {/* Navigation dots */}
-          <div style={{ 
-            display: 'flex', 
-            justifyContent: 'center', 
-            marginTop: '20px', 
-            gap: '10px' 
-          }}>
-            {Array.from({ length: totalSlides }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                aria-label={`Go to slide ${index + 1}`}
-                style={{
-                  width: '12px',
-                  height: '12px',
-                  borderRadius: '50%',
-                  border: 'none',
-                  backgroundColor: currentAdvisorySlide === index ? '#00B4D8' : '#004AAD',
-                  cursor: 'pointer',
-                  padding: 0,
-                  transition: 'background-color 0.3s ease',
-                }}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '100px', flexWrap: 'wrap' }}>
+            <div>
+              <ProfileCard
+                name="Dr G R Karpagam"
+                designation={
+                  <>
+                    Professor<br />Dept. of Computer Science and Engineering<br /> Director , PSG - AI Consortium
+                  </>
+                }
+                organization=""
+                photoUrl={Dr_GRK}
               />
-            ))}
+            </div>
+            <div>
+              <ProfileCard
+                name="Dr B Vinoth Kumar"
+                designation={
+                  <>
+                    Professor<br /> Dept. of Information Technology<br />Infrastructure Technical Lead ,<br /> PSG - AI Consortium
+                  </>
+                }
+                organization=""
+                photoUrl={VinothImage}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </CommitteeSection>
 
-      {/* Track Chairs Section */}
-      <div style={{ marginTop: '60px' }}>
-        <h2 style={{ textAlign: 'center', marginBottom: '25px', fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif', letterSpacing: '1px' }}>TRACK CHAIRS</h2>
-        {/* Track Tabs */}
+      <CommitteeSection>
+        <Heading>ORGANIZING CHAIRS</Heading>
+        <div style={{ marginBottom: '60px' }}>
+          <h2 style={{ textAlign: 'center', marginBottom: '25px', fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif', letterSpacing: '1px' }}>ORGANIZING CHAIRS</h2>
+          <div style={{ 
+             background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
+            borderRadius: '20px',
+            padding: '30px',
+            boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)'
+          }}>
+            <NormalCardGrid cards={sampleNormalCards} />
+          </div>
+        </div>
+      </CommitteeSection>
+
+      <CommitteeSection>
+        <Heading>ADVISORY BOARD</Heading>
+        <div style={{ 
+          marginBottom: '60px', 
+          background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
+          borderRadius: '20px',
+          padding: '30px',
+          boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)'
+        }}>
+          <div style={{ position: 'relative', maxWidth: '100%' }}>
+            <div style={{ 
+              display: 'flex', 
+              justifyContent: 'center', 
+              gap: '100px', 
+              transition: 'opacity 0.5s ease',
+            }}>
+              {visibleAdvisoryCards().map((profile, index) => (
+                <div key={index}>
+                  <ProfileCard
+                    name={profile.name}
+                    designation={profile.designation}
+                    organization={profile.organization}
+                    photoUrl={profile.photoUrl}
+                  />
+                </div>
+              ))}
+            </div>
+            
+            <div style={{ 
+              display: 'flex', 
+              justifyContent: 'center', 
+              marginTop: '20px', 
+              gap: '10px' 
+            }}>
+              {Array.from({ length: totalSlides }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                  style={{
+                    width: '12px',
+                    height: '12px',
+                    borderRadius: '50%',
+                    border: 'none',
+                    backgroundColor: currentAdvisorySlide === index ? '#00B4D8' : '#004AAD',
+                    cursor: 'pointer',
+                    padding: 0,
+                    transition: 'background-color 0.3s ease',
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </CommitteeSection>
+
+      <CommitteeSection>
+        <Heading>TRACK CHAIRS</Heading>
         <div style={{
           display: 'flex',
           justifyContent: 'center',
@@ -922,7 +941,6 @@ const panelist = [
             TRACK 3 <br /><br />AI HORIZON
           </button>
         </div>
-        {/* Render Active Track */}
         <div style={{
           background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
           borderRadius: '20px',
@@ -937,381 +955,369 @@ const panelist = [
         }}>
           {renderTrackSection()}
         </div>
+      </CommitteeSection>
 
-    <br />
-    <br />
-
-      {/* Main Section Tabs */}
-      <div data-aos="fade-up" style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        marginBottom: '20px',
-        gap: '20px',
-      }}>
-        <button
-          onClick={() => setActiveSection('Finance')}
-          style={{
-            padding: '10px 20px',
-            border: 'none',
-            borderRadius: '10px',
-            backgroundColor: activeSection === 'Finance' ? colors.blue : '#F0F0F0',
-            color: activeSection === 'Finance' ? '#FFFFFF' : '#000000',
-            cursor: 'pointer',
-            fontSize: '1em',
-            fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif',
-            fontWeight: '500',
-            letterSpacing: '0.5px',
-            transition: 'all 0.3s ease',
-            flex: '1 1 calc(20% - 20px)', 
-            maxWidth: 'calc(20% - 20px)',
-          }}
-        >
-          FINANCE CHAIRS
-        </button>
-        <button
-          onClick={() => setActiveSection('Tutorial')}
-          style={{
-            padding: '10px 20px',
-            border: 'none',
-            borderRadius: '10px',
-            backgroundColor: activeSection === 'Tutorial' ? '#00B4D8' : '#004AAD',
-            color: '#FFFFFF',
-            cursor: 'pointer',
-            fontSize: '1em',
-            fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
-            fontWeight: '500',
-            letterSpacing: '0.5px',
-            transition: 'background-color 0.3s',
-            flex: '1 1 calc(20% - 20px)',
-            maxWidth: 'calc(20% - 20px)',
-          }}
-        >
-          TUTORIAL CHAIRS
-        </button>
-        <button
-          onClick={() => setActiveSection('Publication')}
-          style={{
-            padding: '10px 20px',
-            border: 'none',
-            borderRadius: '10px',
-            backgroundColor: activeSection === 'Publication' ? '#00B4D8' : '#004AAD',
-            color: '#FFFFFF',
-            cursor: 'pointer',
-            fontSize: '1em',
-            fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
-            fontWeight: '500',
-            letterSpacing: '0.5px',
-            transition: 'background-color 0.3s',
-            flex: '1 1 calc(20% - 20px)', 
-            maxWidth: 'calc(20% - 20px)',
-          }}
-        >
-          PUBLICATION CHAIRS
-        </button>
-        <button
-          onClick={() => setActiveSection('Poster')}
-          style={{
-            padding: '10px 20px',
-            border: 'none',
-            borderRadius: '10px',
-            backgroundColor: activeSection === 'Poster' ? '#00B4D8' : '#004AAD',
-            color: '#FFFFFF',
-            cursor: 'pointer',
-            fontSize: '1em',
-            fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
-            fontWeight: '500',
-            letterSpacing: '0.5px',
-            transition: 'background-color 0.3s',
-            flex: '1 1 calc(20% - 20px)', 
-            maxWidth: 'calc(20% - 20px)',
-          }}
-        >
-          POSTER AND EXPO CHAIRS
-        </button>
-        <button
-          onClick={() => setActiveSection('govn')}
-          style={{
-            padding: '10px 20px',
-            border: 'none',
-            borderRadius: '10px',
-            backgroundColor: activeSection === 'govn' ? '#00B4D8' : '#004AAD',
-            color: '#FFFFFF',
-            cursor: 'pointer',
-            fontSize: '1em',
-            fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
-            fontWeight: '500',
-            letterSpacing: '0.5px',
-            transition: 'background-color 0.3s',
-            flex: '1 1 calc(20% - 20px)', 
-            maxWidth: 'calc(20% - 20px)',
-          }}
-        >
-          GOVERNMENT LIASION CHAIRS
-        </button>
-        <button
-          onClick={() => setActiveSection('industry')}
-          style={{
-            padding: '10px 20px',
-            border: 'none',
-            borderRadius: '10px',
-            backgroundColor: activeSection === 'industry' ? '#00B4D8' : '#004AAD',
-            color: '#FFFFFF',
-            cursor: 'pointer',
-            fontSize: '1em',
-            fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
-            fontWeight: '500',
-            letterSpacing: '0.5px',
-            transition: 'background-color 0.3s',
-            flex: '1 1 calc(20% - 20px)', 
-            maxWidth: 'calc(20% - 20px)',
-          }}
-        >
-          INDUSTRY LIASION CHAIRS
-        </button>
-        <button
-          onClick={() => setActiveSection('publicity')}
-          style={{
-            padding: '10px 20px',
-            border: 'none',
-            borderRadius: '10px',
-            backgroundColor: activeSection === 'publicity' ? '#00B4D8' : '#004AAD',
-            color: '#FFFFFF',
-            cursor: 'pointer',
-            fontSize: '1em',
-            fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
-            fontWeight: '500',
-            letterSpacing: '0.5px',
-            transition: 'background-color 0.3s',
-            flex: '1 1 calc(20% - 20px)', 
-            maxWidth: 'calc(20% - 20px)',
-          }}
-        >
-          PUBLICITY AND PUBLIC RELATIONS CHAIRS
-        </button>
-        <button
-          onClick={() => setActiveSection('sponsor')}
-          style={{
-            padding: '10px 20px',
-            border: 'none',
-            borderRadius: '10px',
-            backgroundColor: activeSection === 'sponsor' ? '#00B4D8' : '#004AAD',
-            color: '#FFFFFF',
-            cursor: 'pointer',
-            fontSize: '1em',
-            fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
-            fontWeight: '500',
-            letterSpacing: '0.5px',
-            transition: 'background-color 0.3s',
-            flex: '1 1 calc(20% - 20px)', 
-            maxWidth: 'calc(20% - 20px)',
-          }}
-        >
-          SPONSORSHIP CHAIRS
-        </button>
-        <button
-          onClick={() => setActiveSection('international')}
-          style={{
-            padding: '10px 20px',
-            border: 'none',
-            borderRadius: '10px',
-            backgroundColor: activeSection === 'international' ? '#00B4D8' : '#004AAD',
-            color: '#FFFFFF',
-            cursor: 'pointer',
-            fontSize: '1em',
-            fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
-            fontWeight: '500',
-            letterSpacing: '0.5px',
-            transition: 'background-color 0.3s',
-            flex: '1 1 calc(20% - 20px)', 
-            maxWidth: 'calc(20% - 20px)',
-          }}
-        >
-          INTERNATIONAL LIAISON CHAIRS
-        </button>
-        <button
-          onClick={() => setActiveSection('panelist')}
-          style={{
-            padding: '10px 20px',
-            border: 'none',
-            borderRadius: '10px',
-            backgroundColor: activeSection === 'panelist' ? '#00B4D8' : '#004AAD',
-            color: '#FFFFFF',
-            cursor: 'pointer',
-            fontSize: '1em',
-            fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
-            fontWeight: '500',
-            letterSpacing: '0.5px',
-            transition: 'background-color 0.3s',
-            flex: '1 1 calc(20% - 20px)', 
-            maxWidth: 'calc(20% - 20px)',
-          }}
-        >
-          PANELIST LIAISON CHAIRS
-        </button>
-      </div>
-
-      {/* Render Main Section */}
-      <div data-aos="fade-up" style={{
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
-        borderRadius: '20px',
-        padding: '30px',
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
-        color: '#FFFFFF',
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        gap: '20px'
-      }}>
-        {renderMainSection()}
-      </div>
-      <br />
-      <br />
-      {/* Keynote Speakers Section */}
-      <h2 style={{ 
-        textAlign: 'center', 
-        marginTop: '60px', 
-        marginBottom: '25px',
-        fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif', 
-        letterSpacing: '1px',
-        fontSize: '1.8em'
-      }}>KEYNOTE SPEAKERS</h2>
-      
-      <div style={{ 
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
-        borderRadius: '20px',
-        padding: '30px',
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
-        marginBottom: '60px'
-      }}>
-        <div style={{
+      <CommitteeSection>
+        <Heading>MAIN SECTION TABS</Heading>
+        <div data-aos="fade-up" style={{
           display: 'flex',
           flexWrap: 'wrap',
           justifyContent: 'center',
-          gap: '40px'
+          marginBottom: '20px',
+          gap: '20px',
         }}>
-          {/* First Row */}
+          <button
+            onClick={() => setActiveSection('Finance')}
+            style={{
+              padding: '10px 20px',
+              border: 'none',
+              borderRadius: '10px',
+              backgroundColor: activeSection === 'Finance' ? '#00B4D8' : '#F0F0F0',
+              color: activeSection === 'Finance' ? '#FFFFFF' : '#000000',
+              cursor: 'pointer',
+              fontSize: '1em',
+              fontFamily: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif',
+              fontWeight: '500',
+              letterSpacing: '0.5px',
+              transition: 'all 0.3s ease',
+              flex: '1 1 calc(20% - 20px)', 
+              maxWidth: 'calc(20% - 20px)',
+            }}
+          >
+            FINANCE CHAIRS
+          </button>
+          <button
+            onClick={() => setActiveSection('Tutorial')}
+            style={{
+              padding: '10px 20px',
+              border: 'none',
+              borderRadius: '10px',
+              backgroundColor: activeSection === 'Tutorial' ? '#00B4D8' : '#004AAD',
+              color: '#FFFFFF',
+              cursor: 'pointer',
+              fontSize: '1em',
+              fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
+              fontWeight: '500',
+              letterSpacing: '0.5px',
+              transition: 'background-color 0.3s',
+              flex: '1 1 calc(20% - 20px)',
+              maxWidth: 'calc(20% - 20px)',
+            }}
+          >
+            TUTORIAL CHAIRS
+          </button>
+          <button
+            onClick={() => setActiveSection('Publication')}
+            style={{
+              padding: '10px 20px',
+              border: 'none',
+              borderRadius: '10px',
+              backgroundColor: activeSection === 'Publication' ? '#00B4D8' : '#004AAD',
+              color: '#FFFFFF',
+              cursor: 'pointer',
+              fontSize: '1em',
+              fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
+              fontWeight: '500',
+              letterSpacing: '0.5px',
+              transition: 'background-color 0.3s',
+              flex: '1 1 calc(20% - 20px)', 
+              maxWidth: 'calc(20% - 20px)',
+            }}
+          >
+            PUBLICATION CHAIRS
+          </button>
+          <button
+            onClick={() => setActiveSection('Poster')}
+            style={{
+              padding: '10px 20px',
+              border: 'none',
+              borderRadius: '10px',
+              backgroundColor: activeSection === 'Poster' ? '#00B4D8' : '#004AAD',
+              color: '#FFFFFF',
+              cursor: 'pointer',
+              fontSize: '1em',
+              fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
+              fontWeight: '500',
+              letterSpacing: '0.5px',
+              transition: 'background-color 0.3s',
+              flex: '1 1 calc(20% - 20px)', 
+              maxWidth: 'calc(20% - 20px)',
+            }}
+          >
+            POSTER AND EXPO CHAIRS
+          </button>
+          <button
+            onClick={() => setActiveSection('govn')}
+            style={{
+              padding: '10px 20px',
+              border: 'none',
+              borderRadius: '10px',
+              backgroundColor: activeSection === 'govn' ? '#00B4D8' : '#004AAD',
+              color: '#FFFFFF',
+              cursor: 'pointer',
+              fontSize: '1em',
+              fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
+              fontWeight: '500',
+              letterSpacing: '0.5px',
+              transition: 'background-color 0.3s',
+              flex: '1 1 calc(20% - 20px)', 
+              maxWidth: 'calc(20% - 20px)',
+            }}
+          >
+            GOVERNMENT LIASION CHAIRS
+          </button>
+          <button
+            onClick={() => setActiveSection('industry')}
+            style={{
+              padding: '10px 20px',
+              border: 'none',
+              borderRadius: '10px',
+              backgroundColor: activeSection === 'industry' ? '#00B4D8' : '#004AAD',
+              color: '#FFFFFF',
+              cursor: 'pointer',
+              fontSize: '1em',
+              fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
+              fontWeight: '500',
+              letterSpacing: '0.5px',
+              transition: 'background-color 0.3s',
+              flex: '1 1 calc(20% - 20px)', 
+              maxWidth: 'calc(20% - 20px)',
+            }}
+          >
+            INDUSTRY LIASION CHAIRS
+          </button>
+          <button
+            onClick={() => setActiveSection('publicity')}
+            style={{
+              padding: '10px 20px',
+              border: 'none',
+              borderRadius: '10px',
+              backgroundColor: activeSection === 'publicity' ? '#00B4D8' : '#004AAD',
+              color: '#FFFFFF',
+              cursor: 'pointer',
+              fontSize: '1em',
+              fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
+              fontWeight: '500',
+              letterSpacing: '0.5px',
+              transition: 'background-color 0.3s',
+              flex: '1 1 calc(20% - 20px)', 
+              maxWidth: 'calc(20% - 20px)',
+            }}
+          >
+            PUBLICITY AND PUBLIC RELATIONS CHAIRS
+          </button>
+          <button
+            onClick={() => setActiveSection('sponsor')}
+            style={{
+              padding: '10px 20px',
+              border: 'none',
+              borderRadius: '10px',
+              backgroundColor: activeSection === 'sponsor' ? '#00B4D8' : '#004AAD',
+              color: '#FFFFFF',
+              cursor: 'pointer',
+              fontSize: '1em',
+              fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
+              fontWeight: '500',
+              letterSpacing: '0.5px',
+              transition: 'background-color 0.3s',
+              flex: '1 1 calc(20% - 20px)', 
+              maxWidth: 'calc(20% - 20px)',
+            }}
+          >
+            SPONSORSHIP CHAIRS
+          </button>
+          <button
+            onClick={() => setActiveSection('international')}
+            style={{
+              padding: '10px 20px',
+              border: 'none',
+              borderRadius: '10px',
+              backgroundColor: activeSection === 'international' ? '#00B4D8' : '#004AAD',
+              color: '#FFFFFF',
+              cursor: 'pointer',
+              fontSize: '1em',
+              fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
+              fontWeight: '500',
+              letterSpacing: '0.5px',
+              transition: 'background-color 0.3s',
+              flex: '1 1 calc(20% - 20px)', 
+              maxWidth: 'calc(20% - 20px)',
+            }}
+          >
+            INTERNATIONAL LIAISON CHAIRS
+          </button>
+          <button
+            onClick={() => setActiveSection('panelist')}
+            style={{
+              padding: '10px 20px',
+              border: 'none',
+              borderRadius: '10px',
+              backgroundColor: activeSection === 'panelist' ? '#00B4D8' : '#004AAD',
+              color: '#FFFFFF',
+              cursor: 'pointer',
+              fontSize: '1em',
+              fontFamily: 'Palatino Linotype", "Book Antiqua", Palatino, serif',
+              fontWeight: '500',
+              letterSpacing: '0.5px',
+              transition: 'background-color 0.3s',
+              flex: '1 1 calc(20% - 20px)', 
+              maxWidth: 'calc(20% - 20px)',
+            }}
+          >
+            PANELIST LIAISON CHAIRS
+          </button>
+        </div>
+      </CommitteeSection>
+
+      <CommitteeSection>
+        <Heading>MAIN SECTION</Heading>
+        <div data-aos="fade-up" style={{
+          background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
+          borderRadius: '20px',
+          padding: '30px',
+          boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
+          color: '#FFFFFF',
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: '20px'
+        }}>
+          {renderMainSection()}
+        </div>
+      </CommitteeSection>
+
+      <CommitteeSection>
+        <Heading>KEYNOTE SPEAKERS</Heading>
+        <div style={{ 
+          background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.4), rgba(0, 180, 216, 0.4))',
+          borderRadius: '20px',
+          padding: '30px',
+          boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
+          marginBottom: '60px'
+        }}>
           <div style={{
-            margin: '10px',
-            flex: '0 0 calc(50% - 60px)', // Two cards per row with gap consideration
-            maxWidth: 'calc(50% - 60px)',
             display: 'flex',
-            justifyContent: 'center'
-          }}><ProfileCard
-          name="Dr Arun Rajkumar"
-          designation={<>
-            Assistant Professor <br />Dept. of Data Science and AI <br />Centre for Responsible AI <br />IIT Madras
-          </>}
-          organization=""
-          photoUrl={arun}
-        />
-          </div>
-          <div style={{
-            margin: '10px',
-            flex: '0 0 calc(50% - 60px)',
-            maxWidth: 'calc(50% - 60px)',
-            display: 'flex',
-            justifyContent: 'center'
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: '40px'
           }}>
-            <ProfileCard
-              name="Dr Amar Aggoun"
-              designation={
-                <>
-                  Professor of Visual Computing &<br />Head of Computer Science <br />Leeds Bekket University
-                </>
-              }
-              organization="London, England, UK"
-              photoUrl={amar} // Use the imported amar image
-            />
-          </div>
-          
-          {/* Second Row */}
-          <div style={{
-            margin: '10px',
-            flex: '0 0 calc(50% - 60px)',
-            maxWidth: 'calc(50% - 60px)',
-            display: 'flex',
-            justifyContent: 'center'
-          }}>
-            <ProfileCard
-              name="Dr Jorg Frochte"
-              designation={
-                <>
-                  Professor for Applied Computer Science <br />Interdisciplinary Institute of <br />Applied AI and Data Science <br />Bochum University of Applied Sciences
-                </>
-              }
-              organization=""
-              photoUrl={jorg} // Use the imported jorg image
-            />
-          </div>
-          <div style={{
-            margin: '10px',
-            flex: '0 0 calc(50% - 60px)',
-            maxWidth: 'calc(50% - 60px)',
-            display: 'flex',
-            justifyContent: 'center'
-          }}>
-            <ProfileCard
-              name="Dr Srinivas Padmanabhuni"
-              designation={
-                <>
-                  Marax AI, INC <br />AI Advisor at IIIT Lucknow <br />CTO and Co-Founder<br />CityMandi , Bengaluru
-                </>
-              }
-              organization=""
-              photoUrl={srinivas} // Use the imported srinivas image
-            />
-          </div>
-          
-          {/* Third Row */}
-          <div style={{
-            margin: '10px',
-            flex: '0 0 calc(50% - 60px)',
-            maxWidth: 'calc(50% - 60px)',
-            display: 'flex',
-            justifyContent: 'center'
-          }}>
-            <ProfileCard
-              name="Mr. Mukund Bhoovaraghavan"
-              designation={<>
-                 Principal Group Engineering Manager <br /> Microsoft Hydrabad
-                </>}
-              organization=""
-              photoUrl={mukundh}
-            />
-          </div>
-          <div style={{
-            margin: '10px',
-            flex: '0 0 calc(50% - 60px)',
-            maxWidth: 'calc(50% - 60px)',
-            display: 'flex',
-            justifyContent: 'center'
-          }}>
-            <ProfileCard
-              name="Mr Srikanth Subramanian"
-              designation={<>
-                 Vice President of Engineering at<br />Salesforce , Bengaluru
-              </>}
-              organization=""
-              photoUrl={srikanth}
-            />
-          </div>
-          
-          {/* Last Row - Single Card */}
-          <div style={{
-            margin: '10px',
-            flex: '0 0 calc(50% - 60px)',
-            maxWidth: 'calc(50% - 60px)',
-            display: 'flex',
-            justifyContent: 'center'
-          }}>
+            <div style={{
+              margin: '10px',
+              flex: '0 0 calc(50% - 60px)',
+              maxWidth: 'calc(50% - 60px)',
+              display: 'flex',
+              justifyContent: 'center'
+            }}><ProfileCard
+            name="Dr Arun Rajkumar"
+            designation={<>
+              Assistant Professor <br />Dept. of Data Science and AI <br />Centre for Responsible AI <br />IIT Madras
+            </>}
+            organization=""
+            photoUrl={arun}
+          />
+            </div>
+            <div style={{
+              margin: '10px',
+              flex: '0 0 calc(50% - 60px)',
+              maxWidth: 'calc(50% - 60px)',
+              display: 'flex',
+              justifyContent: 'center'
+            }}>
+              <ProfileCard
+                name="Dr Amar Aggoun"
+                designation={
+                  <>
+                    Professor of Visual Computing &<br />Head of Computer Science <br />Leeds Bekket University
+                  </>
+                }
+                organization="London, England, UK"
+                photoUrl={amar}
+              />
+            </div>
             
+            <div style={{
+              margin: '10px',
+              flex: '0 0 calc(50% - 60px)',
+              maxWidth: 'calc(50% - 60px)',
+              display: 'flex',
+              justifyContent: 'center'
+            }}>
+              <ProfileCard
+                name="Dr Jorg Frochte"
+                designation={
+                  <>
+                    Professor for Applied Computer Science <br />Interdisciplinary Institute of <br />Applied AI and Data Science <br />Bochum University of Applied Sciences
+                  </>
+                }
+                organization=""
+                photoUrl={jorg}
+              />
+            </div>
+            <div style={{
+              margin: '10px',
+              flex: '0 0 calc(50% - 60px)',
+              maxWidth: 'calc(50% - 60px)',
+              display: 'flex',
+              justifyContent: 'center'
+            }}>
+              <ProfileCard
+                name="Dr Srinivas Padmanabhuni"
+                designation={
+                  <>
+                    Marax AI, INC <br />AI Advisor at IIIT Lucknow <br />CTO and Co-Founder<br />CityMandi , Bengaluru
+                  </>
+                }
+                organization=""
+                photoUrl={srinivas}
+              />
+            </div>
+            
+            <div style={{
+              margin: '10px',
+              flex: '0 0 calc(50% - 60px)',
+              maxWidth: 'calc(50% - 60px)',
+              display: 'flex',
+              justifyContent: 'center'
+            }}>
+              <ProfileCard
+                name="Mr. Mukund Bhoovaraghavan"
+                designation={<>
+                   Principal Group Engineering Manager <br /> Microsoft Hydrabad
+                  </>}
+                organization=""
+                photoUrl={mukundh}
+              />
+            </div>
+            <div style={{
+              margin: '10px',
+              flex: '0 0 calc(50% - 60px)',
+              maxWidth: 'calc(50% - 60px)',
+              display: 'flex',
+              justifyContent: 'center'
+            }}>
+              <ProfileCard
+                name="Mr Srikanth Subramanian"
+                designation={<>
+                   Vice President of Engineering at<br />Salesforce , Bengaluru
+                </>}
+                organization=""
+                photoUrl={srikanth}
+              />
+            </div>
+            
+            <div style={{
+              margin: '10px',
+              flex: '0 0 calc(50% - 60px)',
+              maxWidth: 'calc(50% - 60px)',
+              display: 'flex',
+              justifyContent: 'center'
+            }}>
+              
+            </div>
           </div>
         </div>
-      </div>
-
-      </div> 
-      </div></div>
+      </CommitteeSection>
+    </CommitteeContainer>
   );
 }
 
