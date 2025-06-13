@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { colors, typography } from './styles/commonStyles';
 
 import yadatiImage from './assets/yadati.jpg';
@@ -18,21 +16,19 @@ import balajiImage from './assets/balaji.jpg';
 import arunImage from './assets/arun.jpg';
 import mukundImage from './assets/mukund.jpg';
 
-const SectionContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 20px;
+const SectionContainer = styled.div`
   width: 100%;
+  padding: 60px 0;
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
 `;
 
 const SectionTitle = styled.h2`
   font-family: ${typography.heading.fontFamily};
-  font-size: 3rem;
-  font-weight: 800;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: ${colors.blue};
   text-align: center;
-  margin-bottom: 1rem;
-  color: #0d58a9;
+  margin-bottom: 50px;
   position: relative;
 
   &::after {
@@ -41,7 +37,7 @@ const SectionTitle = styled.h2`
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 150px;
+    width: 80px;
     height: 4px;
     background: #D9A353;
     border-radius: 2px;
@@ -51,271 +47,324 @@ const SectionTitle = styled.h2`
 const CardGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  width: 100%;
-  max-width: 1600px;
-  margin-top: 20px;
-  padding: 0 20px;
+  gap: 30px;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 0;
 
   @media (max-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
+    width: 95%;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    width: 85%;
   }
 `;
 
 const SpeakerCard = styled.div`
-  background: ${colors.blue};
+  position: relative;
+  background: white;
   border-radius: 15px;
-  padding: 15px;
-  color: ${colors.white};
-  text-align: center;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 400px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  height: 500px;
-  width: 100%;
-  filter: saturate(85%);
-  transform-origin: center center;
-  position: relative;
-  will-change: transform;
-  cursor: pointer;
 
   &:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    filter: saturate(100%);
-    z-index: 2;
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   }
+`;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    height: 15px;
-    background: rgba(0, 0, 0, 0.15);
-    border-radius: 50%;
-    filter: blur(8px);
-    opacity: 0;
-    transition: opacity 0.4s ease;
+const ImageContainer = styled.div`
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 20px auto 0 auto;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border: 4px solid white;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  flex-shrink: 0;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+`;
+
+const SpeakerImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+  display: block;
+  border-radius: 50%;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  ${SpeakerCard}:hover & {
+    transform: scale(1.05);
   }
+`;
 
-  &:hover::after {
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(13, 88, 169, 0.9));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  ${SpeakerCard}:hover & {
     opacity: 1;
   }
 `;
 
-const SpeakerImage = styled.img`
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid ${colors.white};
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+const ContentContainer = styled.div`
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  text-align: center;
+  margin-top: -20px;
 `;
 
 const SpeakerName = styled.h3`
   font-family: ${typography.heading.fontFamily};
-  font-size: 1.3em;
-  color: ${colors.white};
-  min-height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 15px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: ${colors.blue};
+  margin: 0 0 10px 0;
 `;
 
 const SpeakerDesignation = styled.div`
   font-family: ${typography.body.fontFamily};
-  font-size: 0.95em;
-  line-height: 1.3;
-  color: ${colors.white};
-  min-height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 15px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #666;
+  margin-bottom: 15px;
 `;
 
 const SpeakerLink = styled.a`
-  background: #D9A353;
-  color: ${colors.blue}; /* Or use white if you want light text */
-  text-decoration: none;
-  font-family: ${typography.body.fontFamily};
-  font-size: 1.1em;
-  font-weight: bold;
-  margin-top: auto;
-  padding: 10px 24px;
-  border: none;
-  border-radius: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: inline-block;
+  background: #D9A353;
+  color: white;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  margin-top: auto;
 
   &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(217, 163, 83, 0.5);
+    background: #c08a3f;
+    transform: translateY(-2px);
   }
 `;
 
-const SpeakerSection = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
+const SocialLinks = styled.div`
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  justify-content: center;
+`;
+
+const SocialLink = styled.a`
+  color: ${colors.blue};
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #D9A353;
+  }
+`;
 
   const speakers = [
     {
-      name: 'Prof. Yadati Narahari',
-      designation: (
-        <>
-          Honorary Professor<br />
-          Department of CSA, IISC Bangalore
-        </>
-      ),
+    name: 'Prof. Yadati Narahari',
+    designation: 'Honorary Professor, Department of CSA, IISC Bangalore',
       iconUrl: yadatiImage,
       link: 'https://gtl.csa.iisc.ac.in/hari',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/yadati-narahari-0b0b0b0b/',
+      twitter: '#',
+      website: 'https://gtl.csa.iisc.ac.in/hari'
+    }
     },
     {
       name: 'Dr Srinivas Padmanabhuni',
-      designation: (
-        <>
-          AI Advisor, Marax AI<br />
-          Faculty, IIIT Lucknow
-        </>
-      ),
+    designation: 'AI Advisor, Marax AI & Faculty, IIIT Lucknow',
       iconUrl: srinivasImage,
       link: 'https://iiitl.ac.in/index.php/personnel/dr-srinivas-padmanabhuni/',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/srinivas-padmanabhuni/',
+      twitter: '#',
+      website: 'https://iiitl.ac.in/index.php/personnel/dr-srinivas-padmanabhuni/'
+    }
     },
     {
       name: 'Dr Millie Pant',
-      designation: (
-        <>
-          Professor & Head<br />
-          IIT Roorkee
-        </>
-      ),
+    designation: 'Professor & Head, IIT Roorkee',
       iconUrl: milliImage,
       link: 'https://www.iitr.ac.in/~ASE/millifpt',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/millie-pant-0b0b0b0b/',
+      twitter: '#',
+      website: 'https://www.iitr.ac.in/~ASE/millifpt'
+    }
     },
     {
       name: 'Dr L Venkata Subramaniam',
-      designation: <>IBM Quantum India Leader</>,
+    designation: 'IBM Quantum India Leader',
       iconUrl: venkataImage,
-      link: 'https://www.linkedin.com/in/lvsubramaniam/?originalSubdomain=in',
+    link: 'https://www.linkedin.com/in/lvsubramaniam/',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/lvsubramaniam/',
+      twitter: '#',
+      website: '#'
+    }
     },
     {
-      name: 'Prof. Ferrante Neri',
-      designation: (
-        <>
-          Professor of ML & AI<br />
-          University of Surrey
-        </>
-      ),
+    name: 'Prof. Ferrante Neri',
+    designation: 'Professor of ML & AI, University of Surrey',
       iconUrl: ferranteImage,
       link: 'https://www.surrey.ac.uk/people/ferrante-neri',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/ferrante-neri-0b0b0b0b/',
+      twitter: '#',
+      website: 'https://www.surrey.ac.uk/people/ferrante-neri'
+    }
     },
     {
       name: 'Dr Pablo Moscato',
-      designation: (
-        <>
-          Professor of Data Science<br />
-          University of Newcastle
-        </>
-      ),
+    designation: 'Professor of Data Science, University of Newcastle',
       iconUrl: pabloImage,
       link: 'https://www.newcastle.edu.au/profile/pablo-moscato',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/pablo-moscato-0b0b0b0b/',
+      twitter: '#',
+      website: 'https://www.newcastle.edu.au/profile/pablo-moscato'
+    }
     },
     {
       name: 'Dr Sudha Ramalingam',
-      designation: (
-        <>
-          Professor & Head<br />
-          PSG IMSR, India
-        </>
-      ),
+    designation: 'Professor & Head, PSG IMSR, India',
       iconUrl: sudhaImage,
       link: 'https://psgimsr.ac.in/old/community-medicine/dr-sudha-ramalingam/',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/sudha-ramalingam-0b0b0b0b/',
+      twitter: '#',
+      website: 'https://psgimsr.ac.in/old/community-medicine/dr-sudha-ramalingam/'
+    }
     },
     {
       name: 'Dr Karthik Vaidhyanathan',
-      designation: (
-        <>
-          Assistant Professor<br />
-          IIIT Hyderabad
-        </>
-      ),
+    designation: 'Assistant Professor, IIIT Hyderabad',
       iconUrl: karthikVaidhyanathanImage,
       link: 'https://karthikvaidhyanathan.com/',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/karthik-vaidhyanathan-0b0b0b0b/',
+      twitter: '#',
+      website: 'https://karthikvaidhyanathan.com/'
+    }
     },
     {
       name: 'Mr Srikanth Subramanian',
-      designation: (
-        <>
-          VP, Engineering<br />
-          Salesforce India
-        </>
-      ),
+    designation: 'VP, Engineering, Salesforce India',
       iconUrl: srikanthImage,
-      link: 'https://www.linkedin.com/in/srikanth-subramanian/?originalSubdomain=in',
+    link: 'https://www.linkedin.com/in/srikanth-subramanian/',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/srikanth-subramanian/',
+      twitter: '#',
+      website: '#'
+    }
     },
     {
       name: 'Dr Anjani Priyadarsini',
-      designation: (
-        <>
-          Quantum Lead<br />
-          AWS India
-        </>
-      ),
+    designation: 'Quantum Lead, AWS India',
       iconUrl: anjaniImage,
-      link: 'https://www.linkedin.com/in/dr-anjani-priyadarsini/?originalSubdomain=in',
-    },
-    {
-      name: 'Mr Mukund Bhoovaraghavan',
-      designation: (
-        <>
-          Principal Group Eng. Manager<br />
-          Microsoft India
-        </>
-      ),
-      iconUrl: mukundImage,
-      link: 'https://www.linkedin.com/in/mukundbhoovaraghavan/?originalSubdomain=in',
+    link: 'https://www.linkedin.com/in/dr-anjani-priyadarsini/',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/dr-anjani-priyadarsini/',
+      twitter: '#',
+      website: '#'
+    }
+  },
+  {
+    name: 'Mr Mukund Bhoovaraghavan',
+    designation: 'Principal Group Eng. Manager, Microsoft India',
+    iconUrl: mukundImage,
+    link: 'https://www.linkedin.com/in/mukundbhoovaraghavan/',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/mukundbhoovaraghavan/',
+      twitter: '#',
+      website: '#'
+    }
     },
     {
       name: 'Dr Arun Rajkumar',
-      designation: (
-        <>
-          Assistant Professor<br />
-          IIT Madras
-        </>
-      ),
+    designation: 'Assistant Professor, IIT Madras',
       iconUrl: arunImage,
       link: 'https://www.cse.iitm.ac.in/profile.php?arg=MjA0MA==',
-    },
-  ];
+    social: {
+      linkedin: 'https://www.linkedin.com/in/arun-rajkumar-0b0b0b0b/',
+      twitter: '#',
+      website: 'https://www.cse.iitm.ac.in/profile.php?arg=MjA0MA=='
+    }
+  }
+];
 
+const Speaker = () => {
   return (
     <SectionContainer>
       <SectionTitle>Keynote Speakers and Panelists</SectionTitle>
       <CardGrid>
         {speakers.map((speaker, index) => (
-          <SpeakerCard
-            key={index}
-            data-aos={index % 3 === 0 ? 'fade-right' : index % 3 === 1 ? 'fade-up' : 'fade-left'}
-            data-aos-delay={`${index * 35}`}
-          >
+          <SpeakerCard key={index}>
+            <ImageContainer>
             <SpeakerImage src={speaker.iconUrl} alt={speaker.name} />
+              <Overlay />
+            </ImageContainer>
+            <ContentContainer>
+              <div>
             <SpeakerName>{speaker.name}</SpeakerName>
             <SpeakerDesignation>{speaker.designation}</SpeakerDesignation>
+              </div>
+              <div>
             <SpeakerLink href={speaker.link} target="_blank" rel="noopener noreferrer">
               View Profile
             </SpeakerLink>
+                <SocialLinks>
+                  <SocialLink href={speaker.social.linkedin} target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-linkedin"></i>
+                  </SocialLink>
+                  <SocialLink href={speaker.social.twitter} target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-twitter"></i>
+                  </SocialLink>
+                  <SocialLink href={speaker.social.website} target="_blank" rel="noopener noreferrer">
+                    <i className="fas fa-globe"></i>
+                  </SocialLink>
+                </SocialLinks>
+              </div>
+            </ContentContainer>
           </SpeakerCard>
         ))}
       </CardGrid>
@@ -323,4 +372,4 @@ const SpeakerSection = () => {
   );
 };
 
-export default SpeakerSection;
+export default Speaker;

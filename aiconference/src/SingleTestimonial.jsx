@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import testimonialImage from './assets/5856.jpg';
+import testimonialImage from './assets/image.png';
 
 const colors = {
   white: '#ffffff',
@@ -21,6 +21,7 @@ const TestimonialsContainer = styled.section`
   padding: 80px 0;
   background: ${colors.blue};
   text-align: center;
+  overflow: hidden;
 `;
 
 const TestimonialsTitle = styled.h2`
@@ -51,19 +52,38 @@ const TestimonialCard = styled.div`
   width: 1200px;
   margin: 0 auto;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  transition: all 0.5s ease;
+  position: relative;
 `;
 
 const TestimonialImage = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px ${colors.yellow};
+  transition: all 0.5s ease;
+  cursor: pointer;
+  filter: saturate(50%);
+
+  &:hover {
+    width: 400px;
+    height: 100%;
+    border-radius: 15px;
+    transform: translateX(-20px);
+    filter: saturate(110%);
+  }
 `;
 
 const TestimonialContent = styled.div`
   color: ${colors.white};
+  flex: 1;
+  transition: all 0.5s ease;
+  text-align: left;
+  padding: 20px;
 `;
 
 const TestimonialText = styled.p`
@@ -72,6 +92,7 @@ const TestimonialText = styled.p`
   line-height: 1.6;
   margin-bottom: 15px;
   font-style: italic;
+  transition: all 0.5s ease;
 `;
 
 const TestimonialName = styled.h4`
@@ -79,6 +100,7 @@ const TestimonialName = styled.h4`
   font-size: 1.2em;
   color: ${colors.yellow};
   margin: 0;
+  transition: all 0.5s ease;
 `;
 
 const TestimonialRole = styled.p`
@@ -87,13 +109,14 @@ const TestimonialRole = styled.p`
   color: ${colors.white};
   opacity: 0.9;
   margin-top: 5px;
+  transition: all 0.5s ease;
 `;
 
 const SingleTestimonial = () => {
   const testimonial = {
     name: "Dr. Badri N Subudhi",
     role: "Indian Institute of Technology Jammu, India",
-    text: "AI Spectrum 2025 is where tomorrow’s AI breakthroughs begin—uniting researchers, industry, and innovators to explore AI’s origins, impact, future trends, and disruptive applications. More than just a conference, it’s a nexus of interdisciplinary knowledge exchange and real‑world impact.",
+    text: "AI Spectrum 2025 is where tomorrow's AI breakthroughs begin—uniting researchers, industry, and innovators to explore AI's origins, impact, future trends, and disruptive applications. More than just a conference, it's a nexus of interdisciplinary knowledge exchange and real‑world impact.",
     image: testimonialImage
   };
 
