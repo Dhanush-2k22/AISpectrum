@@ -12,7 +12,7 @@ import EventsSection from './events.jsx';
 import VenueContactSection from './VenueContactSection.jsx';
 import Footer from './Footer.jsx';
 import About from './reg-about/about.jsx';
-import ImpDates from './reg-about/reg.jsx';
+import Dates from './imp.jsx';
 import WelcomeCardSection from './cbeplaces.jsx';
 import MainContent from './components/MainContent.jsx';
 import TempComponent from './temp.jsx';
@@ -204,7 +204,7 @@ function App() {
             <PublicationSection />
           </div>
           <div id="Dates">
-            <ImpDates />
+            <Dates />
           </div>
           <div id="paper-submission">
             <PaperSubmission />

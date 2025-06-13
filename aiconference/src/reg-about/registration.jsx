@@ -8,10 +8,16 @@ const RegDetails = () => {
       borderRadius: '20px',
       padding: '30px',
       boxShadow: '0 10px 20px rgba(217, 163, 83, 0.2)',
-      maxWidth: '70%',
+      maxWidth: '1000px',
       margin: '60px auto',
       color: '#475569',
-      border: '1px solid rgba(217, 163, 83, 0.2)'
+      border: '1px solid rgba(217, 163, 83, 0.2)',
+      '@media (max-width: 768px)': {
+        maxWidth: '100%',
+        width: '100%',
+        boxSizing: 'border-box',
+        padding: '15px'
+      }
     }}>
       <h2 style={{ 
         fontSize: '3rem',
@@ -58,7 +64,12 @@ const RegDetails = () => {
         display: 'inline-block'
       }}>The registration fee for the conference is as follows:</p>
       
-      <div style={{ overflowX: 'auto' }}>
+      <div style={{ 
+        overflowX: 'auto',
+        '@media (max-width: 768px)': {
+          width: '100%'
+        }
+      }}>
         <table style={{
           width: '80%',
           borderCollapse: 'collapse',
@@ -69,31 +80,102 @@ const RegDetails = () => {
           backgroundColor: '#023e8a',
           color: 'white',
           margin: '0 auto 30px',
-          boxShadow: '0 4px 12px rgba(217, 163, 83, 0.2)'
+          boxShadow: '0 4px 12px rgba(217, 163, 83, 0.2)',
+          '@media (max-width: 768px)': {
+            width: '100%',
+            fontSize: '0.9rem'
+          }
         }}>
           <thead>
-            <tr style={{ background: '#0d58a9', color: 'white' }}>
-              <th style={{ padding: '1rem', border: '3px solid #D9A353', textAlign: 'center' }}>CATEGORY</th>
-              <th style={{ padding: '1rem', border: '3px solid #D9A353', textAlign: 'center' }}>INDIAN DELEGATES</th>
-              <th style={{ padding: '1rem', border: '3px solid #D9A353', textAlign: 'center' }}>FOREIGN DELEGATES</th>
+            <tr style={{ 
+              background: '#0d58a9', 
+              color: 'white',
+              '@media (max-width: 768px)': {
+                display: 'flex',
+                flexDirection: 'column'
+              }
+            }}>
+              <th style={{ 
+                padding: '1rem', 
+                border: '3px solid #D9A353', 
+                textAlign: 'center',
+                '@media (max-width: 768px)': {
+                  padding: '0.8rem',
+                  border: 'none',
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.3)'
+                }
+              }}>CATEGORY</th>
+              <th style={{ 
+                padding: '1rem', 
+                border: '3px solid #D9A353', 
+                textAlign: 'center',
+                '@media (max-width: 768px)': {
+                  padding: '0.8rem',
+                  border: 'none',
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.3)'
+                }
+              }}>INDIAN DELEGATES</th>
+              <th style={{ 
+                padding: '1rem', 
+                border: '3px solid #D9A353', 
+                textAlign: 'center',
+                '@media (max-width: 768px)': {
+                  padding: '0.8rem',
+                  border: 'none'
+                }
+              }}>FOREIGN DELEGATES</th>
             </tr>
           </thead>
           <tbody>
-            <tr style={{ backgroundColor: '#fff', color: '#000' }}>
-              <td style={{ padding: '1rem', border: '3px solid #D9A353' }}>Academician, Research Scholar</td>
-              <td style={{ padding: '1rem', border: '3px solid #D9A353', fontWeight: 'bold', color: '#0d58a9' }}> ₹ 10,000</td>
-              <td style={{ padding: '1rem', border: '3px solid #D9A353', fontWeight: 'bold', color: '#0d58a9' }}>US $ 125</td>
-            </tr>
-            <tr style={{ backgroundColor: '#f0f0f0', color: '#000' }}>
-              <td style={{ padding: '1rem', border: '3px solid #D9A353' }}>Industry person</td>
-              <td style={{ padding: '1rem', border: '3px solid #D9A353', fontWeight: 'bold', color: '#0d58a9' }}> ₹ 12,000</td>
-              <td style={{ padding: '1rem', border: '3px solid #D9A353', fontWeight: 'bold', color: '#0d58a9' }}>US $ 140</td>
-            </tr>
-            <tr style={{ backgroundColor: '#fff', color: '#000' }}>
-              <td style={{ padding: '1rem', border: '3px solid #D9A353' }}>Attendees</td>
-              <td style={{ padding: '1rem', border: '3px solid #D9A353', fontWeight: 'bold', color: '#0d58a9' }}> ₹ 3,000</td>
-              <td style={{ padding: '1rem', border: '3px solid #D9A353', fontWeight: 'bold', color: '#0d58a9' }}>US $ 75</td>
-            </tr>
+            {[
+              { category: 'Academician, Research Scholar', indian: '₹ 10,000', foreign: 'US $ 125' },
+              { category: 'Industry person', indian: '₹ 12,000', foreign: 'US $ 140' },
+              { category: 'Attendees', indian: '₹ 3,000', foreign: 'US $ 75' }
+            ].map((row, idx) => (
+              <tr key={idx} style={{ 
+                backgroundColor: idx % 2 === 0 ? '#fff' : '#f0f0f0', 
+                color: '#000',
+                '@media (max-width: 768px)': {
+                  display: 'flex',
+                  flexDirection: 'column',
+                  borderBottom: '2px solid #D9A353'
+                }
+              }}>
+                <td style={{ 
+                  padding: '1rem', 
+                  border: '3px solid #D9A353',
+                  '@media (max-width: 768px)': {
+                    padding: '0.8rem',
+                    border: 'none',
+                    borderBottom: '1px solid rgba(217, 163, 83, 0.3)',
+                    fontSize: '0.85rem'
+                  }
+                }}>{row.category}</td>
+                <td style={{ 
+                  padding: '1rem', 
+                  border: '3px solid #D9A353', 
+                  fontWeight: 'bold', 
+                  color: '#0d58a9',
+                  '@media (max-width: 768px)': {
+                    padding: '0.8rem',
+                    border: 'none',
+                    borderBottom: '1px solid rgba(217, 163, 83, 0.3)',
+                    fontSize: '0.9rem'
+                  }
+                }}>{row.indian}</td>
+                <td style={{ 
+                  padding: '1rem', 
+                  border: '3px solid #D9A353', 
+                  fontWeight: 'bold', 
+                  color: '#0d58a9',
+                  '@media (max-width: 768px)': {
+                    padding: '0.8rem',
+                    border: 'none',
+                    fontSize: '0.9rem'
+                  }
+                }}>{row.foreign}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
@@ -123,7 +205,13 @@ const RegDetails = () => {
         display: 'inline-block'
       }}>Payment Type: Internet Banking</h2>
       
-      <div style={{ overflowX: 'auto', marginBottom: '2rem' }}>
+      <div style={{ 
+        overflowX: 'auto', 
+        marginBottom: '2rem',
+        '@media (max-width: 768px)': {
+          width: '100%'
+        }
+      }}>
         <table style={{
           width: '80%',
           borderCollapse: 'collapse',
@@ -133,44 +221,78 @@ const RegDetails = () => {
           backgroundColor: '#ffffff',
           color: '#000',
           margin: '0 auto 30px',
-          boxShadow: '0 4px 12px rgba(217, 163, 83, 0.2)'
+          boxShadow: '0 4px 12px rgba(217, 163, 83, 0.2)',
+          '@media (max-width: 768px)': {
+            width: '100%',
+            fontSize: '0.9rem'
+          }
         }}>
           <thead>
-            <tr style={{ background: '#0d58a9' }}>
-              <th colSpan={2} style={{ padding: '1rem', textAlign: 'center', color: 'white', fontSize: '1.5rem', border: '3px solid #D9A353' }}>
+            <tr style={{ 
+              background: '#0d58a9',
+              '@media (max-width: 768px)': {
+                display: 'flex',
+                flexDirection: 'column'
+              }
+            }}>
+              <th colSpan={2} style={{ 
+                padding: '1rem', 
+                textAlign: 'center', 
+                color: 'white', 
+                fontSize: '1.5rem', 
+                border: '3px solid #D9A353',
+                '@media (max-width: 768px)': {
+                  fontSize: '1.2rem',
+                  padding: '0.8rem',
+                  border: 'none',
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.3)'
+                }
+              }}>
                 Payment Details
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td style={{ padding: '1rem', fontWeight: 'bold', backgroundColor: '#f0f8ff', border: '3px solid #D9A353' }}>Account Number</td>
-              <td style={{ padding: '1rem', border: '3px solid #D9A353', fontWeight: 500, color: '#0d58a9' }}>1481267367</td>
-            </tr>
-            <tr>
-              <td style={{ padding: '1rem', fontWeight: 'bold', backgroundColor: '#f0f8ff', border: '3px solid #D9A353' }}>Name of the Beneficiary</td>
-              <td style={{ padding: '1rem', border: '3px solid #D9A353', color: '#0d58a9' }}>PSG Center for Nonformal and Continuing Education (PSG CNCE)</td>
-            </tr>
-            <tr>
-              <td style={{ padding: '1rem', fontWeight: 'bold', backgroundColor: '#f0f8ff', border: '3px solid #D9A353' }}>Address</td>
-              <td style={{ padding: '1rem', border: '3px solid #D9A353', color: '#0d58a9' }}>Peelamedu, Coimbatore - 641004</td>
-            </tr>
-            <tr>
-              <td style={{ padding: '1rem', fontWeight: 'bold', backgroundColor: '#f0f8ff', border: '3px solid #D9A353' }}>Name of the Bank</td>
-              <td style={{ padding: '1rem', border: '3px solid #D9A353', color: '#0d58a9' }}>Central Bank of India</td>
-            </tr>
-            <tr>
-              <td style={{ padding: '1rem', fontWeight: 'bold', backgroundColor: '#f0f8ff', border: '3px solid #D9A353' }}>Account Type</td>
-              <td style={{ padding: '1rem', border: '3px solid #D9A353', color: '#0d58a9' }}>Savings</td>
-            </tr>
-            <tr>
-              <td style={{ padding: '1rem', fontWeight: 'bold', backgroundColor: '#f0f8ff', border: '3px solid #D9A353' }}>IFSC Code</td>
-              <td style={{ padding: '1rem', border: '3px solid #D9A353', color: '#0d58a9' }}>CBIN0280913</td>
-            </tr>
-            <tr>
-              <td style={{ padding: '1rem', fontWeight: 'bold', backgroundColor: '#f0f8ff', border: '3px solid #D9A353' }}>Swift Code</td>
-              <td style={{ padding: '1rem', border: '3px solid #D9A353', color: '#0d58a9' }}>CBININBBOSB</td>
-            </tr>
+            {[
+              { label: 'Account Number', value: '1481267367' },
+              { label: 'Name of the Beneficiary', value: 'PSG Center for Nonformal and Continuing Education (PSG CNCE)' },
+              { label: 'Address', value: 'Peelamedu, Coimbatore - 641004' },
+              { label: 'Name of the Bank', value: 'Central Bank of India' },
+              { label: 'Account Type', value: 'Savings' },
+              { label: 'IFSC Code', value: 'CBIN0280913' },
+              { label: 'Swift Code', value: 'CBININBBOSB' }
+            ].map((row, idx) => (
+              <tr key={idx} style={{
+                '@media (max-width: 768px)': {
+                  display: 'flex',
+                  flexDirection: 'column',
+                  borderBottom: '2px solid #D9A353'
+                }
+              }}>
+                <td style={{ 
+                  padding: '1rem', 
+                  fontWeight: 'bold', 
+                  backgroundColor: '#f0f8ff', 
+                  border: '3px solid #D9A353',
+                  '@media (max-width: 768px)': {
+                    padding: '0.8rem',
+                    border: 'none',
+                    borderBottom: '1px solid rgba(217, 163, 83, 0.3)',
+                    fontSize: '0.85rem'
+                  }
+                }}>{row.label}</td>
+                <td style={{ 
+                  padding: '1rem', 
+                  border: '3px solid #D9A353', 
+                  color: '#0d58a9',
+                  '@media (max-width: 768px)': {
+                    padding: '0.8rem',
+                    border: 'none',
+                    fontSize: '0.9rem'
+                  }
+                }}>{row.value}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

@@ -1,9 +1,44 @@
 import React from 'react';
+import styled from 'styled-components';
 import lectureNotesImage from './assets/lecturenotes.png';
 import eaiLogoImage from './assets/Eai_logo_with_margins.png';
 import springerLogoImage from './assets/Springer.png';
 // Assuming commonStyles is needed for colors/typography if not already imported
 // import { colors, typography } from './styles/commonStyles';
+
+const LogoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+  border: 2px solid #D9A353;
+  border-radius: 20px;
+  background-color: #0d58a9;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 4px 12px rgba(217, 163, 83, 0.2);
+
+  @media (max-width: 768px) {
+    gap: 15px;
+    padding: 12px;
+    max-width: 350px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+`;
+
+const LogoImage = styled.img`
+  max-height: 100px;
+  filter: brightness(0) invert(1);
+
+  @media (max-width: 768px) {
+    max-height: 50px;
+    max-width: 90px;
+    object-fit: contain;
+    flex: 1;
+  }
+`;
 
 const PublicationSection = () => {
   return (
@@ -72,37 +107,16 @@ const PublicationSection = () => {
         other leading citation databases.
       </p>
 
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '40px',
-          padding: '20px',
-          border: '2px solid #D9A353',
-          borderRadius: '20px',
-          backgroundColor: '#0d58a9',
-          maxWidth: '600px',
-          margin: 'auto',
-          boxShadow: '0 4px 12px rgba(217, 163, 83, 0.2)'
-        }}
-      >
-        <img
+      <LogoContainer>
+        <LogoImage
           src={eaiLogoImage}
           alt="EAI Logo"
-          style={{
-            maxHeight: '100px',
-            filter: 'brightness(0) invert(1)',
-          }}
         />
-        <img
+        <LogoImage
           src={springerLogoImage}
           alt="Springer Logo"
-          style={{
-            maxHeight: '100px',
-            filter: 'brightness(0) invert(1)',
-          }}
         />
-      </div>
+      </LogoContainer>
     </section>
   );
 };

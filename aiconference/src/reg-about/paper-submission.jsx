@@ -2,16 +2,22 @@ import React from 'react';
 
 const PaperSubmission = () => {
   return (
-    <div style={{ 
+    <div id="paper-submission" style={{ 
       marginBottom: '80px', 
       background: 'rgb(255, 255, 255)',
       borderRadius: '20px',
       padding: '30px',
       boxShadow: '0 10px 20px rgba(217, 163, 83, 0.2)',
-      maxWidth: '70%',
-      margin: '0 auto 60px',
+      maxWidth: '1000px',
+      margin: '60px auto',
       color: '#475569',
-      border: '1px solid rgba(217, 163, 83, 0.2)'
+      border: '1px solid rgba(217, 163, 83, 0.2)',
+      '@media (max-width: 768px)': {
+        maxWidth: '100%',
+        width: '100%',
+        boxSizing: 'border-box',
+        padding: '15px'
+      }
     }}>
       <h2 style={{ 
         fontSize: '3rem',

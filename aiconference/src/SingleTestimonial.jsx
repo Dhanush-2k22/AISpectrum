@@ -22,6 +22,10 @@ const TestimonialsContainer = styled.section`
   background: ${colors.blue};
   text-align: center;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 40px 0;
+  }
 `;
 
 const TestimonialsTitle = styled.h2`
@@ -42,6 +46,11 @@ const TestimonialsTitle = styled.h2`
     height: 3px;
     background: ${colors.yellow};
   }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
 `;
 
 const TestimonialCard = styled.div`
@@ -57,6 +66,13 @@ const TestimonialCard = styled.div`
   gap: 40px;
   transition: all 0.5s ease;
   position: relative;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
 `;
 
 const TestimonialImage = styled.img`
@@ -76,6 +92,19 @@ const TestimonialImage = styled.img`
     transform: translateX(-20px);
     filter: saturate(110%);
   }
+
+  @media (max-width: 768px) {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+
+    &:hover {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      transform: none;
+    }
+  }
 `;
 
 const TestimonialContent = styled.div`
@@ -84,6 +113,11 @@ const TestimonialContent = styled.div`
   transition: all 0.5s ease;
   text-align: left;
   padding: 20px;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    padding: 10px;
+  }
 `;
 
 const TestimonialText = styled.p`
@@ -93,6 +127,11 @@ const TestimonialText = styled.p`
   margin-bottom: 15px;
   font-style: italic;
   transition: all 0.5s ease;
+
+  @media (max-width: 768px) {
+    font-size: 1em;
+    line-height: 1.4;
+  }
 `;
 
 const TestimonialName = styled.h4`
@@ -101,6 +140,10 @@ const TestimonialName = styled.h4`
   color: ${colors.yellow};
   margin: 0;
   transition: all 0.5s ease;
+
+  @media (max-width: 768px) {
+    font-size: 1.1em;
+  }
 `;
 
 const TestimonialRole = styled.p`
@@ -110,6 +153,10 @@ const TestimonialRole = styled.p`
   opacity: 0.9;
   margin-top: 5px;
   transition: all 0.5s ease;
+
+  @media (max-width: 768px) {
+    font-size: 0.8em;
+  }
 `;
 
 const SingleTestimonial = () => {

@@ -4,6 +4,37 @@ import 'aos/dist/aos.css';
 import ablockImage from '../assets/Ablock.jpeg';
 import psgAiImage from '../assets/AICons_logo.jpg';
 import psgCareImage from '../assets/PSGCARE.jpg';
+import styled from 'styled-components';
+
+const SectionHeading = styled.h2`
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0d58a9;
+  margin-bottom: 1rem;
+  background: #0d58a9;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    padding: 0 10px;
+  }
+`;
+
+const UnderlineBar = styled.div`
+  width: 150px;
+  height: 4px;
+  background: #D9A353;
+  margin: 0 auto;
+  border-radius: 2px;
+
+  @media (max-width: 768px) {
+    width: 120px;
+  }
+`;
 
 const SeeMore = ({ children }) => {
   const [showMore, setShowMore] = useState(false);
@@ -78,35 +109,18 @@ const About = () => {
           }}
         >
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <h2
+            <SectionHeading
               data-aos="zoom-in"
               data-aos-duration="1000"
               data-aos-easing="ease-out-cubic"
-              style={{
-                fontSize: '3rem',
-                fontWeight: '800',
-                color: '#0d58a9',
-                marginBottom: '1rem',
-                background: '#0d58a9',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
             >
               About PSGCT
-            </h2>
-            <div
+            </SectionHeading>
+            <UnderlineBar
               data-aos="zoom-in"
               data-aos-duration="1000"
               data-aos-delay="200"
               data-aos-easing="ease-out-cubic"
-              style={{
-                width: '150px',
-                height: '4px',
-                background: '#D9A353',
-                margin: '0 auto',
-                borderRadius: '2px',
-              }}
             />
           </div>
 
@@ -245,35 +259,18 @@ const About = () => {
           }}
         >
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <h2
+            <SectionHeading
               data-aos="zoom-in"
               data-aos-duration="1000"
               data-aos-easing="ease-out-cubic"
-              style={{
-                fontSize: '3rem',
-                fontWeight: '800',
-                color: '#0d58a9',
-                marginBottom: '1rem',
-                background: '#0d58a9',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
             >
               The AI Consortium @ PSG College of Technology
-            </h2>
-            <div
+            </SectionHeading>
+            <UnderlineBar
               data-aos="zoom-in"
               data-aos-duration="1000"
               data-aos-delay="200"
               data-aos-easing="ease-out-cubic"
-              style={{
-                width: '150px',
-                height: '4px',
-                background: '#D9A353',
-                margin: '0 auto',
-                borderRadius: '2px',
-              }}
             />
           </div>
 
@@ -283,6 +280,11 @@ const About = () => {
               gridTemplateColumns: window.innerWidth < 768 ? '1fr' : '1fr 1.5fr',
               gap: '3rem',
               alignItems: 'start',
+              '@media (max-width: 768px)': {
+                gridTemplateColumns: '1fr',
+                gap: '1.5rem',
+                padding: '0 15px'
+              }
             }}
           >
             {/* Image Card */}
@@ -297,7 +299,11 @@ const About = () => {
                 boxShadow: '0 4px 12px rgba(217, 163, 83, 0.2)',
                 transform: 'translateY(0)',
                 transition: 'transform 0.3s ease',
-                border: '1px solid rgba(217, 163, 83, 0.2)'
+                border: '1px solid rgba(217, 163, 83, 0.2)',
+                '@media (max-width: 768px)': {
+                  padding: '1rem',
+                  margin: '0 10px'
+                }
               }}
               onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
               onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
@@ -310,12 +316,19 @@ const About = () => {
                   height: '250px',
                   objectFit: 'contain',
                   borderRadius: '16px',
+                  '@media (max-width: 768px)': {
+                    height: '200px'
+                  }
                 }}
               />
             </div>
 
             {/* Content */}
-            <div data-aos="fade-left">
+            <div data-aos="fade-left" style={{
+              '@media (max-width: 768px)': {
+                padding: '0 10px'
+              }
+            }}>
               <p
                 style={{
                   marginBottom: '1.5rem',
@@ -323,6 +336,10 @@ const About = () => {
                   color: '#475569',
                   fontSize: '1.1rem',
                   textAlign: 'justify',
+                  '@media (max-width: 768px)': {
+                    fontSize: '1rem',
+                    lineHeight: '1.6'
+                  }
                 }}
               >
                 The growth of Artificial Intelligence must be guided by strong ethical principles and Responsible AI, ensuring that its development promotes fairness, transparency, and societal well-being.
@@ -330,8 +347,27 @@ const About = () => {
               </p>
 
               <div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '1rem', color: '#0d58a9',textAlign: 'justify', }}>Key Measures for AI Integration</h3>
-                <ul style={{ paddingLeft: '1.5rem', color: '#374151', lineHeight: '1.6',textAlign: 'justify',marginBottom: '1.5rem' }}>
+                <h3 style={{ 
+                  fontSize: '1.25rem', 
+                  fontWeight: '700', 
+                  marginBottom: '1rem', 
+                  color: '#0d58a9',
+                  textAlign: 'justify',
+                  '@media (max-width: 768px)': {
+                    fontSize: '1.1rem'
+                  }
+                }}>Key Measures for AI Integration</h3>
+                <ul style={{ 
+                  paddingLeft: '1.5rem', 
+                  color: '#374151', 
+                  lineHeight: '1.6',
+                  textAlign: 'justify',
+                  marginBottom: '1.5rem',
+                  '@media (max-width: 768px)': {
+                    paddingLeft: '1rem',
+                    fontSize: '0.95rem'
+                  }
+                }}>
                   <li>AI Affirmation Pledge</li>
                   <li>Campus-wide AI Awareness Campaigns</li>
                   <li>AI First Curriculum</li>
@@ -388,35 +424,18 @@ const About = () => {
           }}
         >
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <h2
+            <SectionHeading
               data-aos="zoom-in"
               data-aos-duration="1000"
               data-aos-easing="ease-out-cubic"
-              style={{
-                fontSize: '3rem',
-                fontWeight: '800',
-                color: '#0d58a9',
-                marginBottom: '1rem',
-                background: '#0d58a9',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
             >
               About PSG CARE
-            </h2>
-            <div
+            </SectionHeading>
+            <UnderlineBar
               data-aos="zoom-in"
               data-aos-duration="1000"
               data-aos-delay="200"
               data-aos-easing="ease-out-cubic"
-              style={{
-                width: '150px',
-                height: '4px',
-                background: '#D9A353',
-                margin: '0 auto',
-                borderRadius: '2px',
-              }}
             />
           </div>
 
@@ -522,35 +541,18 @@ const About = () => {
           }}
         >
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <h2
+            <SectionHeading
               data-aos="zoom-in"
               data-aos-duration="1000"
               data-aos-easing="ease-out-cubic"
-              style={{
-                fontSize: '3rem',
-                fontWeight: '800',
-                color: '#0d58a9',
-                marginBottom: '1rem',
-                background: '#0d58a9',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
             >
               Scope of the Conference
-            </h2>
-            <div
+            </SectionHeading>
+            <UnderlineBar
               data-aos="zoom-in"
               data-aos-duration="1000"
               data-aos-delay="200"
               data-aos-easing="ease-out-cubic"
-              style={{
-                width: '150px',
-                height: '4px',
-                background: '#D9A353',
-                margin: '0 auto',
-                borderRadius: '2px',
-              }}
             />
           </div>
 
@@ -561,6 +563,10 @@ const About = () => {
               padding: '2.5rem',
               border: '1px solid rgba(217, 163, 83, 0.2)',
               boxShadow: '0 4px 12px rgba(217, 163, 83, 0.1)',
+              '@media (max-width: 768px)': {
+                padding: '1.5rem',
+                margin: '0 10px'
+              }
             }}
           >
             <p
@@ -569,6 +575,10 @@ const About = () => {
                 color: '#475569',
                 fontSize: '1.2rem',
                 textAlign: 'justify',
+                '@media (max-width: 768px)': {
+                  fontSize: '1rem',
+                  lineHeight: '1.6'
+                }
               }}
             >
               Contemporary Intelligent System focuses on methods and algorithms for solving challenging problems and systems that behave intelligently in specialized domains such as medical diagnostics, decision making, security, gene expression analysis, speech and text recognition. The scope of this conference is to welcome original research papers contributing innovative ideas and out of box thinking in broad domains of Artificial Intelligence and allied areas in the perspective of Communication, IoT and Cyber Security. The conference aims to integrate the researchers from industry with academicians and scholars together to interchange their findings and results.
