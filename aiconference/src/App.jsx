@@ -23,6 +23,7 @@ import PaperSubmission from './reg-about/paper-submission';
 import RegDetails from './reg-about/registration';
 
 import Testimonials from './testimonials';
+import SingleTestimonial from './SingleTestimonial.jsx';
 
 // Back to Top Button Component
 const BackToTopButton = () => {
@@ -199,6 +200,9 @@ function App() {
           <div id="topics">
             <TopicsSection />
           </div>
+          <div id="publications">
+            <PublicationSection />
+          </div>
           <div id="Dates">
             <ImpDates />
           </div>
@@ -208,23 +212,20 @@ function App() {
           <div id="reg-details">
             <RegDetails />
           </div>
-          <div id="testimonials">
-            <Testimonials />
+          <div id="singletestimonial">
+            <SingleTestimonial/>
           </div>
           <div id="events">
             <EventsSection />
-          </div>
-          <div id="publications">
-            <PublicationSection />
-          </div>
-          <div id="venue-contact">
-            <VenueContactSection />
           </div>
           <div id="sponsors">
             <Sponsor />
           </div>
           <div id="welcome">
             <WelcomeCardSection />
+          </div>
+          <div id="venue-contact">
+            <VenueContactSection />
           </div>
           <Footer />
         </div>

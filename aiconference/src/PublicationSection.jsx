@@ -38,7 +38,7 @@ const PublicationSection = () => {
       </h2>
 
       <img
-        src="/aispectrum/assets/lecturenotes.png"
+        src="/assets/lecturenotes.png"
         alt="Lecture Notes of the Institute for Computer Sciences cover"
         style={{
           maxHeight: '320px',
@@ -51,7 +51,7 @@ const PublicationSection = () => {
 
       <p
         style={{
-          fontSize: '1.1em',
+          fontSize: '1.2em',
           lineHeight: '1.8',
           maxWidth: '900px',
           margin: '0 auto 50px',
@@ -64,8 +64,8 @@ const PublicationSection = () => {
         }}
       >
         The conference proceedings will be published in the{' '}
-        <strong style={{ color: '#0d58a9' }}>Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering (LNICST)</strong>{' '}
-        series by Springer. They will be indexed in <strong style={{ color: '#0d58a9' }}>Scopus</strong>, <strong style={{ color: '#0d58a9' }}>Ei Compendex</strong>, <strong style={{ color: '#0d58a9' }}>DBLP</strong>, and
+        Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering (LNICST){' '}
+        series by Springer. They will be indexed in Scopus,Ei Compendex, DBLP, and
         other leading citation databases.
       </p>
 
@@ -84,7 +84,7 @@ const PublicationSection = () => {
         }}
       >
         <img
-          src="/aispectrum/assets/Eai_logo_with_margins.png"
+          src="/assets/Eai_logo_with_margins.png"
           alt="EAI Logo"
           style={{
             maxHeight: '100px',
@@ -92,7 +92,7 @@ const PublicationSection = () => {
           }}
         />
         <img
-          src="/aispectrum/assets/Springer.png"
+          src="/assets/Springer.png"
           alt="Springer Logo"
           style={{
             maxHeight: '100px',

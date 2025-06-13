@@ -90,9 +90,9 @@ const MainContent = () => {
             </p>
             <h2 style={{ 
               margin: 0, 
-              fontSize: '1.8rem', 
+              fontSize: '1.2rem', 
               color: '#D9A353', 
-              fontWeight: '700',
+              fontWeight: '600',
               textAlign: 'center'
             }}>
               PSG - <span style={{ fontWeight: 'bold' }}>AI CONSORTIUM</span>
@@ -118,7 +118,7 @@ const MainContent = () => {
           <Line />
           THE AI SPECTRUM: BRIDGING RESEARCH, INDUSTRY & INNOVATION
           <Line />
-          Date : 22 - 24 December 2025
+          22 - 24 December 2025
           <Line />
           <div style={{ 
             marginTop: '30px',

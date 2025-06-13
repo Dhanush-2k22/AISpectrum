@@ -32,7 +32,7 @@ const Sponsor = () => {
           boxSizing: "border-box",
           margin: 0,
           marginTop: "40px",
-          marginBottom: "20px",
+          marginBottom: "10px",
           borderRadius: "20px", // 👈 Curved edges here
         }}
       >
@@ -85,38 +85,7 @@ const Sponsor = () => {
               To be announced
             </div>
           ))}
-        </div>
-
-        {/* Association Line with Logo below */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "15px",
-          }}
-        >
-          <h2
-            style={{
-              color: "#0d58a9",
-              fontSize: "1.6rem",
-              margin: 0,
-            }}
-          >
-            In association with
-          </h2>
-          <img
-            src={psgcare}
-            alt="PSG CARE"
-            style={{
-              height: "50px",
-              borderRadius: "10px",
-              background: "#fff",
-              padding: "5px",
-            }}
-          />
-        </div>
+        </div>  
       </div>
     </>
   );

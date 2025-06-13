@@ -479,7 +479,7 @@ const About = () => {
                   textAlign: 'justify',
                 }}
               >
-                <strong style={{ color: '#0d58a9' }}>Dr. R. Rudramoorthy</strong> is the Director of PSG CARE. The center also focuses on creating and sustaining effective faculty student relationships and aims to pursue its mission.
+                Dr. R. Rudramoorthy is the Director of PSG CARE. The center also focuses on creating and sustaining effective faculty student relationships and aims to pursue its mission.
               </p>
               
               <SeeMore>
