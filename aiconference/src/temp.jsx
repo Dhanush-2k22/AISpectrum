@@ -4,8 +4,8 @@ import NormalCardGrid from './normalcard';
 import { colors } from './styles/commonStyles';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import styled from 'styled-components';
 
+// Import images from committee file
 // Import images from committee file
 import TrusteeImage from './assets/trustee.jpg';
 import PrakasanImage from './assets/Prakasan.png';
@@ -77,25 +77,6 @@ import Dr_Rekha from './assets/Dr_Rekha.jpg';
 import millie from './assets/mille.jpg';
 import defaultImage from './assets/5856.jpg';
 
-const Heading = styled.h2`
-  color: #0D58A9;
-  font-weight: bold;
-  margin: 2rem 0 1rem 0;
-  text-align: center;
-  font-family: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif';
-`;
-
-const MainHeading = styled.h1`
-  color: #0D58A9;
-  font-weight: bold;
-  margin: 2rem 0 1rem 0;
-  text-align: center;
-  font-family: 'Montserrat, "Trebuchet MS", Helvetica, sans-serif';
-  font-size: calc(1.8rem + 1vw);
-  letter-spacing: 0.5px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-`;
-
 const TempComponent = () => {
   // Set background color when component mounts
   useEffect(() => {
@@ -114,15 +95,32 @@ const TempComponent = () => {
       padding: '70px 20px 40px 20px',
       color: '#000000',
       fontFamily: '"Inter", sans-serif',
-      maxWidth: '1400px',
+      maxWidth: '1280px',
       margin: '0 auto',
       overflowX: 'hidden',
       width: '100%',
       boxSizing: 'border-box'
     }}>
-      <MainHeading data-aos="fade-up">ORGANIZING COMMITTEE</MainHeading>
+      <h1 data-aos="fade-up" style={{ 
+        textAlign: 'center', 
+        marginBottom: '40px',
+        fontSize: 'calc(1.8rem + 1vw)',
+        color: '#D9A353',
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '700',
+        letterSpacing: '0.5px',
+        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)'
+      }}>ORGANIZING COMMITTEE</h1>
 
-      <Heading data-aos="fade-up">PATRON</Heading>
+      <h2 data-aos="fade-up" style={{ 
+        textAlign: 'center', 
+        marginBottom: '25px',
+        fontSize: 'calc(1.2rem + 0.5vw)',
+        color: '#D9A353',
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '600',
+        letterSpacing: '0.5px'
+      }}>PATRON</h2>
       <div data-aos="fade-up" style={{ 
         marginBottom: '40px', 
         display: 'flex',
@@ -132,7 +130,7 @@ const TempComponent = () => {
         background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
         padding: '30px',
         borderRadius: '15px',
-        boxShadow: '0 4px 15px rgba(13, 88, 169, 0.1)'
+        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.1)'
       }}>
         <ProfileCard
           name="Shri L Gopalakrishnan"
@@ -142,7 +140,15 @@ const TempComponent = () => {
         />
       </div>
       
-      <Heading data-aos="fade-up">CO - PATRON</Heading>
+      <h2 data-aos="fade-up" style={{ 
+        textAlign: 'center', 
+        marginBottom: '25px',
+        fontSize: 'calc(1.2rem + 0.5vw)',
+        color: '#D9A353',
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '600',
+        letterSpacing: '0.5px'
+      }}>CO - PATRON</h2>
       <div data-aos="fade-up" style={{ 
         marginBottom: '40px', 
         display: 'flex',
@@ -152,34 +158,45 @@ const TempComponent = () => {
         background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
         padding: '30px',
         borderRadius: '15px',
-        boxShadow: '0 4px 15px rgba(13, 88, 169, 0.1)'
+        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.1)'
       }}>
         <ProfileCard
           name="Dr K Prakasan"
-          designation="Principal"    
+          designation="Principal"
+          organization="PSG College of Technology"
           photoUrl={PrakasanImage}
         />
       </div>
       
-      <Heading data-aos="fade-up">GENERAL CHAIRS</Heading>
+      <h2 data-aos="fade-up" style={{ 
+        textAlign: 'center', 
+        marginBottom: '25px',
+        fontSize: 'calc(1.2rem + 0.5vw)',
+        color: '#D9A353',
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '600',
+        letterSpacing: '0.5px'
+      }}>GENERAL CHAIRS</h2>
       <div data-aos="fade-up" style={{ 
         display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
+        gridTemplateColumns: 'repeat(4, minmax(250px, 1fr))',
         gap: '30px',
         maxWidth: '1400px',
         margin: '0 auto 40px',
         padding: '30px',
         width: '100%',
         boxSizing: 'border-box',
+        justifyContent: 'center',
         background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
         borderRadius: '15px',
-        boxShadow: '0 4px 15px rgba(13, 88, 169, 0.1)'
+        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.1)'
       }}>
-        <div style={{ 
-          gridColumn: '1 / -1',
+        <div data-aos="fade-up" data-aos-delay="100" style={{ 
+          width: '100%',
+          height: '100%',
           display: 'flex',
           justifyContent: 'center',
-          gap: '30px'
+          minWidth: '0'
         }}>
           <ProfileCard
             name="Dr G R Karpagam"
@@ -187,9 +204,19 @@ const TempComponent = () => {
               <>
                 Professor<br />Department of Computer Science and Engineering<br />Director, PSG - AI Consortium
               </>
-            }     
+            }
+            organization="PSG College of Technology"
             photoUrl={Dr_GRK}
           />
+        </div>
+        
+        <div data-aos="fade-up" data-aos-delay="200" style={{ 
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          minWidth: '0'
+        }}>
           <ProfileCard
             name="Dr B Vinoth Kumar"
             designation={
@@ -197,80 +224,21 @@ const TempComponent = () => {
                 Professor<br />Department of Information Technology<br />IT Infrastructure and Networking -Technical Lead, PSG - AI Consortium
               </>
             }
+            organization="PSG College of Technology"
             photoUrl={VinothImage}
           />
         </div>
       </div>
       
-      <Heading data-aos="fade-up">ORGANIZING CHAIRS</Heading>
-      <div data-aos="fade-up" style={{ 
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        gap: '30px',
-        maxWidth: '1400px',
-        margin: '0 auto 40px',
-        padding: '30px',
-        width: '100%',
-        boxSizing: 'border-box',
-        background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
-        borderRadius: '15px',
-        boxShadow: '0 4px 15px rgba(13, 88, 169, 0.1)'
-      }}>
-        <div style={{ 
-          gridColumn: '1 / -1',
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '30px',
-          flexWrap: 'wrap'
-        }}>
-          <ProfileCard
-            name="Dr D Indumathi"
-            designation="Associate Professor"
-            organization="Department of Computer Science and Engineering"
-            photoUrl={IndhumathiImage}
-          />
-          <ProfileCard
-            name="Dr R Rekha"
-            designation="Associate Professor"
-            organization="Department of Information Technology"
-            photoUrl={Dr_Rekha}
-          />
-          <ProfileCard
-            name="Dr K Sathiyapriya"
-            designation="Associate Professor"
-            organization="Department of Computer Science and Engineering"
-            photoUrl={SathiyapriyaImage}
-          />
-          <ProfileCard
-            name="Dr R Senthil Prabha"
-            designation="Associate Professor"
-            organization="Department of Information Technology"
-            photoUrl={SenthilPrabhaImage}
-          />
-        </div>
-      </div>
-      
-      <Heading data-aos="fade-up">ORGANIZING CO - CHAIR</Heading>
-      <div data-aos="fade-up" style={{ 
-        marginBottom: '40px', 
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '30px',
-        background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
-        padding: '30px',
-        borderRadius: '15px',
-        boxShadow: '0 4px 15px rgba(13, 88, 169, 0.1)'
-      }}>
-        <ProfileCard
-          name="Dr Ferrante Neri"
-          designation="Professor of Machine Learning and Artificial Intelligence"
-          organization="University of Surrey, United Kingdom"
-          photoUrl={FerranteImage}
-        />
-      </div>
-      
-      <Heading data-aos="fade-up">SCIENTIFIC COMMITTEE CHAIRS</Heading>
+      <h2 data-aos="fade-up" style={{ 
+        textAlign: 'center', 
+        marginBottom: '25px',
+        fontSize: 'calc(1.2rem + 0.5vw)',
+        color: '#D9A353',
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '600',
+        letterSpacing: '0.5px'
+      }}>ORGANIZING CHAIRS</h2>
       <div data-aos="fade-up" style={{ 
         display: 'grid',
         gridTemplateColumns: 'repeat(4, minmax(250px, 1fr))',
@@ -282,7 +250,118 @@ const TempComponent = () => {
         boxSizing: 'border-box',
         background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
         borderRadius: '15px',
-        boxShadow: '0 4px 15px rgba(13, 88, 169, 0.1)'
+        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.1)'
+      }}>
+        <div data-aos="fade-up" style={{ 
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          minWidth: '0'
+        }}>
+          <ProfileCard
+            name="Dr D Indumathi"
+            designation="Associate Professor"
+            organization="Department of Computer Science and Engineering, PSG College of Technology"
+            photoUrl={IndhumathiImage}
+          />
+        </div>
+        
+        <div data-aos="fade-up" style={{ 
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          minWidth: '0'
+        }}>
+          <ProfileCard
+            name="Dr R Rekha"
+            designation="Associate Professor"
+            organization="Department of Information Technology, PSG College of Technology"
+            photoUrl={Dr_Rekha}
+          />
+        </div>
+        
+        <div data-aos="fade-up" style={{ 
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          minWidth: '0'
+        }}>
+          <ProfileCard
+            name="Dr K Sathiyapriya"
+            designation="Associate Professor"
+            organization="Department of Computer Science and Engineering, PSG College of Technology"
+            photoUrl={SathiyapriyaImage}
+          />
+        </div>
+        
+        <div data-aos="fade-up" style={{ 
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          minWidth: '0'
+        }}>
+          <ProfileCard
+            name="Dr R Senthil Prabha"
+            designation="Associate Professor"
+            organization="Department of Information Technology, PSG College of Technology"
+            photoUrl={SenthilPrabhaImage}
+          />
+        </div>
+      </div>
+      
+      <h2 data-aos="fade-up" style={{ 
+        textAlign: 'center', 
+        marginBottom: '25px',
+        fontSize: 'calc(1.2rem + 0.5vw)',
+        color: '#D9A353',
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '600',
+        letterSpacing: '0.5px'
+      }}>ORGANIZING CO - CHAIR</h2>
+      <div data-aos="fade-up" style={{ 
+        marginBottom: '40px', 
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '30px',
+        background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
+        padding: '30px',
+        borderRadius: '15px',
+        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.1)'
+      }}>
+        <ProfileCard
+          name="Dr Ferrante Neri"
+          designation="Professor of Machine Learning and Artificial Intelligence"
+          organization="University of Surrey, United Kingdom"
+          photoUrl={FerranteImage}
+        />
+      </div>
+      
+      <h2 data-aos="fade-up" style={{ 
+        textAlign: 'center', 
+        marginBottom: '25px',
+        fontSize: 'calc(1.2rem + 0.5vw)',
+        color: '#D9A353',
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '600',
+        letterSpacing: '0.5px'
+      }}>SCIENTIFIC COMMITTEE CHAIRS</h2>
+      <div data-aos="fade-up" style={{ 
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, minmax(250px, 1fr))',
+        gap: '30px',
+        maxWidth: '1400px',
+        margin: '0 auto 40px',
+        padding: '30px',
+        width: '100%',
+        boxSizing: 'border-box',
+        background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
+        borderRadius: '15px',
+        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.1)'
       }}>
         <div data-aos="fade-up" style={{ 
           width: '100%',
@@ -329,7 +408,7 @@ const TempComponent = () => {
           <ProfileCard
             name="Dr Millie Pant"
             designation="Professor & Head"
-            organization="Department of Applied Mathematics and Scientific Computing, Indian Institute of Technology Roorke, India"
+            organization="Department of Applied Mathematics and Scientific Computing, Indian Institute of Technology Roorkee, India"
             photoUrl={millie}
           />
         </div>
@@ -362,15 +441,14 @@ const TempComponent = () => {
         justifyContent: 'center',
         background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
         borderRadius: '15px',
-        boxShadow: '0 4px 15px rgba(13, 88, 169, 0.1)'
+        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.1)'
       }}>
         <div data-aos="fade-up" style={{ 
           width: '100%',
           height: '100%',
           display: 'flex',
           justifyContent: 'center',
-          minWidth: '0',
-          gridColumn: '2 / span 1'
+          minWidth: '0'
         }}>
           <ProfileCard
             name="Dr Arun Rajkumar"
@@ -385,8 +463,7 @@ const TempComponent = () => {
           height: '100%',
           display: 'flex',
           justifyContent: 'center',
-          minWidth: '0',
-          gridColumn: '3 / span 1'
+          minWidth: '0'
         }}>
           <ProfileCard
             name="Dr B Sangeetha"
@@ -397,7 +474,16 @@ const TempComponent = () => {
         </div>
       </div>
       
-      <MainHeading data-aos="fade-up">ADVISORY COMMITTEE</MainHeading>
+      <h1 data-aos="fade-up" style={{ 
+        textAlign: 'center', 
+        marginBottom: '40px',
+        fontSize: 'calc(1.8rem + 1vw)',
+        color: '#D9A353',
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: '700',
+        letterSpacing: '0.5px',
+        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)'
+      }}>ADVISORY COMMITTEE</h1>
       <div style={{ 
         marginBottom: '40px', 
         background: 'linear-gradient(145deg, #0d58a9 0%, #0a4a8f 100%)',
@@ -407,19 +493,22 @@ const TempComponent = () => {
         flexDirection: 'column',
         alignItems: 'center',
         gap: '30px',
-        boxShadow: '0 4px 15px rgba(13, 88, 169, 0.2)'
+        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.2)'
       }}>
 
-         <Heading style={{ 
+        
+       
+        
+        <h2 style={{ 
           textAlign: 'center', 
-          marginBottom: '5px',
+          marginBottom: '25px',
           fontSize: 'calc(1.2rem + 0.5vw)',
           color: '#D9A353',
           fontFamily: '"Playfair Display", serif',
           fontWeight: '600',
           letterSpacing: '0.5px',
           textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)'
-        }}>INTERNATIONAL ADVISORY COMMITTEE</Heading>
+        }}>INTERNATIONAL ADVISORY COMMITTEE</h2>
         
         <div style={{
           width: '100%',
@@ -429,17 +518,18 @@ const TempComponent = () => {
           borderRadius: '10px',
           backgroundColor: 'rgba(255, 255, 255, 0.1)',
           backdropFilter: 'blur(10px)',
-          textAlign:'left',
-          border: '1px solid rgba(13, 88, 169, 0.2)'
+          border: '1px solid rgba(217, 163, 83, 0.2)',
+          overflowX: 'auto',
         }}>
           <table style={{
             width: '100%',
             minWidth: '600px',
             borderCollapse: 'collapse',
-            color: '#ffffff'
+            color: '#ffffff',
+            textAlign: 'left',
           }}>
             <tbody>
-              <tr>
+                            <tr>
                 <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(13, 88, 169, 0.2)' }}>
                   Dr Chunting Chris Mi
                 </td>
@@ -551,19 +641,20 @@ const TempComponent = () => {
                   Qatar University , Qatar
                 </td>
               </tr>
+            
             </tbody>
           </table>
         </div>
-        <Heading style={{ 
+         <h2 style={{ 
           textAlign: 'center', 
-          marginBottom: '3px',
+          marginBottom: '25px',
           fontSize: 'calc(1.2rem + 0.5vw)',
           color: '#D9A353',
           fontFamily: '"Playfair Display", serif',
           fontWeight: '600',
           letterSpacing: '0.5px',
           textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)'
-        }}>NATIONAL ADVISORY COMMITTEE</Heading>
+        }}>NATIONAL ADVISORY COMMITTEE</h2>
         
         <div style={{
           width: '100%',
@@ -573,33 +664,34 @@ const TempComponent = () => {
           borderRadius: '10px',
           backgroundColor: 'rgba(255, 255, 255, 0.1)',
           backdropFilter: 'blur(10px)',
-          textAlign:'left',
-          border: '1px solid rgba(13, 88, 169, 0.2)'
+          border: '1px solid rgba(217, 163, 83, 0.2)',
+          overflowX: 'auto',
         }}>
           <table style={{
             width: '100%',
             minWidth: '600px',
             borderCollapse: 'collapse',
-            color: '#ffffff'
+            color: '#ffffff',
+            textAlign: 'left' 
           }}>
             <tbody>
               <tr>
                 <td style={{ 
                   padding: '12px 20px', 
-                  borderBottom: '1px solid rgba(13, 88, 169, 0.2)',
+                  borderBottom: '1px solid rgba(217, 163, 83, 0.2)',
                   transition: 'all 0.3s ease'
                 }}>
                   Dr Albert Sunny
                 </td>
                 <td style={{ 
                   padding: '12px 20px', 
-                  borderBottom: '1px solid rgba(13, 88, 169, 0.2)',
+                  borderBottom: '1px solid rgba(217, 163, 83, 0.2)',
                   transition: 'all 0.3s ease'
                 }}>
                   Indian Institute of Science Bangalore, Karnataka
                 </td>
               </tr>
-              <tr>
+               <tr>
                 <td style={{ padding: '12px 20px', borderBottom: '1px solid rgba(13, 88, 169, 0.2)' }}>
                   Dr Badri Narayan Subudhi
                 </td>
@@ -754,32 +846,47 @@ const TempComponent = () => {
             </tbody>
           </table>
         </div>
-        
-       
       </div>
+      
       
       <style jsx>{`
         @media screen and (max-width: 768px) {
           h1 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
           }
           h2 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
           }
           h4 {
-            font-size: 1rem !important;
+            font-size: 0.9rem !important;
+          }
+          div[data-aos="fade-up"] {
+            flex-direction: column !important;
+            align-items: center !important;
+            padding: 20px !important;
+            grid-template-columns: 1fr !important;
+          }
+          div[style*="gridTemplateColumns"] {
+            grid-template-columns: 1fr !important;
+          }
+          table {
+            min-width: auto !important;
+            width: 100% !important;
           }
         }
         
         @media screen and (max-width: 480px) {
           h1 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
           }
           h2 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
           }
           h4 {
-            font-size: 0.9rem !important;
+            font-size: 0.8rem !important;
+          }
+          div[data-aos="fade-up"] {
+            padding: 15px !important;
           }
         }
         
@@ -796,6 +903,14 @@ const TempComponent = () => {
         @media screen and (max-width: 600px) {
           div[style*="gridTemplateColumns"] {
             grid-template-columns: 1fr;
+          }
+        }
+        @media screen and (min-width: 1200px) {
+          div[style*="gridTemplateColumns"] > div:first-child {
+            grid-column: 2;
+          }
+          div[style*="gridTemplateColumns"] > div:last-child {
+            grid-column: 3;
           }
         }
       `}</style>

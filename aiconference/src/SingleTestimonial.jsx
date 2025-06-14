@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import testimonialImage from './assets/image.png';
+import React, { useRef } from 'react';
+import styled, { keyframes } from 'styled-components';
+import Slider from 'react-slick';
+import testimonialImage1 from './assets/image.png';
+import testimonialImage2 from './assets/image2.png';
 
 const colors = {
   white: '#ffffff',
@@ -16,6 +18,17 @@ const typography = {
     fontFamily: "'Inter', sans-serif"
   }
 };
+
+const slideIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
 const TestimonialsContainer = styled.section`
   padding: 80px 0;
@@ -64,8 +77,7 @@ const TestimonialCard = styled.div`
   display: flex;
   align-items: center;
   gap: 40px;
-  transition: all 0.5s ease;
-  position: relative;
+  animation: ${slideIn} 0.8s ease forwards;
 
   @media (max-width: 768px) {
     width: 90%;
@@ -110,7 +122,6 @@ const TestimonialImage = styled.img`
 const TestimonialContent = styled.div`
   color: ${colors.white};
   flex: 1;
-  transition: all 0.5s ease;
   text-align: left;
   padding: 20px;
 
@@ -126,7 +137,6 @@ const TestimonialText = styled.p`
   line-height: 1.6;
   margin-bottom: 15px;
   font-style: italic;
-  transition: all 0.5s ease;
 
   @media (max-width: 768px) {
     font-size: 1em;
@@ -139,7 +149,6 @@ const TestimonialName = styled.h4`
   font-size: 1.2em;
   color: ${colors.yellow};
   margin: 0;
-  transition: all 0.5s ease;
 
   @media (max-width: 768px) {
     font-size: 1.1em;
@@ -152,34 +161,66 @@ const TestimonialRole = styled.p`
   color: ${colors.white};
   opacity: 0.9;
   margin-top: 5px;
-  transition: all 0.5s ease;
 
   @media (max-width: 768px) {
     font-size: 0.8em;
   }
 `;
 
-const SingleTestimonial = () => {
-  const testimonial = {
+// Slider config
+const sliderSettings = {
+  dots: false,
+  arrows: false,
+  infinite: true,
+  speed: 10000,         // slow scroll
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 0,     // continuous flow
+  cssEase: 'linear',
+  pauseOnHover: false,  // we'll control hover manually
+};
+
+const testimonials = [
+  {
     name: "Dr. Badri N Subudhi",
     role: "Indian Institute of Technology Jammu, India",
     text: "AI Spectrum 2025 is where tomorrow's AI breakthroughs begin—uniting researchers, industry, and innovators to explore AI's origins, impact, future trends, and disruptive applications. More than just a conference, it's a nexus of interdisciplinary knowledge exchange and real‑world impact.",
-    image: testimonialImage
-  };
+    image: testimonialImage1
+  },
+  {
+    name: "Prof. Dr. Liang Zhou",
+    role: "Shanghai Intelligent Medical Devices and Active Health Collaborative Innovation Center, China",
+    text: "AI Spectrum 2025 as it fosters global collaboration, open dialogue, and inclusivity in the AI research ecosystem. It stands as a platform poised to be a Launchpad for next-generation ideas and bold innovations in AI.",
+    image: testimonialImage2
+  }
+];
+
+const TestimonialsSlider = () => {
+  const sliderRef = useRef(null);
 
   return (
     <TestimonialsContainer>
       <TestimonialsTitle>Expert Opinions on AI Spectrum 2025</TestimonialsTitle>
-      <TestimonialCard>
-        <TestimonialImage src={testimonial.image} alt={testimonial.name} />
-        <TestimonialContent>
-          <TestimonialText>"{testimonial.text}"</TestimonialText>
-          <TestimonialName>{testimonial.name}</TestimonialName>
-          <TestimonialRole>{testimonial.role}</TestimonialRole>
-        </TestimonialContent>
-      </TestimonialCard>
+      <Slider ref={sliderRef} {...sliderSettings}>
+        {testimonials.map((item, idx) => (
+          <div key={idx}>
+            <TestimonialCard
+              onMouseEnter={() => sliderRef.current?.slickPause()}
+              onMouseLeave={() => sliderRef.current?.slickPlay()}
+            >
+              <TestimonialImage src={item.image} alt={item.name} />
+              <TestimonialContent>
+                <TestimonialText>"{item.text}"</TestimonialText>
+                <TestimonialName>{item.name}</TestimonialName>
+                <TestimonialRole>{item.role}</TestimonialRole>
+              </TestimonialContent>
+            </TestimonialCard>
+          </div>
+        ))}
+      </Slider>
     </TestimonialsContainer>
   );
 };
 
-export default SingleTestimonial;
+export default TestimonialsSlider;

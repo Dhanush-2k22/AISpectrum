@@ -98,7 +98,7 @@ const ThemeSection = () => {
             lineHeight: '1.6',
             maxWidth: '900px',
             margin: '0 auto',
-            textAlign: 'justify-center',
+            textAlign: 'justify',
             textJustify: 'inter-word',
             color: '#475569',
             transition: 'all 0.4s ease',
