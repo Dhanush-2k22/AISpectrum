@@ -3,6 +3,8 @@ import './App.css';
 import Navbar from './Navbar/Navbar.jsx';
 import UpdatePopup from './components/UpdatePopup.jsx';
 import { GlobalStyles, colors } from './styles/commonStyles';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 import Comitte from './comitte';
 import ThemeSection from './Theme/theme.jsx';

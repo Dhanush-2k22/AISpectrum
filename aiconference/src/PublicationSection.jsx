@@ -98,6 +98,7 @@ const PublicationSection = () => {
           padding: '20px',
           backgroundColor: 'rgba(217, 163, 83, 0.05)',
           borderRadius: '10px',
+          textAlign:'justify',
           border: '1px solid rgba(217, 163, 83, 0.2)'
         }}
       >

@@ -36,6 +36,52 @@ const UnderlineBar = styled.div`
   }
 `;
 
+const FloatingCard = styled.div`
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 12px rgba(217, 163, 83, 0.2);
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(217, 163, 83, 0.2);
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 4px 12px rgba(217, 163, 83, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    margin: 0 10px 2rem 10px;
+  }
+`;
+
+const ScopeContent = styled.div`
+  background-color: rgba(217, 163, 83, 0.05);
+  border-radius: 16px;
+  padding: 2.5rem;
+  border: 1px solid rgba(217, 163, 83, 0.2);
+  box-shadow: 0 4px 12px rgba(217, 163, 83, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    margin: 0;
+  }
+`;
+
+const ScopeText = styled.p`
+  line-height: 1.8;
+  color: #475569;
+  font-size: 1.2rem;
+  text-align: justify;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+`;
+
 const SeeMore = ({ children }) => {
   const [showMore, setShowMore] = useState(false);
 
@@ -516,29 +562,11 @@ const About = () => {
         </div>
 
         {/* --- CONFERENCE SCOPE FLOATING CARD --- */}
-        <div
+        <FloatingCard
           data-aos="fade-up"
           data-aos-duration="1200"
           data-aos-delay="100"
           data-aos-easing="ease-out-cubic"
-          style={{
-            backgroundColor: '#ffffff',
-            borderRadius: '24px',
-            padding: '3rem',
-            marginBottom: '3rem',
-            boxShadow: '0 4px 12px rgba(217, 163, 83, 0.2)',
-            transform: 'translateY(0)',
-            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-            border: '1px solid rgba(217, 163, 83, 0.2)'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'translateY(-8px)';
-            e.currentTarget.style.boxShadow = '0 4px 12px rgba(217, 163, 83, 0.2)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 4px 12px rgba(217, 163, 83, 0.2)';
-          }}
         >
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
             <SectionHeading
@@ -556,35 +584,12 @@ const About = () => {
             />
           </div>
 
-          <div
-            style={{
-              backgroundColor: 'rgba(217, 163, 83, 0.05)',
-              borderRadius: '16px',
-              padding: '2.5rem',
-              border: '1px solid rgba(217, 163, 83, 0.2)',
-              boxShadow: '0 4px 12px rgba(217, 163, 83, 0.1)',
-              '@media (max-width: 768px)': {
-                padding: '1.5rem',
-                margin: '0 10px'
-              }
-            }}
-          >
-            <p
-              style={{
-                lineHeight: '1.8',
-                color: '#475569',
-                fontSize: '1.2rem',
-                textAlign: 'justify',
-                '@media (max-width: 768px)': {
-                  fontSize: '1rem',
-                  lineHeight: '1.6'
-                }
-              }}
-            >
+          <ScopeContent>
+            <ScopeText>
               Contemporary Intelligent System focuses on methods and algorithms for solving challenging problems and systems that behave intelligently in specialized domains such as medical diagnostics, decision making, security, gene expression analysis, speech and text recognition. The scope of this conference is to welcome original research papers contributing innovative ideas and out of box thinking in broad domains of Artificial Intelligence and allied areas in the perspective of Communication, IoT and Cyber Security. The conference aims to integrate the researchers from industry with academicians and scholars together to interchange their findings and results.
-            </p>
-          </div>
-        </div>
+            </ScopeText>
+          </ScopeContent>
+        </FloatingCard>
       </div>
     </div>
   );
