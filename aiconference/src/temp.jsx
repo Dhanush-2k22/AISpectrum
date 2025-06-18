@@ -4,6 +4,7 @@ import NormalCardGrid from './normalcard';
 import { colors } from './styles/commonStyles';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import styled from 'styled-components';
 
 // Import images from committee file
 // Import images from committee file
@@ -76,6 +77,68 @@ import sudha_R from './assets/sudha_R.png';
 import Dr_Rekha from './assets/Dr_Rekha.jpg';
 import millie from './assets/mille.jpg';
 import defaultImage from './assets/5856.jpg';
+import malarImage from './assets/malar.jpg';
+
+const GeneralChairsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto 40px;
+  padding: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(217, 163, 83, 0.1);
+
+  @media (min-width: 768px) {
+    gap: 15px;
+  }
+`;
+
+const ScientificCommitteeGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto 40px;
+  padding: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(217, 163, 83, 0.1);
+
+  @media (min-width: 768px) {
+    gap: 15px;
+  }
+`;
+
+const TwoCardCenterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 0 auto 40px;
+  padding: 30px;
+  max-width: 650px;
+  background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(217, 163, 83, 0.1);
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    max-width: 100%;
+    padding: 15px;
+  }
+`;
+
+const FixedCardWrapper = styled.div`
+  width: 300px;
+  display: flex;
+  justify-content: center;
+`;
 
 const TempComponent = () => {
   // Set background color when component mounts
@@ -177,20 +240,7 @@ const TempComponent = () => {
         fontWeight: '600',
         letterSpacing: '0.5px'
       }}>GENERAL CHAIRS</h2>
-      <div data-aos="fade-up" style={{ 
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, minmax(250px, 1fr))',
-        gap: '30px',
-        maxWidth: '1400px',
-        margin: '0 auto 40px',
-        padding: '30px',
-        width: '100%',
-        boxSizing: 'border-box',
-        justifyContent: 'center',
-        background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
-        borderRadius: '15px',
-        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.1)'
-      }}>
+      <GeneralChairsContainer data-aos="fade-up">
         <div data-aos="fade-up" data-aos-delay="100" style={{ 
           width: '100%',
           height: '100%',
@@ -228,7 +278,7 @@ const TempComponent = () => {
             photoUrl={VinothImage}
           />
         </div>
-      </div>
+      </GeneralChairsContainer>
       
       <h2 data-aos="fade-up" style={{ 
         textAlign: 'center', 
@@ -259,12 +309,18 @@ const TempComponent = () => {
           justifyContent: 'center',
           minWidth: '0'
         }}>
-          <ProfileCard
-            name="Dr D Indumathi"
-            designation="Associate Professor"
-            organization="Department of Computer Science and Engineering, PSG College of Technology"
-            photoUrl={IndhumathiImage}
-          />
+        <ProfileCard
+          name="Dr D Indumathi"
+          designation="Associate Professor"
+          organization={
+            <>
+              Department of Computer Science and Engineering,<br />
+              PSG College of Technology
+            </>
+          }
+          photoUrl={IndhumathiImage}
+        />
+
         </div>
         
         <div data-aos="fade-up" style={{ 
@@ -275,12 +331,18 @@ const TempComponent = () => {
           minWidth: '0'
         }}>
           <ProfileCard
-            name="Dr R Rekha"
-            designation="Associate Professor"
-            organization="Department of Information Technology, PSG College of Technology"
-            photoUrl={Dr_Rekha}
-          />
-        </div>
+          name="Dr R Rekha"
+          designation="Associate Professor"
+          organization={
+            <>
+              Department of Information Technology,<br />
+              PSG College of Technology
+            </>
+          }
+          photoUrl={Dr_Rekha}
+        />
+
+          </div>
         
         <div data-aos="fade-up" style={{ 
           width: '100%',
@@ -292,7 +354,13 @@ const TempComponent = () => {
           <ProfileCard
             name="Dr K Sathiyapriya"
             designation="Associate Professor"
-            organization="Department of Computer Science and Engineering, PSG College of Technology"
+              organization={
+            <>
+              Department of Computer Science and Engineering,<br />
+              PSG College of Technology
+            </>
+          }
+            
             photoUrl={SathiyapriyaImage}
           />
         </div>
@@ -307,7 +375,12 @@ const TempComponent = () => {
           <ProfileCard
             name="Dr R Senthil Prabha"
             designation="Associate Professor"
-            organization="Department of Information Technology, PSG College of Technology"
+             organization={
+            <>
+              Department of Information Technology,<br />
+              PSG College of Technology
+            </>
+          }
             photoUrl={SenthilPrabhaImage}
           />
         </div>
@@ -350,19 +423,7 @@ const TempComponent = () => {
         fontWeight: '600',
         letterSpacing: '0.5px'
       }}>SCIENTIFIC COMMITTEE CHAIRS</h2>
-      <div data-aos="fade-up" style={{ 
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, minmax(250px, 1fr))',
-        gap: '30px',
-        maxWidth: '1400px',
-        margin: '0 auto 40px',
-        padding: '30px',
-        width: '100%',
-        boxSizing: 'border-box',
-        background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
-        borderRadius: '15px',
-        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.1)'
-      }}>
+      <ScientificCommitteeGrid data-aos="fade-up">
         <div data-aos="fade-up" style={{ 
           width: '100%',
           height: '100%',
@@ -408,7 +469,12 @@ const TempComponent = () => {
           <ProfileCard
             name="Dr Millie Pant"
             designation="Professor & Head"
-            organization="Department of Applied Mathematics and Scientific Computing, Indian Institute of Technology Roorkee, India"
+              organization={
+            <>
+              Department of Applied Mathematics and Scientific Computing,<br />
+              Indian Institute of Technology Roorkee, India
+            </>
+          }
             photoUrl={millie}
           />
         </div>
@@ -423,56 +489,49 @@ const TempComponent = () => {
           <ProfileCard
             name="Dr B Malar"
             designation="Professor"
-            organization="Department of Applied Mathematics and Computational Sciences, PSG College of Technology, India"
-            photoUrl={defaultImage}
+            
+            organization={
+            <>
+              Department of Applied Mathematics and Computational Sciences,<br />
+              PSG College of Technology, India
+            </>
+          }
+            photoUrl={malarImage}
           />
         </div>
-      </div>
+      </ScientificCommitteeGrid>
 
-      <div data-aos="fade-up" style={{ 
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, minmax(250px, 1fr))',
-        gap: '30px',
-        maxWidth: '1400px',
-        margin: '0 auto 40px',
-        padding: '30px',
-        width: '100%',
-        boxSizing: 'border-box',
-        justifyContent: 'center',
-        background: 'linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%)',
-        borderRadius: '15px',
-        boxShadow: '0 4px 15px rgba(217, 163, 83, 0.1)'
-      }}>
-        <div data-aos="fade-up" style={{ 
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          justifyContent: 'center',
-          minWidth: '0'
-        }}>
+      <TwoCardCenterContainer data-aos="fade-up">
+        <FixedCardWrapper>
           <ProfileCard
             name="Dr Arun Rajkumar"
             designation="Assistant Professor"
-            organization="Department of Computer Science and Engineering, Indian Institute of Technology Madras, India"
+            
+            organization={
+            <>
+              Department of Computer Science and Engineering, <br />
+              Indian Institute of Technology Madras, India
+            </>
+          }
+            
             photoUrl={arun}
           />
-        </div>
-        
-        <div data-aos="fade-up" style={{ 
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          justifyContent: 'center',
-          minWidth: '0'
-        }}>
+        </FixedCardWrapper>
+        <FixedCardWrapper>
           <ProfileCard
             name="Dr B Sangeetha"
-            designation="Assistant Professor(Sl.Gr)"
-            organization="Department of Information Technology, PSG College of Technology"
+            designation="Associate Professor"
+            organization={
+            <>
+              Department of Information Technology, <br />
+              PSG College of Technology
+             
+            </>
+          }
             photoUrl={SangeethaImage}
           />
-        </div>
-      </div>
+        </FixedCardWrapper>
+      </TwoCardCenterContainer>
       
       <h1 data-aos="fade-up" style={{ 
         textAlign: 'center', 

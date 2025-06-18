@@ -9,7 +9,7 @@ import paper from './assets/paper.png';
 
 const eventData = [
   { title: 'Preconference Workshop', img: workshops },
-  { title: 'Keynote Speakers Address', img: keynote },
+  { title: 'Keynote Address', img: keynote },
   { title: 'Project Expo', img: expo },
   { title: 'Paper Presentation', img: paper },
 ];

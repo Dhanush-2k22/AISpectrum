@@ -2,19 +2,43 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import psgImage from '../assets/PSGTECH.jpeg';
+import psgVideo from '../assets/psgdroneshot-2.mp4';
 
-const ImageWrapper = styled.div`
+const VideoWrapper = styled.div`
   width: 100vw;
   height: 100vh;
-  background-image: url(${psgImage});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
 `;
 
-const FixedImage = () => {
-  return <ImageWrapper />;
+const Video = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+`;
+
+const FixedVideo = () => {
+  return (
+    <VideoWrapper>
+      <Video autoPlay muted loop playsInline>
+        <source src={psgVideo} type="video/mp4" />
+      </Video>
+      <Overlay />
+    </VideoWrapper>
+  );
 };
 
-export default FixedImage;
+export default FixedVideo;
