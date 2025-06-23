@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import psgVideo from '../assets/psgdroneshot-2.mp4';
+import psgVideo from '../assets/psgvideo.mp4';
 
 const VideoWrapper = styled.div`
   width: 100vw;
