@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import lectureNotesImage from './assets/lecturenotes.png';
 import eaiLogoImage from './assets/Eai_logo_with_margins.png';
 import springerLogoImage from './assets/Springer.png';
+import psgCareImage from './assets/PSGCARE.jpg';
 // Assuming commonStyles is needed for colors/typography if not already imported
 // import { colors, typography } from './styles/commonStyles';
 
@@ -118,6 +119,66 @@ const PublicationSection = () => {
           alt="Springer Logo"
         />
       </LogoContainer>
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        margin: '30px 0 0 0',
+        gap: '24px',
+        maxWidth: '900px',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        background: 'none',
+        borderRadius: '12px',
+        padding: '18px 24px',
+        boxShadow: '0 2px 8px rgba(217, 163, 83, 0.08)',
+        border: '0.2px solid #D9A353',
+        flexDirection: 'row',
+      }}>
+        <img
+          src={psgCareImage}
+          alt="PSG CARE Logo"
+          style={{
+            height: '70px',
+            width: 'auto',
+            objectFit: 'contain',
+            marginRight: '18px',
+            background: 'white',
+            borderRadius: '8px',
+            boxShadow: '0 2px 8px rgba(13, 88, 169, 0.08)',
+            padding: '6px',
+            marginBottom: 0,
+          }}
+        />
+        <span style={{
+          fontSize: '1.25em',
+          color: 'black',
+          fontWeight: 'normal',
+          textAlign: 'left',
+          lineHeight: 1.5
+        }}>
+          Acknowledgement to PSG CARE for their role in bridging with EAI for the publication of the conference proceedings.
+        </span>
+        <style>{`
+          @media (max-width: 768px) {
+            #publications > div[style*='display: flex'] {
+              flex-direction: column !important;
+              align-items: center !important;
+              padding: 12px 6px !important;
+              gap: 12px !important;
+            }
+            #publications > div[style*='display: flex'] img {
+              margin-right: 0 !important;
+              margin-bottom: 10px !important;
+              height: 55px !important;
+            }
+            #publications > div[style*='display: flex'] span {
+              text-align: center !important;
+              font-size: 1.1em !important;
+            }
+          }
+        `}</style>
+      </div>
     </section>
   );
 };

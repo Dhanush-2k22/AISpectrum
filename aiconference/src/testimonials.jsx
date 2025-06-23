@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import testimonialImage from './assets/5856.jpg';
+import XiaoImage from './assets/Xiao.png';
 
 // Theme object
 const colors = {
@@ -119,6 +120,12 @@ const TestimonialRole = styled.p`
 
 const Testimonials = () => {
   const testimonials = [
+    {
+      name: "Prof. Dr. Xiao-Zhi Gao",
+      role: "University of Eastern Finland, Finland",
+      text: "As a professional in the AI space, I believe AI Spectrum 2025 represents a fantastic opportunity for growth and collaboration. It is perfectly designed to bridge academic advancements with practical industry needs, providing a dynamic environment for learning and forming valuable connections.",
+      image: XiaoImage
+    },
     {
       name: "John Smith",
       role: "AI Researcher",

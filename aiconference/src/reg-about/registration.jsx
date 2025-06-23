@@ -128,9 +128,9 @@ const RegDetails = () => {
           </thead>
           <tbody>
             {[
-              { category: 'Academician, Research Scholar', indian: '₹ 10,000', foreign: 'US $ 125' },
-              { category: 'Industry person', indian: '₹ 12,000', foreign: 'US $ 140' },
-              { category: 'Attendees', indian: '₹ 3,000', foreign: 'US $ 75' }
+              { category: 'Academician, Research Scholar', indian: '₹ 12,000', foreign: '$ 150 USD' },
+              { category: 'Industry person', indian: '₹ 14,000', foreign: '$ 175 USD' },
+              { category: 'Attendees', indian: '₹ 3,000', foreign: '$ 75 USD' }
             ].map((row, idx) => (
               <tr key={idx} style={{ 
                 backgroundColor: idx % 2 === 0 ? '#fff' : '#f0f0f0', 

@@ -3,6 +3,8 @@ import styled, { keyframes } from 'styled-components';
 import Slider from 'react-slick';
 import testimonialImage1 from './assets/image.png';
 import testimonialImage2 from './assets/image2.png';
+import sugunanthanImage from './assets/sugananthan.jpg';
+import xiaoImage from './assets/Xiao.png';
 
 const colors = {
   white: '#ffffff',
@@ -95,7 +97,6 @@ const TestimonialImage = styled.img`
   box-shadow: 0 0 20px ${colors.yellow};
   transition: all 0.5s ease;
   cursor: pointer;
-  filter: saturate(50%);
 
   &:hover {
     width: 400px;
@@ -172,11 +173,11 @@ const sliderSettings = {
   dots: false,
   arrows: false,
   infinite: true,
-  speed: 10000,         // slow scroll
+  speed: 800,           // smooth transition
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 0,     // continuous flow
+  autoplaySpeed: 8000,  // 8 seconds per card
   cssEase: 'linear',
   pauseOnHover: false,  // we'll control hover manually
 };
@@ -193,6 +194,18 @@ const testimonials = [
     role: "Shanghai Intelligent Medical Devices and Active Health Collaborative Innovation Center, China",
     text: "AI Spectrum 2025 as it fosters global collaboration, open dialogue, and inclusivity in the AI research ecosystem. It stands as a platform poised to be a Launchpad for next-generation ideas and bold innovations in AI.",
     image: testimonialImage2
+  },
+  {
+    name: "Prof. Dr. P N Suganthan",
+    role: "Qatar University, Qatar",
+    text: "This conference promises an unparalleled experience in exploring the frontiers of AI. From cutting-edge research to real-world industry applications across diverse tracks like AI Genesis and AI Impact, AI Spectrum 2025 is where future collaborations are truly forged.",
+    image: sugunanthanImage
+  },
+  {
+    name: "Prof. Dr. Xiao-Zhi Gao",
+    role: "University of Eastern Finland, Finland",
+    text: "As a professional in the AI space, I believe AI Spectrum 2025 represents a fantastic opportunity for growth and collaboration. It is perfectly designed to bridge academic advancements with practical industry needs, providing a dynamic environment for learning and forming valuable connections.",
+    image: xiaoImage
   }
 ];
 
