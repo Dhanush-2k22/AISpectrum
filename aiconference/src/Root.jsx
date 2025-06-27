@@ -5,7 +5,7 @@ import RegDetails from './reg-about/reg.jsx';
 
 function Root() {
   return (
-    <Router basename="/aispectrum">
+    <Router basename="/">
       <Routes>
         <Route path="/reg" element={<RegDetails />}/>
         <Route path="/*" element={<App />} />

@@ -173,11 +173,11 @@ const sliderSettings = {
   dots: false,
   arrows: false,
   infinite: true,
-  speed: 800,           // smooth transition
+  speed: 400,           // smooth transition
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 8000,  // 8 seconds per card
+  autoplaySpeed: 3000,  // 3 seconds per card
   cssEase: 'linear',
   pauseOnHover: false,  // we'll control hover manually
 };
