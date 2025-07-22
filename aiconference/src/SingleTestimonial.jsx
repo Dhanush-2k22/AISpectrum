@@ -5,6 +5,7 @@ import testimonialImage1 from './assets/image.png';
 import testimonialImage2 from './assets/image2.png';
 import sugunanthanImage from './assets/sugananthan.jpg';
 import xiaoImage from './assets/Xiao.png';
+import diegoImage from './assets/diego.png';
 
 const colors = {
   white: '#ffffff',
@@ -206,6 +207,12 @@ const testimonials = [
     role: "University of Eastern Finland, Finland",
     text: "As a professional in the AI space, I believe AI Spectrum 2025 represents a fantastic opportunity for growth and collaboration. It is perfectly designed to bridge academic advancements with practical industry needs, providing a dynamic environment for learning and forming valuable connections.",
     image: xiaoImage
+  },
+  {
+    name: "Prof. Dr.Diego Oliva",
+    role: "Universidad de Guadalajara, Mexico",
+    text: "AI Spectrum 2025 is an excellent event for learning about the latest developments in AI and connecting with experts from diverse global perspectives. This event also provides the opportunity to explore theoretical and practical applications of AI directly from the experts.",
+    image: diegoImage
   }
 ];
 
