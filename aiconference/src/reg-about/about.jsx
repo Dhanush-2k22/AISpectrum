@@ -367,6 +367,11 @@ const About = () => {
                   }
                 }}
               />
+              <div>
+                <a href="https://aiconsortium.psgtech.ac.in/teams" style={{ color: '#00408C', textDecoration: 'none' }} >
+                  PSG - AI Consortium members
+                </a>
+              </div>
             </div>
 
             {/* Content */}
