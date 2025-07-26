@@ -111,12 +111,38 @@ const SubmitButton = styled.button`
 
 const UpdatePopup = ({ onClose }) => {
   const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionStatus, setSubmissionStatus] = useState(null); // 'success' or 'error'
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle email submission here
-    console.log('Email submitted:', email);
-    onClose();
+    setIsSubmitting(true);
+    setSubmissionStatus(null);
+
+    // paste Google Apps Script URL
+    const googleAppScriptURL = '';
+
+    const formData = new FormData();
+    formData.append('email', email);
+
+    fetch(googleAppScriptURL, {
+      method: 'POST',
+      body: formData,
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.result === 'success') {
+          setSubmissionStatus('success');
+        } else {
+          setSubmissionStatus('error');
+        }
+        setIsSubmitting(false);
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+        setSubmissionStatus('error');
+        setIsSubmitting(false);
+      });
   };
 
   return (
@@ -124,17 +150,28 @@ const UpdatePopup = ({ onClose }) => {
       <PopupContainer>
         <CloseButton onClick={onClose}>×</CloseButton>
         <Heading>2025 UPDATES!!</Heading>
-        <Description>Get THE MOST Current Info For The AI Conference</Description>
-        <Form onSubmit={handleSubmit}>
-          <Input
-            type="email"
-            placeholder="Enter your working email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <SubmitButton type="submit">Subscribe for Updates</SubmitButton>
-        </Form>
+        {!submissionStatus ? (
+          <>
+            <Description>Get THE MOST Current Info For The AI Conference</Description>
+            <Form onSubmit={handleSubmit}>
+              <Input
+                type="email"
+                placeholder="Enter your working email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                disabled={isSubmitting}
+              />
+              <SubmitButton type="submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Subscribing...' : 'Subscribe for Updates'}
+              </SubmitButton>
+            </Form>
+          </>
+        ) : submissionStatus === 'success' ? (
+          <Description>✅ Thank you! You've been subscribed.</Description>
+        ) : (
+          <Description>❌ Something went wrong. Please try again.</Description>
+        )}
       </PopupContainer>
     </PopupOverlay>
   );
