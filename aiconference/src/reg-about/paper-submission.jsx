@@ -89,44 +89,91 @@ const PaperSubmission = () => {
           textAlign: 'left', 
           marginBottom: '10px', 
           color: '#0d58a9',
-          padding: '12px',
-         }}>
-          Submitted research work must be original in content amd free from plagiarism. Authors are requested to submit a plagiarism report using <br />iThenticate / Turnitin. Plagiarism should be less than 20% to qualify for the paper to be reviewed.
+          padding: '8px',
+        }}>
+          Submitted research work must be original in content amd free from plagiarism. Authors are requested to submit a plagiarism report using iThenticate / Turnitin.
+        </li>
+        <li style={{ 
+          textAlign: 'left', 
+          marginBottom: '10px', 
+          color: '#0d58a9',
+          padding: '8px',
+        }}>
+          Plagiarism should be less than 20% to qualify for the paper to be reviewed.
         </li>
       </ul>
 
       <div style={{ textAlign: 'center', marginTop: '30px' }}>
-        <a
-          href="https://cmt3.research.microsoft.com/AIS2025/Submission/Index"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            backgroundColor: '#D9A353',
-            color: 'white',
-            padding: '12px 30px',
-            fontSize: '1.1rem',
-            fontWeight: '600',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease',
-            boxShadow: '0 4px 6px rgba(217, 163, 83, 0.2)',
-            textDecoration: 'none',
-            display: 'inline-block'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.backgroundColor = '#c08a42';
-            e.target.style.transform = 'translateY(-2px)';
-            e.target.style.boxShadow = '0 6px 8px rgba(217, 163, 83, 0.3)';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.backgroundColor = '#D9A353';
-            e.target.style.transform = 'translateY(0)';
-            e.target.style.boxShadow = '0 4px 6px rgba(217, 163, 83, 0.2)';
-          }}
-        >
-          Submit Paper
-        </a>
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          gap: '20px', 
+          flexWrap: 'wrap',
+          alignItems: 'center'
+        }}>
+          <a
+            href="/springer-template.docx"
+            download="Springer-Template.docx"
+            style={{
+              backgroundColor: '#0d58a9',
+              color: 'white',
+              padding: '12px 30px',
+              fontSize: '1.1rem',
+              fontWeight: '600',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              boxShadow: '0 4px 6px rgba(13, 88, 169, 0.2)',
+              textDecoration: 'none',
+              display: 'inline-block'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = '#0a4a8a';
+              e.target.style.transform = 'translateY(-2px)';
+              e.target.style.boxShadow = '0 6px 8px rgba(13, 88, 169, 0.3)';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = '#0d58a9';
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = '0 4px 6px rgba(13, 88, 169, 0.2)';
+            }}
+          >
+            📄 Download Template
+          </a>
+          
+          <a
+            href="https://cmt3.research.microsoft.com/AIS2025/Submission/Index"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              backgroundColor: '#D9A353',
+              color: 'white',
+              padding: '12px 30px',
+              fontSize: '1.1rem',
+              fontWeight: '600',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              boxShadow: '0 4px 6px rgba(217, 163, 83, 0.2)',
+              textDecoration: 'none',
+              display: 'inline-block'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = '#c08a42';
+              e.target.style.transform = 'translateY(-2px)';
+              e.target.style.boxShadow = '0 6px 8px rgba(217, 163, 83, 0.3)';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = '#D9A353';
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = '0 4px 6px rgba(217, 163, 83, 0.2)';
+            }}
+          >
+            Submit Paper
+          </a>
+        </div>
         <p style={{ marginTop: '15px', color: '#0d58a9', fontSize: '0.9rem' }}>
           The Microsoft CMT service is used for managing the peer-reviewing process for this conference.
         </p>
