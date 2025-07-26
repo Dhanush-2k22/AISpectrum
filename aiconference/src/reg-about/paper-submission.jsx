@@ -112,7 +112,7 @@ const PaperSubmission = () => {
           alignItems: 'center'
         }}>
           <a
-            href="/springer-template.docx"
+            href="aiconference/public/springer-template.docx"
             download="Springer-Template.docx"
             style={{
               backgroundColor: '#0d58a9',
