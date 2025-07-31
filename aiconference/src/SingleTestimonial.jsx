@@ -6,6 +6,7 @@ import testimonialImage2 from './assets/image2.png';
 import sugunanthanImage from './assets/sugananthan.jpg';
 import xiaoImage from './assets/Xiao.png';
 import diegoImage from './assets/diego.png';
+import ganeshImage from './assets/ganesh.png';
 
 const colors = {
   white: '#ffffff',
@@ -95,9 +96,14 @@ const TestimonialImage = styled.img`
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center top;
   box-shadow: 0 0 20px ${colors.yellow};
   transition: all 0.5s ease;
   cursor: pointer;
+
+  &.ganesh-image {
+    object-position: center 20%;
+  }
 
   &:hover {
     width: 400px;
@@ -213,6 +219,12 @@ const testimonials = [
     role: "Universidad de Guadalajara, Mexico",
     text: "AI Spectrum 2025 is an excellent event for learning about the latest developments in AI and connecting with experts from diverse global perspectives. This event also provides the opportunity to explore theoretical and practical applications of AI directly from the experts.",
     image: diegoImage
+  },
+  {
+    name: "Mr.Ganesh S. Rao",
+    role: "Head of R&D, Advanced Driver Assistance Systems (ADAS) Engineering, Continental Autonomous Mobility India Private Limited, India",
+    text: "AI is not just transforming mobility; it is redefining the boundaries of safety and connectivity. With Artificial Intelligence becoming the key driver for enhancing functions and usability in the car and beyond, it is important that AI remains Ethical, Progressive, Innovative, and of high Quality - EPIQ in every sense. Therefore, AI Spectrum plays a significant role in promoting collaboration between academia, industry, and policymakers to shape a future where AI is not only intelligent but also trustworthy and sustainable.",
+    image: ganeshImage
   }
 ];
 
@@ -229,7 +241,11 @@ const TestimonialsSlider = () => {
               onMouseEnter={() => sliderRef.current?.slickPause()}
               onMouseLeave={() => sliderRef.current?.slickPlay()}
             >
-              <TestimonialImage src={item.image} alt={item.name} />
+              <TestimonialImage 
+                src={item.image} 
+                alt={item.name} 
+                className={item.name === "Mr.Ganesh S. Rao" ? "ganesh-image" : ""}
+              />
               <TestimonialContent>
                 <TestimonialText>"{item.text}"</TestimonialText>
                 <TestimonialName>{item.name}</TestimonialName>
