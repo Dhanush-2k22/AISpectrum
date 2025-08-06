@@ -83,7 +83,7 @@ const Dates = () => {
           <tbody>
             {[
               ['Opening Date for Paper Submission', '05.06.2025'],
-              ['Last Date for Full Paper Submission', '01.08.2025'],
+              ['Last Date for Full Paper Submission', '20.08.2025'],
               ['Notification of Acceptance', '15.10.2025'],
               ['Camera-Ready Paper Submission', '01.11.2025'],
               ['Last Date for Registration', '15.11.2025']
